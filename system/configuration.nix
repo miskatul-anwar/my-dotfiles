@@ -2,6 +2,7 @@
 {
 imports = [
 ./hardware/hardware-configuration.nix
+./modules/docker.nix
 ./modules/default-apps.nix
 ./modules/fonts.nix
 ./modules/bootloader.nix
