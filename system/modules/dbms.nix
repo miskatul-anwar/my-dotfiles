@@ -7,7 +7,6 @@
     ensureUsers = [
       {
         name = "miskat";
-        password = "password";
         ensurePermissions = {
           "HR.*" = "ALL PRIVILEGES";
         };
