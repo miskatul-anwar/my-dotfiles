@@ -5,6 +5,7 @@
     ./modules/env.nix
     ./modules/shell.nix
     ./modules/packages.nix
+    ./modules/window-manager/rofi.nix
     ./modules/window-manager/waybar.nix
     ./modules/window-manager/hyprland.nix
   ];
