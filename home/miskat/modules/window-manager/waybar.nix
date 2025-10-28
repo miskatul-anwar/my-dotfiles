@@ -33,6 +33,5 @@
     grimblast
     brightnessctl
     hyprlock
-    zen-browser
   ];
 }
