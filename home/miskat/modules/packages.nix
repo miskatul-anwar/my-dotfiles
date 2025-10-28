@@ -1,6 +1,6 @@
-{ pkgs, ... }: { 
+{inputs, pkgs, system, ... }: { 
 	home.packages = with pkgs; [ 
     		hello neovim curl wget htop neofetch docker
-    # Add more here
+        inputs.zen-browser.packages."${system}".default
   	];
 }
