@@ -12,6 +12,8 @@
       usernamehw.errorlens
       christian-kohler.path-intellisense
       formulahendry.code-runner
+      pkief.material-icon-theme
+      zguolee.tabler-icons
     ];
   };
 }

@@ -18,10 +18,12 @@
     gnumake 
     gdb 
     gef 
-    binutils 
+    # binutils 
     gcc 
     texliveFull
+    # social media
     telegram-desktop
+    whatsapp-for-mac
 
     # Python
     python312
@@ -37,5 +39,6 @@
 
     # clang
     libclang
+    clang
   ];
 }

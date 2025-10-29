@@ -29,7 +29,8 @@
         },
 
         "code-runner.runInTerminal": true,
-        "code-runner.saveFileBeforeRun": true
+        "code-runner.saveFileBeforeRun": true,
+        "editor.minimap.enabled": false
       }
     '';
   };

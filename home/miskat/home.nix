@@ -1,7 +1,7 @@
 {config, pkgs, ... }: {
   imports = [
     ./modules/git.nix
-    ./modules/files.nix
+    ./modules/codium.nix
     ./modules/env.nix
     ./modules/shell.nix
     ./modules/packages.nix
