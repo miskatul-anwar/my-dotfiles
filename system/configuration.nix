@@ -25,6 +25,10 @@ nixpkgs.config.allowUnfree = true;
 # Enable flakes
 nix.settings.experimental-features = ["nix-command" "flakes"];
 
+# Enable Auto Upgrades
+system.autoUpgrade.enable = true;
+system.autoUpgrade.allowReboot = true;
+
 system.stateVersion = "25.05";
 
 }

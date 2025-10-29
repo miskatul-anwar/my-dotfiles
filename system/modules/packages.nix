@@ -21,11 +21,11 @@
     telegram-desktop
 
     # Python
-    python312Full
+    python312
     python312Packages.jupyter
     python312Packages.matplotlib
     python312Packages.manim
-    python312Packages.scicpy
+    python312Packages.scipy
     python312Packages.sympy
   ];
 }
