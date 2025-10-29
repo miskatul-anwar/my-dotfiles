@@ -11,16 +11,12 @@ imports = [
 ./modules/networking.nix
 ./modules/locale.nix
 ./modules/users.nix
-./modules/xserver.nix
 ./modules/desktop.nix
 ./modules/printing.nix
 ./modules/sound.nix
 ./modules/packages.nix
 ./modules/git.nix
-./modules/hyprland.nix
 ./modules/vscode.nix
-# ./modules/nvidia.nix
-# ./modules/nvidia-prime.nix
 ];
 
 # Allow unfree packages
