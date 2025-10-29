@@ -22,6 +22,7 @@
   ###################################
   environment.systemPackages = with pkgs; [
     # GNOME core apps (top-level, not gnome.gnome-*)
+    gnome-shell
     gnome-terminal
     nautilus
     gedit
@@ -81,6 +82,14 @@
     # System tray/network/bluetooth
     networkmanagerapplet
     blueman
+    ####################################
+    ## Gnome Shell Extensions
+    ###################################
+    gnomeExtensions.rounded-window-corners-reborn
+    gnomeExtensions.arcmenu
+    gnomeExtensions.caffeine
+    gnomeExtensions.dash-to-dock
+    gtop
   ];
 
   ###################################
@@ -125,4 +134,5 @@
     liberation_ttf
     ubuntu_font_family
   ];
+
 }

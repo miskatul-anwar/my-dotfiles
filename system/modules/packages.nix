@@ -1,5 +1,8 @@
 {inputs, config, pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    glibc
+    glibc.dev
+    viu
     vim 
     lunarvim 
     wget 
@@ -22,10 +25,17 @@
 
     # Python
     python312
-    python312Packages.jupyter
+    python312Packages.ipykernel       # Python kernel for Jupyter
+    python312Packages.notebook         # classic Jupyter Notebook
+    python312Packages.jupyterlab       # modern interface (optional)
+    python312Packages.numpy
+    python312Packages.pandas
     python312Packages.matplotlib
-    python312Packages.manim
     python312Packages.scipy
-    python312Packages.sympy
+    python312Packages.seaborn
+
+
+    # clang
+    libclang
   ];
 }

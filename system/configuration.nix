@@ -16,7 +16,7 @@ imports = [
 ./modules/sound.nix
 ./modules/packages.nix
 ./modules/git.nix
-./modules/vscode.nix
+./modules/codium.nix
 ];
 
 # Allow unfree packages
