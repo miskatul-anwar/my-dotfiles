@@ -2,6 +2,7 @@
 {
 imports = [
 ./hardware/hardware-configuration.nix
+./hardware/drives.nix
 ./modules/nh.nix
 ./modules/dbms.nix
 ./modules/docker.nix

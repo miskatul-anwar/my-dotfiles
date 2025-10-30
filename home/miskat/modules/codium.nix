@@ -21,16 +21,13 @@
         "window.commandCenter": false,
         "workbench.layoutControl.enabled": false,
         "editor.fontFamily": "JetBrains Mono",
+        "editor.fontSize": 16,
         "editor.fontLigatures": true,
-
-        "code-runner.executorMap": {
-          "c": "cd $dir && nix-shell -p gcc glibc.dev glibc binutils --run 'gcc \"$file\" -o \"$fileNameWithoutExt\" && ./\"$fileNameWithoutExt\"'",
-          "cpp": "cd $dir && nix-shell -p gcc glibc.dev glibc binutils --run 'g++ \"$file\" -o \"$fileNameWithoutExt\" && ./\"$fileNameWithoutExt\"'"
-        },
-
         "code-runner.runInTerminal": true,
         "code-runner.saveFileBeforeRun": true,
-        "editor.minimap.enabled": false
+        "editor.minimap.enabled": false,
+        "workbench.productIconTheme": "Tabler",
+        "editor.formatOnSave": true
       }
     '';
   };

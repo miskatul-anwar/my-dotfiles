@@ -23,6 +23,7 @@
   environment.systemPackages = with pkgs; [
     # GNOME core apps (top-level, not gnome.gnome-*)
     gnome-shell
+    gnome-menus
     gnome-terminal
     nautilus
     gedit
@@ -54,10 +55,10 @@
 
     # Fonts (matching Ubuntu)
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     dejavu_fonts
     liberation_ttf
-    ubuntu_font_family
+    ubuntu-classic
 
     # Common Ubuntu apps
     firefox
@@ -129,10 +130,10 @@
   fonts.packages = with pkgs; [
     inter
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     dejavu_fonts
     liberation_ttf
-    ubuntu_font_family
+    ubuntu-classic
   ];
 
 }

@@ -1,7 +1,8 @@
 {inputs, config, pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    glibc
-    glibc.dev
+    clang-tools
+    gcc
+    libgccjit
     viu
     vim 
     lunarvim 
@@ -12,18 +13,12 @@
     ghostty 
     pciutils 
     zoom-us 
-    libgccjit 
     rustup 
     lsd 
-    gnumake 
-    gdb 
-    gef 
     # binutils 
-    gcc 
     texliveFull
     # social media
     telegram-desktop
-    whatsapp-for-mac
 
     # Python
     python312
