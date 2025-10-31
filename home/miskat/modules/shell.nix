@@ -13,7 +13,7 @@
     # Oh My Zsh integration
     oh-my-zsh = {
       enable = true;
-      theme = "agnoster"; # or "robbyrussell", "powerlevel10k" (if installed)
+      theme = "robbyrussell"; # or "agnoster", "powerlevel10k" (if installed)
       plugins = [
         "git"
         "sudo"
@@ -65,8 +65,6 @@
 
     # Extra initialization (custom exports, etc.)
     initContent = ''
-      neofetch
-      export PATH=$HOME/.local/bin:$PATH
       export EDITOR="nvim"
 
     '';

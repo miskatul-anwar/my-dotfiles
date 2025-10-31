@@ -1,5 +1,6 @@
 {inputs, config, pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    ripgrep 
     clang-tools
     gcc
     libgccjit

@@ -27,7 +27,8 @@
         "code-runner.saveFileBeforeRun": true,
         "editor.minimap.enabled": false,
         "workbench.productIconTheme": "Tabler",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": false,
+        "explorer.confirmDelete": false
       }
     '';
   };

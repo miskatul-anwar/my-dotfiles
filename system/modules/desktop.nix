@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  # enable hyprland
+  programs.hyprland.enable = true;
+  programs.hyprland.xwayland.enable = true;
   ###################################
   ##  Display and Desktop (GNOME)
   ###################################
