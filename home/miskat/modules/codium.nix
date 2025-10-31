@@ -28,7 +28,8 @@
         "editor.minimap.enabled": false,
         "workbench.productIconTheme": "Tabler",
         "editor.formatOnSave": false,
-        "explorer.confirmDelete": false
+        "explorer.confirmDelete": false,
+        "workbench.iconTheme": "material-icon-theme"
       }
     '';
   };
