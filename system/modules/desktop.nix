@@ -2,8 +2,8 @@
 
 {
   # enable hyprland
-  programs.hyprland.enable = true;
-  programs.hyprland.xwayland.enable = true;
+  # programs.hyprland.enable = true;
+  # programs.hyprland.xwayland.enable = true;
   ###################################
   ##  Display and Desktop (GNOME)
   ###################################
@@ -64,7 +64,6 @@
     ubuntu-classic
 
     # Common Ubuntu apps
-    firefox
     thunderbird
     transmission_4-gtk
     transmission_3-gtk

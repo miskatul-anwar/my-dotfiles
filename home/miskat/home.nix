@@ -5,7 +5,7 @@
     ./modules/env.nix
     ./modules/shell.nix
     ./modules/packages.nix
-    ./modules/window-manager/mod.nix
+    # ./modules/window-manager/mod.nix
   ];
 
   home = {
