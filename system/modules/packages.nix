@@ -25,6 +25,7 @@
     texliveFull
     # social media
     telegram-desktop
+    caprine
 
     # Python
     python312

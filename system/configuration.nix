@@ -2,6 +2,10 @@
 {
 imports = [
 ./hardware/hardware-configuration.nix
+./modules/nvidia.nix
+./modules/gc.nix
+./modules/auto-upgrade.nix
+./modules/ascii.nix
 ./hardware/drives.nix
 ./modules/nh.nix
 ./modules/dbms.nix
@@ -25,10 +29,6 @@ nixpkgs.config.allowUnfree = true;
 
 # Enable flakes
 nix.settings.experimental-features = ["nix-command" "flakes"];
-
-# Enable Auto Upgrades
-system.autoUpgrade.enable = true;
-system.autoUpgrade.allowReboot = true;
 
 system.stateVersion = "25.05";
 

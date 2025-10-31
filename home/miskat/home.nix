@@ -1,11 +1,11 @@
 {config, pkgs, ... }: {
   imports = [
     ./modules/git.nix
-    ./modules/codium.nix
     ./modules/env.nix
     ./modules/shell.nix
     ./modules/packages.nix
-    # ./modules/window-manager/mod.nix
+    ./modules/codium/settings.nix
+    ./modules/codium/snippet.nix
   ];
 
   home = {
