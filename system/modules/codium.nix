@@ -3,7 +3,7 @@
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
-      vscodevim.vim
+      asvetliakov.vscode-neovim
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
       github.github-vscode-theme

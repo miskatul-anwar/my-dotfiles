@@ -27,10 +27,12 @@
         "code-runner.saveFileBeforeRun": true,
         "editor.minimap.enabled": false,
         "workbench.productIconTheme": "Tabler",
-        "editor.formatOnSave": false,
+        "editor.formatOnSave": true,
         "explorer.confirmDelete": false,
-        "workbench.iconTheme": "material-icon-theme"
-      }
+        "workbench.iconTheme": "material-icon-theme",
+        "extensions.experimental.affinity" : {
+          "asvetliakov.vscode-neovim" : 1
+        }
     '';
   };
 }
