@@ -1,5 +1,5 @@
 {...}:{
-  home.files.".config/VSCodium/User/snippets/cpp.json".text = ''
+  home.file.".config/VSCodium/User/snippets/cpp.json".text = ''
     {
       "ICPC Fast Template": {
         "prefix": "icpc",
