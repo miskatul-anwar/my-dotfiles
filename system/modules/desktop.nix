@@ -64,7 +64,6 @@
     ubuntu-classic
 
     # Common Ubuntu apps
-    thunderbird
     transmission_4-gtk
     transmission_3-gtk
     rhythmbox

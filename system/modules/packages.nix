@@ -1,5 +1,8 @@
 {inputs, config, pkgs, ...}: {
-  programs.firefox.enable = true;
+  programs = {
+    firefox.enable = true;
+    thunderbird.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     ripgrep 
