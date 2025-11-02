@@ -1,8 +1,9 @@
 {config, pkgs, ... }: {
   imports = [
+    ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/env.nix
-    ./modules/shell.nix
+    ./modules/zsh.nix
     ./modules/packages.nix
     ./modules/codium/settings.nix
     ./modules/codium/snippet.nix
