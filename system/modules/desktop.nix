@@ -86,10 +86,9 @@
     ## Gnome Shell Extensions
     ###################################
     gnomeExtensions.rounded-window-corners-reborn
-    gnomeExtensions.arcmenu
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
-    gtop
+    gnomeExtensions.luminus-shell-y
   ];
 
   ###################################
