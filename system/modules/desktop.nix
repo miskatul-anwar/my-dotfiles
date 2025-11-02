@@ -8,6 +8,7 @@
   ##  Display and Desktop (GNOME)
   ###################################
 
+  xdg.menus.enable = true;
   services.xserver.enable = true;
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
@@ -25,8 +26,6 @@
   ###################################
   environment.systemPackages = with pkgs; [
     # GNOME core apps (top-level, not gnome.gnome-*)
-    gnome-shell
-    gnome-menus
     gnome-terminal
     nautilus
     gedit
@@ -65,7 +64,6 @@
 
     # Common Ubuntu apps
     transmission_4-gtk
-    transmission_3-gtk
     rhythmbox
     cheese
     shotwell
