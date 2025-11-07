@@ -1,6 +1,7 @@
 # my-dotfiles
 
 This repository provides a modular, flake-based configuration for NixOS and Home Manager, tailored for reproducible system and user environments.
+![nixos_niri](view.png)
 
 ---
 
