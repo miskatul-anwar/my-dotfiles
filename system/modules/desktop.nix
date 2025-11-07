@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # enable hyprland
-  # programs.hyprland.enable = true;
-  # programs.hyprland.xwayland.enable = true;
   ###################################
   ##  Display and Desktop (GNOME)
   ###################################
@@ -88,7 +85,7 @@
     gnomeExtensions.rounded-window-corners-reborn
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
-    gnomeExtensions.luminus-shell-y
+    gnomeExtensions.blur-my-shell
   ];
 
   ###################################

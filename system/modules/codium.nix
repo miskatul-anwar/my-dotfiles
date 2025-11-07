@@ -2,7 +2,10 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
+
     extensions = with pkgs.vscode-extensions; [
+      redhat.java
+      adpyke.codesnap
       asvetliakov.vscode-neovim
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd

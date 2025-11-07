@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 {
 imports = [
+./modules/window-manager.nix
 ./hardware/hardware-configuration.nix
 ./modules/nvidia.nix
 ./modules/gc.nix
@@ -17,7 +18,6 @@ imports = [
 ./modules/locale.nix
 ./modules/users.nix
 ./modules/desktop.nix
-./modules/printing.nix
 ./modules/sound.nix
 ./modules/packages.nix
 ./modules/git.nix

@@ -1,10 +1,33 @@
 {inputs, config, pkgs, ...}: {
   programs = {
     firefox.enable = true;
+
+    sniffnet.enable = true;
+    
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+      dumpcap.enable = true;
+      usbmon.enable = true;
+    };
+
     thunderbird.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
+    #Cyber
+    bettercap
+    # ciscoPacketTracer8
+    netcat-gnu
+    hping
+    burpsuite
+    wireshark
+    sniffnet
+    nmap
+    tcpdump
+    hashcat
+    aircrack-ng
+  
     ripgrep 
     clang-tools
     gcc
@@ -42,5 +65,8 @@
     # clang
     libclang
     clang
+
+    # Java
+    javaPackages.compiler.openjdk25
   ];
 }

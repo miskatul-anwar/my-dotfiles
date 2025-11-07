@@ -32,7 +32,9 @@
         "workbench.iconTheme": "material-icon-theme",
         "extensions.experimental.affinity" : {
           "asvetliakov.vscode-neovim" : 1
-        }
+        },
+        "redhat.telemetry.enabled": true
+      }
     '';
   };
 }
