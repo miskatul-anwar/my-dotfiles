@@ -1,0 +1,6 @@
+
+{
+  services.udev.extraRules = ''
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", MODE="0666", SYMLINK+="arduino"
+  '';
+}

@@ -3,6 +3,10 @@
 imports = [
 ./modules/window-manager.nix
 ./hardware/hardware-configuration.nix
+./modules/virtualisation.nix
+# ./modules/android-dev.nix
+./modules/flatpak.nix
+./hardware/arduino.nix
 ./modules/nvidia.nix
 ./modules/gc.nix
 ./modules/auto-upgrade.nix

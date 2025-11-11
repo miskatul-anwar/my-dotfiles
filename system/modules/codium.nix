@@ -11,7 +11,10 @@
       llvm-vs-code-extensions.vscode-clangd
       github.github-vscode-theme
       rust-lang.rust-analyzer
-      pylyzer.pylyzer
+      ms-python.python
+      # ms-python.pylint
+      ms-python.isort
+      ms-python.black-formatter
       usernamehw.errorlens
       christian-kohler.path-intellisense
       formulahendry.code-runner

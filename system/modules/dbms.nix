@@ -3,12 +3,13 @@
     enable = true;
     package = pkgs.mariadb;
     dataDir = "/var/lib/mysql";
-    ensureDatabases=["HR"];
+    ensureDatabases=["HR" "BOOKSTORE"];
     ensureUsers = [
       {
         name = "miskat";
         ensurePermissions = {
           "HR.*" = "ALL PRIVILEGES";
+          "BOOKSTORE.*" = "ALL PRIVILEGES";
         };
       }
     ];

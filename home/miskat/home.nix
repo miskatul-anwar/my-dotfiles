@@ -1,6 +1,6 @@
 {config, pkgs, ... }: {
   imports = [
-    ./modules/ghostty.nix
+    # ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/env.nix
     ./modules/zsh.nix

@@ -17,7 +17,7 @@
   environment.systemPackages = with pkgs; [
     #Cyber
     bettercap
-    # ciscoPacketTracer8
+    ciscoPacketTracer8
     netcat-gnu
     hping
     burpsuite
@@ -29,9 +29,6 @@
     aircrack-ng
   
     ripgrep 
-    clang-tools
-    gcc
-    libgccjit
     viu
     vim 
     lunarvim 
@@ -62,11 +59,20 @@
     python312Packages.seaborn
 
 
-    # clang
+
+
+    simulide_1_2_0
+    arduino-ide
+
+    # Cp
+    pypy3
+    clang-tools
+    gcc
+    libgccjit
     libclang
     clang
 
-    # Java
-    javaPackages.compiler.openjdk25
+    # Diagrams
+    graphviz
   ];
 }

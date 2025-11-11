@@ -31,4 +31,26 @@
       }
     }
   '';
+
+  home.file.".config/VSCodium/User/snippets/python.json".text = ''
+    {
+      "Fast IO Threaded (ICPC)": {
+        "prefix": "fastio",
+        "body": [
+          "import sys",
+          "import threading",
+          "",
+          "input = sys.stdin.readline",
+          "write = sys.stdout.write",
+          "",
+          "def main():",
+          "",   
+          "",
+          "if __name__ == \"__main__\":",
+          "    threading.Thread(target=main).start()"
+        ],
+        "description": "Fast input/output with threading for ICPC-style problems"
+      }
+    }
+  '';
 }

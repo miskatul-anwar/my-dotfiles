@@ -5,6 +5,7 @@
     inputs.quickshell.packages.${system}.default
     inputs.noctalia.packages.${system}.default
     fuzzel
+    rofi
     alacritty
     swaybg
     xwayland-satellite
