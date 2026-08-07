@@ -8,9 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixvim, ... }@inputs:
   {
     nixosConfigurations.miskat = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
@@ -28,6 +33,7 @@
             users.miskat = import ./home/miskat/home.nix;
             backupFileExtension = "backup";
             extraSpecialArgs = { inherit inputs; };
+            sharedModules = [ nixvim.homeModules.nixvim ];
           };
         }
       ];

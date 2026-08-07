@@ -16,7 +16,6 @@
     # CLI utilities
     ripgrep
     vim
-    neovim
     wget
     curl
     htop
