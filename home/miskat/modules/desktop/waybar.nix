@@ -132,10 +132,10 @@
         background-color: transparent;
       }
 
-      /* Bar containers */
+      /* Bar containers (Golden Accent Glassmorphism) */
       .modules-left, .modules-center, .modules-right {
-        background-color: rgba(29, 25, 43, 0.85);
-        border: 1px solid rgba(51, 204, 255, 0.25);
+        background-color: rgba(26, 26, 36, 0.88);
+        border: 1px solid rgba(243, 190, 83, 0.35);
         border-radius: 12px;
         padding: 2px 8px;
         margin: 2px 0;
@@ -143,14 +143,14 @@
 
       /* Launcher */
       #custom-launcher {
-        color: #33ccff;
+        color: #f3be53;
         font-size: 18px;
         padding-left: 8px;
         padding-right: 12px;
         transition: transform 0.2s ease;
       }
       #custom-launcher:hover {
-        color: #00ff99;
+        color: #ffd700;
       }
 
       /* Workspaces */
@@ -158,18 +158,18 @@
         padding: 0 4px;
       }
       #workspaces button {
-        color: #c3dde7;
+        color: #e6e6ee;
         padding: 2px 8px;
         margin: 2px 2px;
         border-radius: 8px;
         transition: all 0.2s ease-in-out;
       }
       #workspaces button.active {
-        background: linear-gradient(135deg, #33ccff, #00ff99);
-        color: #1d192b;
+        background: linear-gradient(135deg, #f3be53, #ffd700);
+        color: #1a1a24;
       }
       #workspaces button:hover {
-        background-color: rgba(115, 179, 212, 0.3);
+        background-color: rgba(243, 190, 83, 0.3);
         color: #ffffff;
       }
       #workspaces button.urgent {
@@ -185,22 +185,22 @@
       }
 
       #cpu {
-        color: #f5c2e7;
+        color: #e6c368;
       }
       #memory {
-        color: #b5e8e0;
+        color: #f7c04a;
       }
       #clock {
-        color: #c3dde7;
+        color: #f3be53;
       }
       #pulseaudio {
-        color: #73b3d4;
+        color: #ffd700;
       }
       #pulseaudio.muted {
         color: #ff5555;
       }
       #network {
-        color: #00ff99;
+        color: #e5c07b;
       }
       #network.disconnected {
         color: #ff5555;
@@ -221,13 +221,13 @@
 
       /* Tooltip styling */
       tooltip {
-        background-color: rgba(29, 25, 43, 0.95);
-        border: 1px solid rgba(51, 204, 255, 0.4);
+        background-color: rgba(26, 26, 36, 0.95);
+        border: 1px solid rgba(243, 190, 83, 0.4);
         border-radius: 10px;
         padding: 8px;
       }
       tooltip label {
-        color: #c3dde7;
+        color: #e6e6ee;
       }
     '';
   };

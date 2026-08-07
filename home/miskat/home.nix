@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./modules/git.nix
@@ -13,10 +13,28 @@
   ];
 
   home = {
-    username     = "miskat";
+    username      = "miskat";
     homeDirectory = "/home/miskat";
-    stateVersion  = "25.05";
-    file = {};
+    stateVersion   = "25.05";
+    file          = {};
+
+    pointerCursor = {
+      enable     = true;
+      gtk.enable = true;
+      x11.enable = true;
+      package    = pkgs.bibata-cursors;
+      name       = "Bibata-Modern-Classic";
+      size       = 24;
+    };
+  };
+
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name    = "Bibata-Modern-Classic";
+      size    = 24;
+    };
   };
 
   programs.home-manager.enable = true;

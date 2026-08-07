@@ -18,42 +18,42 @@
       background_opacity   = "0.85";
       dynamic_background_opacity = "yes";
 
-      # Color scheme matching Hyprland (#1d192b / #33ccff / #00ff99)
-      foreground              = "#c3dde7";
-      background              = "#1d192b";
-      selection_foreground    = "#1d192b";
-      selection_background    = "#33ccff";
-      cursor                  = "#33ccff";
-      cursor_text_color       = "#1d192b";
-      url_color               = "#00ff99";
-      active_border_color     = "#33ccff";
-      inactive_border_color   = "#465ea7";
+      # Color scheme matching Hyprland (Golden Accent Palette: #1a1a24 / #f3be53 / #ffd700)
+      foreground              = "#e6e6ee";
+      background              = "#1a1a24";
+      selection_foreground    = "#1a1a24";
+      selection_background    = "#f3be53";
+      cursor                  = "#f3be53";
+      cursor_text_color       = "#1a1a24";
+      url_color               = "#ffd700";
+      active_border_color     = "#f3be53";
+      inactive_border_color   = "#3a3a4a";
       bell_border_color       = "#ff5555";
       wayland_titlebar_color  = "system";
 
       # Tab bar colors
-      active_tab_foreground   = "#1d192b";
-      active_tab_background   = "#33ccff";
-      inactive_tab_foreground = "#c3dde7";
-      inactive_tab_background = "#2b2540";
-      tab_bar_background      = "#1d192b";
+      active_tab_foreground   = "#1a1a24";
+      active_tab_background   = "#f3be53";
+      inactive_tab_foreground = "#e6e6ee";
+      inactive_tab_background = "#2a2a3b";
+      tab_bar_background      = "#1a1a24";
 
       # 16 terminal colors
-      color0  = "#1d192b";
-      color8  = "#465ea7";
+      color0  = "#1a1a24";
+      color8  = "#5c5c70";
       color1  = "#ff5555";
       color9  = "#ff6e6e";
-      color2  = "#00ff99";
-      color10 = "#50fa7b";
-      color3  = "#f1fa8c";
-      color11 = "#f1fa8c";
-      color4  = "#33ccff";
-      color12 = "#6296ca";
+      color2  = "#e5c07b";
+      color10 = "#f7c04a";
+      color3  = "#f3be53";
+      color11 = "#ffd700";
+      color4  = "#e6c368";
+      color12 = "#f3be53";
       color5  = "#bd93f9";
       color13 = "#d6acff";
-      color6  = "#8be9fd";
-      color14 = "#a4ffff";
-      color7  = "#c3dde7";
+      color6  = "#f7c04a";
+      color14 = "#ffe082";
+      color7  = "#e6e6ee";
       color15 = "#ffffff";
     };
   };

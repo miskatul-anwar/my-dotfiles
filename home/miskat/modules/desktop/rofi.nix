@@ -14,14 +14,14 @@
 
       * {
         font:           "JetBrains Mono Nerd Font 11";
-        background:     #1D192BE6;
-        background-alt: #2B2540;
-        foreground:     #C3DDE7;
-        selected:       #33CCFF;
-        selected-text:  #1D192B;
-        active:         #00FF99;
+        background:     #1A1A24E6;
+        background-alt: #2A2A3B;
+        foreground:     #E6E6EE;
+        selected:       #F3BE53;
+        selected-text:  #1A1A24;
+        active:         #FFD700;
         urgent:         #FF5555;
-        border-color:   #33CCFF;
+        border-color:   #F3BE53;
       }
 
       window {

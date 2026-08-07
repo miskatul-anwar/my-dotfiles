@@ -38,25 +38,42 @@
       "$file"    = "nautilus";
       "$browser" = "google-chrome-stable";
 
-      # ── Input ─────────────────────────────────────────────────────────
+      # ── Environment Variables ─────────────────────────────────────────
+      env = [
+        "XCURSOR_THEME,Bibata-Modern-Classic"
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_THEME,Bibata-Modern-Classic"
+        "HYPRCURSOR_SIZE,24"
+      ];
+
+      # ── Input & Touchpad Gestures ──────────────────────────────────────
       input = {
         kb_layout    = "us";
         follow_mouse = 1;
         sensitivity  = 0;
         touchpad = {
-          natural_scroll     = true;
+          natural_scroll       = true;
           disable_while_typing = true;
-          tap-to-click       = true;
+          tap-to-click         = true;
         };
       };
 
-      # ── General ───────────────────────────────────────────────────────
+      gestures = {
+        workspace_swipe                    = true;
+        workspace_swipe_fingers            = 3;
+        workspace_swipe_distance           = 300;
+        workspace_swipe_invert             = true;
+        workspace_swipe_min_speed_to_force = 30;
+        workspace_swipe_cancel_ratio       = 0.5;
+      };
+
+      # ── General (Golden Accent Borders) ───────────────────────────────
       general = {
         gaps_in              = 6;
         gaps_out             = 14;
         border_size          = 2;
-        "col.active_border"  = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(1d192baa)";
+        "col.active_border"  = "rgba(f3be53ee) rgba(ffd700ee) 45deg";
+        "col.inactive_border" = "rgba(2a2a3baa)";
         layout               = "dwindle";
       };
 
@@ -284,25 +301,25 @@
     # wallpaper = ,~/.config/hypr/wallpaper.jpg
   '';
 
-  # ── Color palette ─────────────────────────────────────────────────────
+  # ── Color palette (Golden Gold Accent Theme) ─────────────────────────
   home.file.".config/hypr/colors".text = ''
-    $background = rgba(1d192bee)
-    $foreground = rgba(c3dde7ee)
-    $color0  = rgba(1d192bee)
-    $color1  = rgba(465EA7ee)
-    $color2  = rgba(5A89B6ee)
-    $color3  = rgba(6296CAee)
-    $color4  = rgba(73B3D4ee)
-    $color5  = rgba(7BC7DDee)
-    $color6  = rgba(9CB4E3ee)
-    $color7  = rgba(c3dde7ee)
-    $color8  = rgba(889aa1ee)
-    $color9  = rgba(465EA7ee)
-    $color10 = rgba(5A89B6ee)
-    $color11 = rgba(6296CAee)
-    $color12 = rgba(73B3D4ee)
-    $color13 = rgba(7BC7DDee)
-    $color14 = rgba(9CB4E3ee)
-    $color15 = rgba(c3dde7ee)
+    $background = rgba(1a1a24ee)
+    $foreground = rgba(e6e6eeee)
+    $color0  = rgba(1a1a24ee)
+    $color1  = rgba(ff5555ee)
+    $color2  = rgba(e5c07bee)
+    $color3  = rgba(f3be53ee)
+    $color4  = rgba(ffd700ee)
+    $color5  = rgba(e6c368ee)
+    $color6  = rgba(f7c04aee)
+    $color7  = rgba(e6e6eeee)
+    $color8  = rgba(5c5c70ee)
+    $color9  = rgba(ff6e6eee)
+    $color10 = rgba(e5c07bee)
+    $color11 = rgba(f3be53ee)
+    $color12 = rgba(ffd700ee)
+    $color13 = rgba(e6c368ee)
+    $color14 = rgba(f7c04aee)
+    $color15 = rgba(ffffffee)
   '';
 }
