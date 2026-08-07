@@ -75,7 +75,7 @@
         layout               = "dwindle";
       };
 
-      # ── Decoration (Blur enabled, No shadow) ───────────────────────────
+      # ── Decoration (Blur + Shadow enabled) ─────────────────────────────
       decoration = {
         rounding                 = 12;
         "blur:enabled"           = true;
@@ -84,8 +84,21 @@
         "blur:new_optimizations" = true;
         "blur:ignore_opacity"    = true;
         "blur:xray"              = false;
-        "shadow:enabled"         = false;
+        "shadow:enabled"         = true;
+        "shadow:range"           = 16;
+        "shadow:render_power"    = 3;
+        "col.shadow"             = "rgba(11111bee)";
       };
+
+      # ── Layer Rules (Blur & Ignorezero for Dunst & Waybar) ─────────────
+      layerrule = [
+        "blur, dunst"
+        "ignorezero, dunst"
+        "blur, waybar"
+        "ignorezero, waybar"
+        "blur, rofi"
+        "ignorezero, rofi"
+      ];
 
       # ── Animations ────────────────────────────────────────────────────
       animations = {
