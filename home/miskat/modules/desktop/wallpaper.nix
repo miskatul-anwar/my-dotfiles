@@ -1,21 +1,22 @@
-# Automatic Anime Wallpaper provider service using Wallhaven API + awww daemon
+# Anime Wallpaper Cycler — rotates downloaded local wallpapers from ~/Pictures/Wallpapers/
 { pkgs, ... }:
 let
   anime-wallpaper-script = pkgs.writeShellScriptBin "anime-wallpaper" ''
     #!/usr/bin/env bash
     set -euo pipefail
 
-    WP_DIR="$HOME/.cache/wallpapers"
+    WP_DIR="$HOME/Pictures/Wallpapers"
     mkdir -p "$WP_DIR"
-    WP_FILE="$WP_DIR/current_anime.jpg"
 
-    # Query Wallhaven API for high-resolution anime wallpapers
-    IMG_URL=$(${pkgs.curl}/bin/curl -s "https://wallhaven.cc/api/v1/search?categories=010&purity=100&sorting=random" | ${pkgs.jq}/bin/jq -r '.data[0].path' 2>/dev/null || true)
+    # Find all downloaded image wallpapers
+    mapfile -t WALLPAPERS < <(find "$WP_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.webp" \) 2>/dev/null)
 
-    if [ -n "$IMG_URL" ] && [ "$IMG_URL" != "null" ]; then
-      ${pkgs.curl}/bin/curl -s "$IMG_URL" -o "$WP_FILE"
-      # Set wallpaper via awww daemon with smooth transition
-      ${pkgs.awww}/bin/awww img "$WP_FILE" --transition-type outer --transition-step 90 --transition-fps 60 || true
+    if [ ''${#WALLPAPERS[@]} -gt 0 ]; then
+      # Pick a random wallpaper from local collection
+      RANDOM_WP="''${WALLPAPERS[$RANDOM % ''${#WALLPAPERS[@]}]}"
+
+      # Apply wallpaper via awww daemon with smooth transition
+      ${pkgs.awww}/bin/awww img "$RANDOM_WP" --transition-type outer --transition-step 90 --transition-fps 60 || true
     fi
   '';
 in
@@ -24,10 +25,10 @@ in
     anime-wallpaper-script
   ];
 
-  # Systemd user timer: rotates anime wallpaper every 30 minutes
+  # Systemd user timer: rotates local anime wallpapers every 30 minutes
   systemd.user.services.anime-wallpaper = {
     Unit = {
-      Description = "Fetch and set random anime wallpaper";
+      Description = "Rotate local anime wallpapers";
       After = [ "graphical-session.target" ];
     };
     Service = {
@@ -38,10 +39,10 @@ in
 
   systemd.user.timers.anime-wallpaper = {
     Unit = {
-      Description = "Rotate anime wallpaper every 30 minutes";
+      Description = "Rotate local anime wallpapers every 30 minutes";
     };
     Timer = {
-      OnBootSec = "10s";
+      OnBootSec = "5s";
       OnUnitActiveSec = "30min";
     };
     Install = {
