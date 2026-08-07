@@ -1,4 +1,4 @@
-# Android development — disabled by default, uncomment in system/default.nix to enable
+# Android development — disabled by default, uncomment in system/profiles/common.nix to enable
 { pkgs, ... }:
 {
   nixpkgs.config.android_sdk.accept_license = true;

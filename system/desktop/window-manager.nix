@@ -32,10 +32,8 @@
     swaynotificationcenter
     libnotify
 
-    # Terminal emulators
-    alacritty
+    # Terminal emulator (Hyprland profile)
     kitty
-    ghostty
 
     # XWayland bridge for X11 apps on Wayland
     xwayland-satellite
@@ -49,9 +47,7 @@
     slurp
     yazi
 
-    # Media controls
-    playerctl
-    pamixer
+    # Brightness control
     brightnessctl
   ];
 }

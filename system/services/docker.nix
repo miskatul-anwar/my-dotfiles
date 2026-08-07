@@ -1,4 +1,4 @@
-# Docker — disabled by default, uncomment in system/default.nix to enable
+# Docker — disabled by default, uncomment in system/profiles/common.nix to enable
 { pkgs, ... }:
 {
   virtualisation.docker = {
