@@ -1,54 +1,6 @@
+# Zsh & Powerlevel10k configuration
 { pkgs, ... }:
 {
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-
-    settings = {
-      add_newline = false;
-
-      format = "$username$hostname$directory$git_branch$git_status$python$rust$cmd_duration\n$character";
-
-      character = {
-        success_symbol = "[• ](bold fg:#a6e3a1) ";
-        error_symbol   = "[• ](bold fg:#f38ba8) ";
-      };
-
-      package = {
-        disabled = true;
-      };
-
-      git_branch = {
-        symbol = "󰘬 ";
-        style  = "bold #cba6f7";
-        format = "on [$symbol$branch]($style) ";
-      };
-
-      git_status = {
-        style  = "bold #f38ba8";
-        format = "([$all_status$ahead_behind]($style) )";
-      };
-
-      cmd_duration = {
-        min_time = 2000;
-        style    = "bold #f9e2af";
-        format   = "took [$duration]($style) ";
-      };
-
-      python = {
-        symbol = "󰌠 ";
-        style  = "bold #e6c368";
-        format = "via [$symbol($version )]($style)";
-      };
-
-      rust = {
-        symbol = "󱌣 ";
-        style  = "bold #f3be53";
-        format = "via [$symbol($version )]($style)";
-      };
-    };
-  };
-
   programs.zoxide.enableZshIntegration = true;
 
   programs.zsh = {
@@ -57,9 +9,16 @@
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
 
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
+
     oh-my-zsh = {
       enable = true;
-      theme = "robbyrussell";
       plugins = [
         "git"
         "sudo"
@@ -83,7 +42,7 @@
       "..." = "cd ../..";
       "~"  = "cd ~";
 
-      # NixOS rebuild (zero arguments required — defaults to ~/my-dotfiles#miskat)
+      # NixOS rebuild
       update   = "nh os switch";
       rebuild  = "nh os switch";
       hm       = "home-manager switch --flake ~/my-dotfiles#miskat";
@@ -108,6 +67,8 @@
     };
 
     initContent = ''
+      [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${USER}.zsh" ]] && source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${USER}.zsh"
+      [[ -f "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
       [[ -f "$HOME/.hf_token" ]] && export HF_TOKEN="$(cat "$HOME/.hf_token")"
       fastfetch
     '';
