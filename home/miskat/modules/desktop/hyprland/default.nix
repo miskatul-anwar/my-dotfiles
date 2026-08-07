@@ -12,7 +12,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    configType = "hyprlang";
+    configType = "lua";
 
     settings = {
       # ── Monitor ──────────────────────────────────────────────────────
