@@ -48,6 +48,22 @@ in
     };
   };
 
+  # CUDA 12.x Toolkit, NVCC Compiler & cuDNN Deep Learning Suite
+  environment.systemPackages = with pkgs; [
+    cudaPackages.cuda_nvcc       # NVCC CUDA compiler
+    cudaPackages.cudatoolkit     # CUDA runtime & toolkit libraries
+    cudaPackages.cudnn           # cuDNN Deep Learning acceleration library
+    cudaPackages.cuda_cudart     # CUDA runtime API library
+  ];
+
+  # System-wide CUDA & NVIDIA Driver Environment Variables
+  environment.variables = {
+    CUDA_PATH        = "${pkgs.cudaPackages.cudatoolkit}";
+    CUDA_ROOT        = "${pkgs.cudaPackages.cudatoolkit}";
+    LD_LIBRARY_PATH  = "${config.hardware.nvidia.package}/lib:${pkgs.cudaPackages.cudatoolkit}/lib:${pkgs.cudaPackages.cudnn}/lib";
+    NVIDIA_VISIBLE_DEVICES = "all";
+  };
+
   # Specialisation: boot into full NVIDIA sync mode for max GPU performance
   specialisation = {
     nvidia-sync.configuration = {
