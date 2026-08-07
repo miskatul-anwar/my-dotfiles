@@ -15,10 +15,12 @@
       "$mainMod, C, exec, kitty -e nvim"
       "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
-      # ── Screenshots & Utilities (ZaneyOS Hyprshot & Grim) ────────────
-      "$mainMod, S, exec, grim -g \"$(slurp)\" - | wl-copy"
-      "$mainMod CTRL, S, exec, grim - | wl-copy"
-      "$mainMod SHIFT, S, exec, grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png"
+      # ── Screenshots & Utilities (Hyprshot & Hyprpicker) ───────────────
+      ", Print, exec, mkdir -p ~/Pictures/Screenshots && hyprshot -m region --clipboard-only"
+      "$mainMod, S, exec, mkdir -p ~/Pictures/Screenshots && hyprshot -m region -o ~/Pictures/Screenshots"
+      "$mainMod SHIFT, S, exec, mkdir -p ~/Pictures/Screenshots && hyprshot -m region --clipboard-only"
+      "$mainMod CTRL, S, exec, mkdir -p ~/Pictures/Screenshots && hyprshot -m output -o ~/Pictures/Screenshots"
+      "$mainMod ALT, S, exec, mkdir -p ~/Pictures/Screenshots && hyprshot -m window -o ~/Pictures/Screenshots"
       "$mainMod ALT, C, exec, hyprpicker -a"
       "$mainMod ALT, M, exec, pavucontrol"
 
