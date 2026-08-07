@@ -15,13 +15,14 @@
     gh
     github-copilot-cli
 
-    # CLI utilities
+    # CLI utilities & Process/GPU Monitors
     ripgrep
     vim
     wget
     curl
     htop
     btop
+    nvtopPackages.full
     pciutils
     lsd
     viu
