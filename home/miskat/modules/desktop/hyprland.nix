@@ -46,16 +46,14 @@
         "HYPRCURSOR_SIZE,24"
       ];
 
-      # ── Input & Touchpad Gestures ──────────────────────────────────────
+      # ── Input & Touchpad ───────────────────────────────────────────────
       input = {
-        kb_layout    = "us";
-        follow_mouse = 1;
-        sensitivity  = 0;
-        touchpad = {
-          natural_scroll       = true;
-          disable_while_typing = true;
-          tap-to-click         = true;
-        };
+        kb_layout                      = "us";
+        follow_mouse                   = 1;
+        sensitivity                    = 0;
+        "touchpad:natural_scroll"       = true;
+        "touchpad:disable_while_typing" = true;
+        "touchpad:tap-to-click"         = true;
       };
 
       # ── General (Obsidian Gold Accent Borders) ─────────────────────────
@@ -70,18 +68,14 @@
 
       # ── Decoration (Blur enabled, No shadow) ───────────────────────────
       decoration = {
-        rounding = 12;
-        blur = {
-          enabled           = true;
-          size              = 8;
-          passes            = 3;
-          new_optimizations = true;
-          ignore_opacity    = true;
-          xray              = false;
-        };
-        shadow = {
-          enabled = false;
-        };
+        rounding                 = 12;
+        "blur:enabled"           = true;
+        "blur:size"              = 8;
+        "blur:passes"            = 3;
+        "blur:new_optimizations" = true;
+        "blur:ignore_opacity"    = true;
+        "blur:xray"              = false;
+        "shadow:enabled"         = false;
       };
 
       # ── Animations ────────────────────────────────────────────────────
@@ -232,7 +226,7 @@
       path = screenshot
       blur_passes = 3
       blur_size = 7
-      color = rgba(1d192bee)
+      color = rgba(121216ee)
     }
 
     input-field {
@@ -241,12 +235,12 @@
       outline_thickness = 2
       dots_size = 0.2
       dots_center = true
-      outer_color = rgba(33ccffee)
-      inner_color = rgba(1d192bee)
-      font_color = rgba(c3dde7ee)
+      outer_color = rgba(f3be53ee)
+      inner_color = rgba(121216ee)
+      font_color = rgba(e6e4dfee)
       fade_on_empty = false
-      placeholder_text = <span foreground="##c3dde7">Password</span>
-      check_color = rgba(00ff99ee)
+      placeholder_text = <span foreground="##e6e4df">Password</span>
+      check_color = rgba(ffd700ee)
       fail_color = rgba(ff5555ee)
       position = 0, -100
       halign = center
@@ -256,7 +250,7 @@
     label {
       monitor =
       text = cmd[update:1000] echo "$(date +'%H:%M')"
-      color = rgba(c3dde7ee)
+      color = rgba(f3be53ee)
       font_size = 64
       font_family = JetBrains Mono Nerd Font Bold
       position = 0, 100
