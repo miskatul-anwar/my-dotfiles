@@ -155,11 +155,10 @@
         font-size: 18px;
         padding-left: 6px;
         padding-right: 12px;
-        transition: transform 0.2s ease;
+        transition: color 0.2s ease;
       }
       #custom-launcher:hover {
         color: #ffd700;
-        transform: scale(1.15);
       }
 
       /* Workspaces (Hyprdots Pill Design) */
@@ -232,7 +231,6 @@
       }
       #custom-powermenu:hover {
         color: #ff6e6e;
-        transform: scale(1.1);
       }
 
       #tray {
