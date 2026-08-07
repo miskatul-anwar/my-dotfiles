@@ -75,13 +75,10 @@
         layout               = "dwindle";
       };
 
-      # ── Decoration (Blur + Shadow enabled) ─────────────────────────────
+      # ── Decoration (Blur enabled, Shadows disabled) ───────────────────
       decoration = {
         rounding                 = 12;
-        drop_shadow              = true;
-        shadow_range             = 16;
-        shadow_render_power      = 3;
-        "col.shadow"             = "rgba(11111bee)";
+        drop_shadow              = false;
 
         blur = {
           enabled           = true;
