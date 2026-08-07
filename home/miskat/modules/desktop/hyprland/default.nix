@@ -43,7 +43,7 @@
       "$term"    = "kitty";
       "$editor"  = "nvim";
       "$file"    = "nautilus";
-      "$browser" = "google-chrome-stable";
+      "$browser" = "google-chrome";
 
       # ── Environment Variables ─────────────────────────────────────────
       env = [

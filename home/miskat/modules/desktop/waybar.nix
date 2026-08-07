@@ -1,4 +1,4 @@
-# Waybar — modern floating status bar configuration
+# Waybar — Hyprdots-inspired floating glassmorphic status bar
 { pkgs, ... }:
 {
   programs.waybar = {
@@ -11,17 +11,16 @@
     settings = [{
       layer = "top";
       position = "top";
-      height = 36;
-      margin-top = 6;
-      margin-left = 12;
-      margin-right = 12;
-      spacing = 8;
+      height = 38;
+      margin-top = 8;
+      margin-left = 14;
+      margin-right = 14;
+      spacing = 10;
 
       modules-left = [
         "custom/launcher"
         "hyprland/workspaces"
-        "cpu"
-        "memory"
+        "hyprland/window"
       ];
 
       modules-center = [
@@ -30,13 +29,15 @@
 
       modules-right = [
         "pulseaudio"
+        "cpu"
+        "memory"
         "network"
         "tray"
         "custom/powermenu"
       ];
 
       "custom/launcher" = {
-        format = "";
+        format = "󰣇";
         on-click = "pkill rofi || rofi -show drun";
         tooltip = false;
       };
@@ -63,6 +64,12 @@
         };
       };
 
+      "hyprland/window" = {
+        format = "󰘔 {title}";
+        max-length = 35;
+        separate-outputs = true;
+      };
+
       cpu = {
         interval = 2;
         format = "󰍛 {usage}%";
@@ -81,7 +88,7 @@
 
       clock = {
         interval = 1;
-        format = "󰥔 {:%I:%M %p  %A, %b %d}";
+        format = "󰥔 {:%I:%M %p  󰃭 %b %d}";
         tooltip-format = "<tt>{calendar}</tt>";
       };
 
@@ -128,52 +135,51 @@
         border-radius: 0;
       }
 
-      /* Continuous horizontal blurred bar spanning from left to right behind all 3 sections */
       window#waybar {
-        background-color: rgba(18, 18, 22, 0.70);
-        border: 1px solid rgba(243, 190, 83, 0.35);
-        border-radius: 14px;
-        padding: 2px 6px;
-      }
-
-      /* Module groups sit cleanly inside the continuous horizontal bar */
-      .modules-left, .modules-center, .modules-right {
         background-color: transparent;
-        border: none;
-        border-radius: 0;
-        padding: 2px 4px;
-        margin: 0;
       }
 
-      /* Launcher */
+      /* Hyprdots Floating Island Containers */
+      .modules-left, .modules-center, .modules-right {
+        background-color: rgba(18, 18, 22, 0.85);
+        border: 1px solid rgba(243, 190, 83, 0.30);
+        border-radius: 14px;
+        padding: 3px 10px;
+        margin: 2px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Launcher (NixOS / Arch icon) */
       #custom-launcher {
         color: #f3be53;
         font-size: 18px;
-        padding-left: 8px;
+        padding-left: 6px;
         padding-right: 12px;
         transition: transform 0.2s ease;
       }
       #custom-launcher:hover {
         color: #ffd700;
+        transform: scale(1.15);
       }
 
-      /* Workspaces */
+      /* Workspaces (Hyprdots Pill Design) */
       #workspaces {
         padding: 0 4px;
       }
       #workspaces button {
-        color: #e6e6ee;
-        padding: 2px 8px;
-        margin: 2px 2px;
-        border-radius: 8px;
+        color: #e6e4df;
+        padding: 2px 9px;
+        margin: 2px 3px;
+        border-radius: 10px;
         transition: all 0.2s ease-in-out;
       }
       #workspaces button.active {
         background: linear-gradient(135deg, #f3be53, #ffd700);
-        color: #1a1a24;
+        color: #121216;
+        box-shadow: 0 0 10px rgba(243, 190, 83, 0.5);
       }
       #workspaces button:hover {
-        background-color: rgba(243, 190, 83, 0.3);
+        background-color: rgba(243, 190, 83, 0.35);
         color: #ffffff;
       }
       #workspaces button.urgent {
@@ -181,11 +187,20 @@
         color: #ffffff;
       }
 
-      /* Modules styling */
+      /* Window Title */
+      #window {
+        color: #e6e4df;
+        padding-left: 10px;
+        padding-right: 6px;
+        font-size: 12px;
+      }
+
+      /* Right & Center Modules */
       #cpu, #memory, #clock, #pulseaudio, #network, #tray, #custom-powermenu {
         padding: 2px 10px;
-        margin: 2px 0;
-        border-radius: 8px;
+        margin: 2px 2px;
+        border-radius: 10px;
+        transition: background-color 0.2s ease;
       }
 
       #cpu {
@@ -196,6 +211,7 @@
       }
       #clock {
         color: #f3be53;
+        font-size: 13px;
       }
       #pulseaudio {
         color: #ffd700;
@@ -212,10 +228,11 @@
       #custom-powermenu {
         color: #ff5555;
         padding-right: 8px;
-        font-size: 14px;
+        font-size: 15px;
       }
       #custom-powermenu:hover {
         color: #ff6e6e;
+        transform: scale(1.1);
       }
 
       #tray {
@@ -225,13 +242,13 @@
 
       /* Tooltip styling */
       tooltip {
-        background-color: rgba(26, 26, 36, 0.95);
+        background-color: rgba(18, 18, 22, 0.95);
         border: 1px solid rgba(243, 190, 83, 0.4);
-        border-radius: 10px;
+        border-radius: 12px;
         padding: 8px;
       }
       tooltip label {
-        color: #e6e6ee;
+        color: #e6e4df;
       }
     '';
   };
