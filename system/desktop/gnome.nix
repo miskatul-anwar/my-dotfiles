@@ -58,6 +58,7 @@
     adw-gtk3
     adwaita-qt
     papirus-icon-theme
+    tela-circle-icon-theme
 
     # Common desktop apps
     transmission_4-gtk

@@ -1,27 +1,32 @@
+# Rofi Launcher — Sleek Glassmorphic Launcher with Tela-circle-purple icons
 { pkgs, ... }:
 {
   programs.rofi = {
     enable   = true;
-    package  = pkgs.rofi;  # rofi-wayland merged into rofi
+    package  = pkgs.rofi;
     terminal = "${pkgs.kitty}/bin/kitty";
+    extraConfig = {
+      icon-theme = "Tela-circle-purple-dark";
+    };
     theme = builtins.toFile "rofi-theme.rasi" ''
       configuration {
-        modi:               "drun,run,filebrowser,window";
-        show-icons:         true;
+        modi:                "drun,run,filebrowser,window";
+        show-icons:          true;
+        icon-theme:          "Tela-circle-purple-dark";
         drun-display-format: "{name}";
-        window-format:      "{w} \u00b7 {c} \u00b7 {t}";
+        window-format:       "{w} · {c} · {t}";
       }
 
       * {
-        font:           "JetBrains Mono Nerd Font 10";
-        background:     #1e1e2eF2;
-        background-alt: #313244;
-        foreground:     #cdd6f4;
-        selected:       #cba6f7;
-        selected-text:  #11111b;
-        active:         #89b4fa;
-        urgent:         #f38ba8;
-        border-color:   #cba6f7;
+        font:            "CaskaydiaCove Nerd Font Mono 11";
+        background:      #1e1e2eF0;
+        background-alt:  #313244;
+        foreground:      #cdd6f4;
+        selected:        #cba6f7;
+        selected-text:   #11111b;
+        active:          #89b4fa;
+        urgent:          #f38ba8;
+        border-color:    #cba6f7;
       }
 
       window {
@@ -31,13 +36,13 @@
         width:            750px;
         border:           2px;
         border-color:     @border-color;
-        border-radius:    14px;
+        border-radius:    18px;
         background-color: @background;
       }
 
       mainbox {
-        spacing:          10px;
-        padding:          15px;
+        spacing:          14px;
+        padding:          20px;
         background-color: transparent;
         orientation:      vertical;
         children:         [ "inputbar", "listview" ];
@@ -45,65 +50,83 @@
 
       inputbar {
         spacing:          10px;
-        padding:          12px;
-        border-radius:    10px;
+        padding:          12px 16px;
+        border-radius:    14px;
+        border:           1px;
+        border-color:     rgba(203, 166, 247, 0.4);
         background-color: @background-alt;
         text-color:       @foreground;
-        children:         [ "entry" ];
+        children:         [ "textbox-prompt-colon", "entry" ];
       }
+
+      textbox-prompt-colon {
+        expand:           false;
+        str:              "";
+        background-color: transparent;
+        text-color:       #cba6f7;
+        font:             "CaskaydiaCove Nerd Font Mono 13";
+      }
+
       entry {
-        background-color: inherit;
+        background-color: transparent;
         text-color:       inherit;
         cursor:           text;
         placeholder:      "Search apps & commands...";
-        placeholder-color: #889aa1;
+        placeholder-color: #7f849c;
       }
 
       listview {
-        columns:          1;
-        lines:            7;
+        columns:          2;
+        lines:            6;
         cycle:            true;
         scrollbar:        false;
-        spacing:          8px;
+        spacing:          10px;
         background-color: transparent;
         text-color:       @foreground;
       }
 
       element {
-        spacing:          12px;
-        padding:          8px 12px;
-        border-radius:    10px;
+        spacing:          14px;
+        padding:          10px 14px;
+        border-radius:    12px;
         background-color: transparent;
         text-color:       @foreground;
         cursor:           pointer;
       }
+
       element selected.normal {
         background-color: @selected;
         text-color:       @selected-text;
       }
+
       element-icon {
         background-color: transparent;
-        size:             32px;
+        size:             36px;
       }
+
       element-text {
         background-color: transparent;
         text-color:       inherit;
         vertical-align:   0.5;
+        font:             "CaskaydiaCove Nerd Font Mono 11";
       }
 
       mode-switcher {
-        spacing:          20px;
+        spacing:          15px;
         background-color: transparent;
       }
+
       button {
-        padding:          15px;
-        border-radius:    10px;
+        padding:          12px;
+        border-radius:    12px;
         background-color: @background-alt;
+        text-color:       @foreground;
         cursor:           pointer;
       }
+
       button selected {
         background-color: @selected;
-        text-color:       @foreground;
+        text-color:       @selected-text;
       }
     '';
   };
