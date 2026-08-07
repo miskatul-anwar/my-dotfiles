@@ -1,7 +1,7 @@
 { ... }:
 {
   networking = {
-    hostName = "nixos";
+    hostName = "miskat";
     networkmanager.enable = true;
     enableIPv6 = true;
 

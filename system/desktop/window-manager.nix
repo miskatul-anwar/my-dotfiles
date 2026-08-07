@@ -6,9 +6,6 @@
     xwayland.enable = true;
   };
 
-  # Niri — tiling Wayland compositor (alternative session)
-  programs.niri.enable = true;
-
   # XDG desktop portal (needed for screen sharing, file pickers under Hyprland)
   xdg.portal = {
     enable = true;

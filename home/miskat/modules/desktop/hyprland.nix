@@ -5,7 +5,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    # stateVersion < 26.05 — keep hyprlang format (not Lua)
     configType = "hyprlang";
 
     settings = {
@@ -21,10 +20,16 @@
       exec-once = [
         "dunst"
         "waybar"
-        "hyprpaper"
+        "awww-daemon"
+        "anime-wallpaper"
         "hypridle"
         "hyprctl setcursor Bibata-Modern-Classic 24"
       ];
+
+      # ── Debug ─────────────────────────────────────────────────────────
+      debug = {
+        disable_logs = false;
+      };
 
       # ── Variables ─────────────────────────────────────────────────────
       "$mainMod" = "SUPER";
@@ -47,23 +52,28 @@
 
       # ── General ───────────────────────────────────────────────────────
       general = {
-        gaps_in              = 5;
-        gaps_out             = 20;
+        gaps_in              = 6;
+        gaps_out             = 14;
         border_size          = 2;
         "col.active_border"  = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.inactive_border" = "rgba(1d192baa)";
         layout               = "dwindle";
       };
 
-      # ── Decoration ────────────────────────────────────────────────────
+      # ── Decoration (Blur enabled, No shadow) ───────────────────────────
       decoration = {
-        rounding = 10;
+        rounding = 12;
         blur = {
-          enabled = true;
-          size    = 3;
-          passes  = 1;
+          enabled           = true;
+          size              = 8;
+          passes            = 3;
+          new_optimizations = true;
+          ignore_opacity    = true;
+          xray              = false;
         };
-        shadow.enabled = false;
+        shadow = {
+          enabled = false;
+        };
       };
 
       # ── Animations ────────────────────────────────────────────────────
@@ -81,7 +91,6 @@
 
       # ── Layouts ───────────────────────────────────────────────────────
       dwindle = {
-        pseudotile     = true;
         preserve_split = true;
       };
 

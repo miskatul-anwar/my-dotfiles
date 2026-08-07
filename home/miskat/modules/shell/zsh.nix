@@ -113,9 +113,9 @@
       "..." = "cd ../..";
       "~"  = "cd ~";
 
-      # NixOS rebuild
-      update   = "nh os switch ~/my-dotfiles --hostname=miskat";
-      rebuild  = "nh os switch ~/my-dotfiles --hostname=miskat";
+      # NixOS rebuild (zero arguments required — defaults to ~/my-dotfiles#miskat)
+      update   = "nh os switch";
+      rebuild  = "nh os switch";
       hm       = "home-manager switch --flake ~/my-dotfiles#miskat";
       editcfg  = "nvim ~/my-dotfiles";
 

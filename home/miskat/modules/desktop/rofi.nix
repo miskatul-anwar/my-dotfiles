@@ -13,26 +13,31 @@
       }
 
       * {
-        font:           "JetBrains Mono Nerd Font 10";
-        background:     #201A41;
-        background-alt: #392684;
-        foreground:     #FFFFFF;
-        selected:       #F801E8;
-        active:         #00CCF5;
-        urgent:         #8D0083;
+        font:           "JetBrains Mono Nerd Font 11";
+        background:     #1D192BE6;
+        background-alt: #2B2540;
+        foreground:     #C3DDE7;
+        selected:       #33CCFF;
+        selected-text:  #1D192B;
+        active:         #00FF99;
+        urgent:         #FF5555;
+        border-color:   #33CCFF;
       }
 
       window {
         transparency:     "real";
         location:         center;
         anchor:           center;
-        width:            1000px;
-        border-radius:    15px;
+        width:            750px;
+        border:           2px;
+        border-color:     @border-color;
+        border-radius:    14px;
         background-color: @background;
       }
 
       mainbox {
-        spacing:          0px;
+        spacing:          10px;
+        padding:          15px;
         background-color: transparent;
         orientation:      vertical;
         children:         [ "inputbar", "listview" ];
@@ -40,39 +45,33 @@
 
       inputbar {
         spacing:          10px;
-        padding:          15px;
+        padding:          12px;
         border-radius:    10px;
         background-color: @background-alt;
         text-color:       @foreground;
-        children:         [ "textbox-prompt-colon", "entry" ];
-      }
-      textbox-prompt-colon {
-        expand:           false;
-        str:              "";
-        background-color: inherit;
-        text-color:       inherit;
+        children:         [ "entry" ];
       }
       entry {
         background-color: inherit;
         text-color:       inherit;
         cursor:           text;
-        placeholder:      "Search";
-        placeholder-color: inherit;
+        placeholder:      "Search apps & commands...";
+        placeholder-color: #889aa1;
       }
 
       listview {
         columns:          1;
-        lines:            8;
+        lines:            7;
         cycle:            true;
         scrollbar:        false;
-        spacing:          10px;
+        spacing:          8px;
         background-color: transparent;
         text-color:       @foreground;
       }
 
       element {
-        spacing:          15px;
-        padding:          8px;
+        spacing:          12px;
+        padding:          8px 12px;
         border-radius:    10px;
         background-color: transparent;
         text-color:       @foreground;
@@ -80,7 +79,7 @@
       }
       element selected.normal {
         background-color: @selected;
-        text-color:       @foreground;
+        text-color:       @selected-text;
       }
       element-icon {
         background-color: transparent;

@@ -1,56 +1,60 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  home.file.".config/kitty/kitty.conf".text = ''
-# vim:ft=kitty
+  programs.kitty = {
+    enable = true;
+    settings = {
+      shell = "${pkgs.zsh}/bin/zsh";
+      confirm_os_window_close = 0;
 
-shell zsh
-confirm_os_window_close 0
+      # Font configuration
+      font_family      = "JetBrainsMono Nerd Font";
+      bold_font        = "auto";
+      italic_font      = "auto";
+      bold_italic_font = "auto";
+      font_size        = "13.0";
 
-# Font
-font_family      jetbrains mono nerd font
-bold_font        jetbrains mono nerd font
-italic_font      jetbrains mono nerd font
-bold_italic_font jetbrains mono nerd font
-font_size 14.0
+      # Window appearance
+      window_padding_width = 12;
+      background_opacity   = "0.85";
+      dynamic_background_opacity = "yes";
 
-# Padding
-window_padding_width 10
+      # Color scheme matching Hyprland (#1d192b / #33ccff / #00ff99)
+      foreground              = "#c3dde7";
+      background              = "#1d192b";
+      selection_foreground    = "#1d192b";
+      selection_background    = "#33ccff";
+      cursor                  = "#33ccff";
+      cursor_text_color       = "#1d192b";
+      url_color               = "#00ff99";
+      active_border_color     = "#33ccff";
+      inactive_border_color   = "#465ea7";
+      bell_border_color       = "#ff5555";
+      wayland_titlebar_color  = "system";
 
-# Colors (Catppuccin Mocha)
-foreground              #CDD6F4
-background              #1E1E2E
-selection_foreground    #1E1E2E
-selection_background    #F5E0DC
-cursor                  #F5E0DC
-cursor_text_color       #1E1E2E
-url_color               #F5E0DC
-active_border_color     #B4BEFE
-inactive_border_color   #6C7086
-bell_border_color       #F9E2AF
-wayland_titlebar_color  system
-macos_titlebar_color    system
-active_tab_foreground   #11111B
-active_tab_background   #CBA6F7
-inactive_tab_foreground #CDD6F4
-inactive_tab_background #181825
-tab_bar_background      #11111B
+      # Tab bar colors
+      active_tab_foreground   = "#1d192b";
+      active_tab_background   = "#33ccff";
+      inactive_tab_foreground = "#c3dde7";
+      inactive_tab_background = "#2b2540";
+      tab_bar_background      = "#1d192b";
 
-# 16 terminal colors
-color0  #45475A
-color8  #585B70
-color1  #F38BA8
-color9  #F38BA8
-color2  #A6E3A1
-color10 #A6E3A1
-color3  #F9E2AF
-color11 #F9E2AF
-color4  #89B4FA
-color12 #89B4FA
-color5  #F5C2E7
-color13 #F5C2E7
-color6  #94E2D5
-color14 #94E2D5
-color7  #BAC2DE
-color15 #A6ADC8
-  '';
+      # 16 terminal colors
+      color0  = "#1d192b";
+      color8  = "#465ea7";
+      color1  = "#ff5555";
+      color9  = "#ff6e6e";
+      color2  = "#00ff99";
+      color10 = "#50fa7b";
+      color3  = "#f1fa8c";
+      color11 = "#f1fa8c";
+      color4  = "#33ccff";
+      color12 = "#6296ca";
+      color5  = "#bd93f9";
+      color13 = "#d6acff";
+      color6  = "#8be9fd";
+      color14 = "#a4ffff";
+      color7  = "#c3dde7";
+      color15 = "#ffffff";
+    };
+  };
 }
