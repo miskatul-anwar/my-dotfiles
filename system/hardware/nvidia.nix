@@ -58,11 +58,15 @@ in
 
   # System-wide CUDA & NVIDIA Driver Environment Variables
   environment.variables = {
-    CUDA_PATH        = "${pkgs.cudaPackages.cudatoolkit}";
-    CUDA_ROOT        = "${pkgs.cudaPackages.cudatoolkit}";
-    LD_LIBRARY_PATH  = "${config.hardware.nvidia.package}/lib:${pkgs.cudaPackages.cudatoolkit}/lib:${pkgs.cudaPackages.cudnn}/lib";
+    CUDA_PATH              = "${pkgs.cudaPackages.cudatoolkit}";
+    CUDA_ROOT              = "${pkgs.cudaPackages.cudatoolkit}";
     NVIDIA_VISIBLE_DEVICES = "all";
   };
+
+  # Append NVIDIA driver & CUDA libraries to LD_LIBRARY_PATH safely without option conflicts
+  environment.extraInit = ''
+    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${config.hardware.nvidia.package}/lib:${pkgs.cudaPackages.cudatoolkit}/lib:${pkgs.cudaPackages.cudnn}/lib"
+  '';
 
   # Specialisation: boot into full NVIDIA sync mode for max GPU performance
   specialisation = {
