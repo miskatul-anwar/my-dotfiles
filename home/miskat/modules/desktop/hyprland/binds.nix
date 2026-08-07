@@ -8,7 +8,7 @@
       "$mainMod, D, exec, pkill -x rofi || rofi -show drun"
       "$mainMod SHIFT, Return, exec, pkill -x rofi || rofi -show drun"
       "$mainMod, W, exec, google-chrome-stable"
-      "$mainMod SHIFT, W, exec, anime-wallpaper"
+      "$mainMod SHIFT, W, exec, set-wallpaper"
       "$mainMod, Y, exec, kitty -e yazi"
       "$mainMod, T, exec, nautilus"
       "$mainMod, E, exec, nautilus"

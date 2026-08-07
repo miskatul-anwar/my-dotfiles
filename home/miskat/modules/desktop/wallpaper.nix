@@ -1,52 +1,34 @@
-# Anime Wallpaper Cycler — rotates downloaded local wallpapers from ~/Pictures/Wallpapers/
+# Static Dracula NixOS Wallpaper Provider
 { pkgs, ... }:
 let
-  anime-wallpaper-script = pkgs.writeShellScriptBin "anime-wallpaper" ''
+  set-wallpaper-script = pkgs.writeShellScriptBin "set-wallpaper" ''
     #!/usr/bin/env bash
     set -euo pipefail
 
-    WP_DIR="$HOME/Pictures/Wallpapers"
-    mkdir -p "$WP_DIR"
+    WP_FILE="$HOME/Pictures/Wallpapers/nixos-dracula.png"
 
-    # Find all downloaded image wallpapers
-    mapfile -t WALLPAPERS < <(find "$WP_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.webp" \) 2>/dev/null)
-
-    if [ ''${#WALLPAPERS[@]} -gt 0 ]; then
-      # Pick a random wallpaper from local collection
-      RANDOM_WP="''${WALLPAPERS[$RANDOM % ''${#WALLPAPERS[@]}]}"
-
-      # Apply wallpaper via awww daemon with smooth transition
-      ${pkgs.awww}/bin/awww img "$RANDOM_WP" --transition-type outer --transition-step 90 --transition-fps 60 || true
+    if [ -f "$WP_FILE" ]; then
+      ${pkgs.awww}/bin/awww img "$WP_FILE" --transition-type outer --transition-step 90 --transition-fps 60 || true
     fi
   '';
 in
 {
   home.packages = [
-    anime-wallpaper-script
+    set-wallpaper-script
   ];
 
-  # Systemd user timer: rotates local anime wallpapers every 30 minutes
-  systemd.user.services.anime-wallpaper = {
+  # Set static wallpaper once at graphical session startup (No automatic switching)
+  systemd.user.services.set-wallpaper = {
     Unit = {
-      Description = "Rotate local anime wallpapers";
+      Description = "Set static Dracula NixOS wallpaper";
       After = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${anime-wallpaper-script}/bin/anime-wallpaper";
+      ExecStart = "${set-wallpaper-script}/bin/set-wallpaper";
       Type = "oneshot";
     };
-  };
-
-  systemd.user.timers.anime-wallpaper = {
-    Unit = {
-      Description = "Rotate local anime wallpapers every 30 minutes";
-    };
-    Timer = {
-      OnBootSec = "5s";
-      OnUnitActiveSec = "30min";
-    };
     Install = {
-      WantedBy = [ "timers.target" ];
+      WantedBy = [ "graphical-session.target" ];
     };
   };
 }
