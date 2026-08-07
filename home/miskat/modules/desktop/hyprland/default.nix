@@ -63,13 +63,13 @@
         "touchpad:tap-to-click"         = true;
       };
 
-      # ── General (Obsidian Gold Accent Borders) ─────────────────────────
+      # ── General (ZaneyOS Catppuccin Active Borders) ────────────────────
       general = {
         gaps_in              = 6;
         gaps_out             = 14;
         border_size          = 2;
-        "col.active_border"  = "rgba(f3be53ee) rgba(ffd700ee) 45deg";
-        "col.inactive_border" = "rgba(282832aa)";
+        "col.active_border"  = "rgba(cba6f7ee) rgba(89b4faee) 45deg";
+        "col.inactive_border" = "rgba(313244aa)";
         layout               = "dwindle";
       };
 

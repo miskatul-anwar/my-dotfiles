@@ -10,54 +10,28 @@
       format = "$username$hostname$directory$git_branch$git_status$python$rust$cmd_duration\n$character";
 
       character = {
-        success_symbol = "[❯](bold #f3be53)";
-        error_symbol   = "[❯](bold #ff5555)";
-        vimcmd_symbol  = "[❮](bold #f3be53)";
+        success_symbol = "[• ](bold fg:#a6e3a1) ";
+        error_symbol   = "[• ](bold fg:#f38ba8) ";
       };
 
-      username = {
-        style_user  = "bold #e6c368";
-        style_root  = "bold #ff5555";
-        format      = "[$user]($style) ";
-        show_always = false;
-      };
-
-      hostname = {
-        ssh_only = true;
-        format   = "@[$hostname](bold #f3be53) ";
-      };
-
-      directory = {
-        style             = "bold #f3be53";
-        truncation_length = 4;
-        truncation_symbol = "…/";
-        home_symbol       = "󰋜 ~";
-        read_only         = " 󰌾";
-        format            = "[$path]($style)[$read_only]($read_only_style) ";
-        substitutions = {
-          "Documents" = "󰈙 Documents";
-          "Downloads" = "󰇚 Downloads";
-          "Music"     = "󰎈 Music";
-          "Pictures"  = "󰋩 Pictures";
-          "Videos"    = "󰕧 Videos";
-          "Desktop"   = "󰧨 Desktop";
-        };
+      package = {
+        disabled = true;
       };
 
       git_branch = {
         symbol = "󰘬 ";
-        style  = "bold #ffd700";
+        style  = "bold #cba6f7";
         format = "on [$symbol$branch]($style) ";
       };
 
       git_status = {
-        style  = "bold #ff5555";
+        style  = "bold #f38ba8";
         format = "([$all_status$ahead_behind]($style) )";
       };
 
       cmd_duration = {
         min_time = 2000;
-        style    = "bold #f7c04a";
+        style    = "bold #f9e2af";
         format   = "took [$duration]($style) ";
       };
 
@@ -71,10 +45,6 @@
         symbol = "󱌣 ";
         style  = "bold #f3be53";
         format = "via [$symbol($version )]($style)";
-      };
-
-      package = {
-        disabled = true;
       };
     };
   };

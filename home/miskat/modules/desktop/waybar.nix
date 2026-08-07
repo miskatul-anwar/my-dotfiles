@@ -127,8 +127,8 @@
 
       /* ZaneyOS Start Menu (Curved Bottom-Right) */
       #custom-startmenu {
-        color: #121216;
-        background: linear-gradient(135deg, #f3be53, #ffd700);
+        color: #11111b;
+        background: linear-gradient(135deg, #cba6f7, #89b4fa);
         font-size: 22px;
         margin: 0px;
         padding: 0px 24px 0px 14px;
@@ -138,8 +138,8 @@
 
       /* ZaneyOS Workspaces (Center Floating Pill) */
       #workspaces {
-        background: rgba(18, 18, 22, 0.90);
-        border: 1px solid rgba(243, 190, 83, 0.35);
+        background: rgba(30, 30, 46, 0.90);
+        border: 1px solid rgba(203, 166, 247, 0.35);
         margin: 4px 0px;
         padding: 3px 6px;
         border-radius: 16px;
@@ -149,8 +149,8 @@
         padding: 0px 8px;
         margin: 0px 3px;
         border-radius: 12px;
-        color: #e6e4df;
-        background: rgba(40, 40, 50, 0.6);
+        color: #cdd6f4;
+        background: rgba(49, 50, 68, 0.6);
         opacity: 0.7;
       }
       #workspaces button.active {
@@ -158,14 +158,14 @@
         padding: 0px 10px;
         margin: 0px 3px;
         border-radius: 12px;
-        color: #121216;
-        background: linear-gradient(135deg, #f3be53, #ffd700);
+        color: #11111b;
+        background: linear-gradient(135deg, #cba6f7, #89b4fa);
         opacity: 1.0;
         min-width: 32px;
-        box-shadow: 0 0 10px rgba(243, 190, 83, 0.5);
+        box-shadow: 0 0 10px rgba(203, 166, 247, 0.5);
       }
       #workspaces button:hover {
-        background: rgba(243, 190, 83, 0.4);
+        background: rgba(203, 166, 247, 0.4);
         color: #ffffff;
         opacity: 0.9;
       }
@@ -176,35 +176,35 @@
         margin: 4px 0px;
         margin-left: 8px;
         padding: 0px 14px;
-        background: rgba(18, 18, 22, 0.88);
-        border: 1px solid rgba(243, 190, 83, 0.30);
-        color: #e6e4df;
+        background: rgba(30, 30, 46, 0.88);
+        border: 1px solid rgba(203, 166, 247, 0.30);
+        color: #cdd6f4;
         border-radius: 20px 8px 20px 8px;
       }
 
       #window {
-        color: #f3be53;
+        color: #cba6f7;
         font-size: 13px;
       }
       #pulseaudio {
-        color: #ffd700;
+        color: #89b4fa;
       }
       #pulseaudio.muted {
-        color: #ff5555;
+        color: #f38ba8;
       }
       #cpu {
-        color: #e6c368;
+        color: #f9e2af;
       }
       #memory {
-        color: #f7c04a;
+        color: #a6e3a1;
       }
 
       /* ZaneyOS Right Curved Modules (8px 20px 8px 20px) */
       #network, #tray, #custom-exit {
         font-weight: bold;
-        background: rgba(18, 18, 22, 0.88);
-        border: 1px solid rgba(243, 190, 83, 0.30);
-        color: #e6e4df;
+        background: rgba(30, 30, 46, 0.88);
+        border: 1px solid rgba(203, 166, 247, 0.30);
+        color: #cdd6f4;
         margin: 4px 0px;
         margin-right: 8px;
         border-radius: 8px 20px 8px 20px;
@@ -212,25 +212,25 @@
       }
 
       #network {
-        color: #e5c07b;
+        color: #94e2d5;
       }
       #network.disconnected {
-        color: #ff5555;
+        color: #f38ba8;
       }
       #custom-exit {
-        color: #ff5555;
+        color: #f38ba8;
         font-size: 15px;
         padding-right: 12px;
       }
       #custom-exit:hover {
-        color: #ff6e6e;
+        color: #f5c2e7;
       }
 
       /* ZaneyOS Clock (Curved Bottom-Left) */
       #clock {
         font-weight: bold;
-        color: #121216;
-        background: linear-gradient(135deg, #f3be53, #ffd700);
+        color: #11111b;
+        background: linear-gradient(135deg, #cba6f7, #89b4fa);
         margin: 0px;
         padding: 0px 16px 0px 24px;
         border-radius: 0px 0px 0px 30px;
@@ -239,13 +239,13 @@
 
       /* Tooltip Styling */
       tooltip {
-        background: rgba(18, 18, 22, 0.95);
-        border: 1px solid rgba(243, 190, 83, 0.4);
+        background: rgba(30, 30, 46, 0.95);
+        border: 1px solid rgba(203, 166, 247, 0.4);
         border-radius: 12px;
         padding: 8px;
       }
       tooltip label {
-        color: #e6e4df;
+        color: #cdd6f4;
       }
     '';
   };

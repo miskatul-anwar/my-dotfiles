@@ -13,15 +13,15 @@
       }
 
       * {
-        font:           "JetBrains Mono Nerd Font 11";
-        background:     #121216F2;
-        background-alt: #1C1C24;
-        foreground:     #E6E4DF;
-        selected:       #F3BE53;
-        selected-text:  #121216;
-        active:         #FFD700;
-        urgent:         #FF5555;
-        border-color:   #F3BE53;
+        font:           "JetBrains Mono Nerd Font 10";
+        background:     #1e1e2eF2;
+        background-alt: #313244;
+        foreground:     #cdd6f4;
+        selected:       #cba6f7;
+        selected-text:  #11111b;
+        active:         #89b4fa;
+        urgent:         #f38ba8;
+        border-color:   #cba6f7;
       }
 
       window {
