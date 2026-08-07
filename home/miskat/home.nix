@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
     ./modules/git.nix
@@ -30,10 +30,49 @@
 
   gtk = {
     enable = true;
+    theme = {
+      name    = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
+    iconTheme = {
+      name    = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
     cursorTheme = {
-      package = pkgs.bibata-cursors;
       name    = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
       size    = 24;
+    };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+    gtk4.theme = config.gtk.theme;
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+    style = {
+      name    = "adwaita-dark";
+      package = pkgs.adwaita-qt;
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme        = "prefer-dark";
+      gtk-theme           = "adw-gtk3-dark";
+      icon-theme          = "Papirus-Dark";
+      cursor-theme        = "Bibata-Modern-Classic";
+      cursor-size         = 24;
+      font-name           = "Inter 10";
+      monospace-font-name = "JetBrains Mono Nerd Font 10";
+    };
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,maximize,close";
     };
   };
 

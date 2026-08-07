@@ -11,6 +11,10 @@
     # Set your token: https://huggingface.co/settings/tokens
     HF_TOKEN = ""; # TODO: replace with your actual token
 
+    # ── Theme & Styling ──────────────────────────────────────────────
+    GTK_THEME            = "adw-gtk3-dark";
+    QT_STYLE_OVERRIDE    = "adwaita-dark";
+
     # ── Browser & terminal defaults ───────────────────────────────────
     BROWSER  = "google-chrome";
     TERMINAL = "kitty";

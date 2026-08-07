@@ -54,7 +54,9 @@
     gnome-tweaks
     gnome-extension-manager
 
-    # Icons
+    # Themes & Icons
+    adw-gtk3
+    adwaita-qt
     papirus-icon-theme
 
     # Common desktop apps
