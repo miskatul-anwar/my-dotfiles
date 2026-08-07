@@ -26,8 +26,9 @@
     texliveFull
     protege
 
-    # Antigravity AI tools
+    # AI & LLM development tools
     antigravity-cli
     antigravity-ide
+    claude-code
   ];
 }
