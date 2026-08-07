@@ -78,7 +78,10 @@
       # ── Decoration (Blur enabled, Shadows disabled) ───────────────────
       decoration = {
         rounding                 = 12;
-        drop_shadow              = false;
+
+        shadow = {
+          enabled = false;
+        };
 
         blur = {
           enabled           = true;
@@ -90,14 +93,14 @@
         };
       };
 
-      # ── Layer Rules (Blur & Ignorezero for Dunst, Waybar, Rofi) ─────────
+      # ── Layer Rules (Hyprland v0.53+ match:namespace syntax) ───────────
       layerrule = [
-        "blur,dunst"
-        "ignorezero,dunst"
-        "blur,waybar"
-        "ignorezero,waybar"
-        "blur,rofi"
-        "ignorezero,rofi"
+        "blur on, match:namespace dunst"
+        "ignore_alpha 0.1, match:namespace dunst"
+        "blur on, match:namespace waybar"
+        "ignore_alpha 0.1, match:namespace waybar"
+        "blur on, match:namespace rofi"
+        "ignore_alpha 0.1, match:namespace rofi"
       ];
 
       # ── Animations ────────────────────────────────────────────────────
