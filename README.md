@@ -84,6 +84,23 @@ Comprehensive Python data science, machine learning, and deep learning environme
 
 ---
 
+## 🎵 Audio, Video & Quality of Life (QoL) Drivers
+
+Comprehensive hardware driver stack & multimedia subsystem shared across both GNOME and Hyprland profiles (`system/desktop/audio.nix` & `system/desktop/media-drivers.nix`):
+
+- **Hardware Video Acceleration (VA-API & Vulkan)**: `hardware.graphics` with 32-bit multilib support, `intel-media-driver` (iHD), `intel-vaapi-driver` (i965), `vaapiVdpau`, `vulkan-loader`, `vulkan-validation-layers`, and CLI diagnostics (`vainfo`, `vulkaninfo`, `clinfo`).
+- **GStreamer & FFmpeg Codec Suite**: `ffmpeg-full`, `gst-plugins-base`, `gst-plugins-good`, `gst-plugins-bad`, `gst-plugins-ugly`, `gst-libav`, and `gst-vaapi` for hardware-accelerated 4K/8K video playback (H.264, H.265/HEVC, AV1, VP9).
+- **PipeWire Audio & High-Fidelity Codecs**: PipeWire core + WirePlumber session manager, `security.rtkit` realtime priority scheduling, 44.1kHz - 192kHz sample rates, and LDAC/AptX/AAC Bluetooth codec support.
+- **Audio DSP & Patchbay Tools**: `easyeffects` (equalizer & noise suppression), `pavucontrol`, `helvum` (PipeWire patchbay), `pulsemixer`, `pamixer`, and `playerctl`.
+- **System QoL Services**:
+  - **`fwupd`**: Firmware update manager for BIOS, peripherals, and Bluetooth headsets (`fwupdmgr`).
+  - **`upower`**: Battery monitoring and power management daemon.
+  - **`gvfs`**: MTP phone storage mounting, trash bin, and network share integration in Nautilus & GTK file managers.
+  - **`tumbler`**: Image and video thumbnail generation service.
+  - **`bluetooth`**: Experimental battery level reporting enabled for Bluetooth headsets and controllers.
+
+---
+
 ## 🛠️ CLI, Security & Engineering Suite
 
 - **GitHub & AI Assistants**: `gh` (GitHub CLI), `github-copilot-cli`, `antigravity-cli`, `antigravity-ide`, `claude-code`.

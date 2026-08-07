@@ -14,9 +14,10 @@
     ../core/users.nix
     ../core/nix.nix
 
-    # Audio & Fonts
+    # Audio, Video Drivers, Media Codecs & QoL Services
     ../desktop/audio.nix
     ../desktop/fonts.nix
+    ../desktop/media-drivers.nix
 
     # System packages (CLI, Dev, Python AI/ML, Security, Common Apps)
     ../packages/cli.nix
