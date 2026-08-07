@@ -7,7 +7,7 @@
       confirm_os_window_close = 0;
 
       # Font configuration (Matching Waybar font)
-      font_family      = "JetBrainsMono Nerd Font Mono";
+      font_family      = "JetBrainsMono Nerd Font";
       bold_font        = "auto";
       italic_font      = "auto";
       bold_italic_font = "auto";

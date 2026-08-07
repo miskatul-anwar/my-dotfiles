@@ -12,7 +12,7 @@
       enable = true;
       settings = {
         flavour = "mocha";
-        transparent_background = true;
+        transparent_background = false;
         integrations = {
           cmp = true;
           gitsigns = true;
