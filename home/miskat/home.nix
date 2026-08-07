@@ -31,8 +31,8 @@
   gtk = {
     enable = true;
     theme = {
-      name    = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
+      name    = "catppuccin-mocha-lavender-standard";
+      package = (pkgs.catppuccin-gtk.override { accents = [ "lavender" ]; variant = "mocha"; });
     };
     iconTheme = {
       name    = "Tela-circle-dark";
@@ -64,12 +64,12 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme        = "prefer-dark";
-      gtk-theme           = "adw-gtk3-dark";
+      gtk-theme           = "catppuccin-mocha-lavender-standard";
       icon-theme          = "Tela-circle-dark";
       cursor-theme        = "Bibata-Modern-Classic";
       cursor-size         = 24;
       font-name           = "Inter 10";
-      monospace-font-name = "JetBrains Mono Nerd Font 10";
+      monospace-font-name = "JetBrainsMono Nerd Font 10";
     };
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";

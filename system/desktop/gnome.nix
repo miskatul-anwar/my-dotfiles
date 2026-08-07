@@ -55,7 +55,7 @@
     gnome-extension-manager
 
     # Themes & Icons
-    adw-gtk3
+    (catppuccin-gtk.override { accents = [ "lavender" ]; variant = "mocha"; })
     adwaita-qt
     papirus-icon-theme
     tela-circle-icon-theme
