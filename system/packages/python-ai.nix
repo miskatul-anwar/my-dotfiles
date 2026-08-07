@@ -39,10 +39,8 @@ in
     pythonWithAiPackages
   ];
 
-  # Environment variables for Jupyter, HuggingFace & uv
+  # Environment variables for Jupyter & HuggingFace
   environment.variables = {
-    JUPYTER_CONFIG_DIR   = "$HOME/.jupyter";
-    UV_PYTHON_DOWNLOADS  = "never";        # Never fetch standalone builds
-    UV_PYTHON_PREFERENCE = "only-system";  # Only use Python found on PATH
+    JUPYTER_CONFIG_DIR = "$HOME/.jupyter";
   };
 }

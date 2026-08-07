@@ -14,10 +14,6 @@
     CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY = "1";
     OLLAMA_NUM_PARALLEL                        = "4";
 
-    # ── Python / uv Tooling ──────────────────────────────────────────
-    UV_PYTHON_DOWNLOADS                        = "never";        # Never fetch standalone builds
-    UV_PYTHON_PREFERENCE                       = "only-system";  # Only use Python found on PATH
-
     # ── Browser default ───────────────────────────────────────────────
     BROWSER  = "google-chrome";
 

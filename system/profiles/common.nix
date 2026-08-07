@@ -35,6 +35,9 @@
   # Cloudflare WARP VPN service & CLI (warp-cli)
   services.cloudflare-warp.enable = true;
 
+  # nix-ld — dynamic linker for unpatched prebuilt binaries (standalone Python, uv, VSCode server, unsloth wheels)
+  programs.nix-ld.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-40.10.5"
