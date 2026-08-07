@@ -11,7 +11,7 @@
       bold_font        = "auto";
       italic_font      = "auto";
       bold_italic_font = "auto";
-      font_size        = "12.0";
+      font_size        = "11.0";
 
       # Window appearance
       window_padding_width = 12;

@@ -50,7 +50,7 @@
         enable = true;
         settings = {
           options = {
-            theme = "catppuccin";
+            theme = "auto";
             component_separators = { left = "│"; right = "│"; };
             section_separators = { left = "󰅂"; right = "󰅁"; };
           };
