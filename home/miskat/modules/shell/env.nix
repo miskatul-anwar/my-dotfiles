@@ -9,10 +9,14 @@
 
     # ── AI / LLM Tooling ─────────────────────────────────────────────
     # Token loaded locally from ~/.hf_token to avoid GitHub Secret Protection block
-    ANTHROPIC_BASE_URL                      = "https://agentrouter.org";
-    ANTHROPIC_MODEL                         = "claude-opus-5";
+    ANTHROPIC_BASE_URL                         = "https://agentrouter.org";
+    ANTHROPIC_MODEL                            = "claude-opus-5";
     CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY = "1";
-    OLLAMA_NUM_PARALLEL                     = "4";
+    OLLAMA_NUM_PARALLEL                        = "4";
+
+    # ── Python / uv Tooling ──────────────────────────────────────────
+    UV_PYTHON_DOWNLOADS                        = "never";        # Never fetch standalone builds
+    UV_PYTHON_PREFERENCE                       = "only-system";  # Only use Python found on PATH
 
     # ── Browser default ───────────────────────────────────────────────
     BROWSER  = "google-chrome";
