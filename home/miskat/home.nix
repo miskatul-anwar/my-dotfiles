@@ -10,6 +10,8 @@
     ./modules/terminal/alacritty.nix
     ./modules/terminal/ghostty.nix
     ./modules/desktop/default.nix
+    ./modules/editor/neovim/default.nix
+    ./modules/editor/codium/default.nix
   ];
 
   home = {
