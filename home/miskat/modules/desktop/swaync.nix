@@ -1,0 +1,239 @@
+# SwayNC (Sway Notification Center) — Glassmorphic Catppuccin Mocha Theme
+{ ... }:
+{
+  services.swaync = {
+    enable = true;
+    settings = {
+      positionX = "right";
+      positionY = "top";
+      layer = "overlay";
+      control-center-layer = "top";
+      layer-shell = true;
+      cssPriority = "application";
+      control-center-margin-top = 10;
+      control-center-margin-bottom = 10;
+      control-center-margin-right = 10;
+      control-center-margin-left = 10;
+      notification-2fa-action = true;
+      notification-inline-replies = true;
+      notification-icon-size = 48;
+      notification-body-image-height = 160;
+      notification-body-image-width = 200;
+      timeout = 6;
+      timeout-low = 3;
+      timeout-critical = 0;
+      fit-to-screen = true;
+      control-center-width = 380;
+      control-center-height = 600;
+      notification-window-width = 360;
+      keyboard-shortcuts = true;
+      image-visibility = "when-available";
+      transition-time = 200;
+      hide-on-clear = false;
+      hide-on-action = true;
+      script-fail-notify = true;
+
+      widgets = [
+        "title"
+        "dnd"
+        "notifications"
+        "mpris"
+        "volume"
+        "backlight"
+      ];
+
+      widget-config = {
+        title = {
+          text = "Notifications";
+          clear-all-button = true;
+          button-text = "󰎟 Clear";
+        };
+
+        dnd = {
+          text = "Do Not Disturb";
+        };
+
+        label = {
+          max-lines = 5;
+          text = "Control Center";
+        };
+
+        mpris = {
+          image-size = 80;
+          image-radius = 12;
+        };
+
+        volume = {
+          label = "󰕾 ";
+        };
+
+        backlight = {
+          label = "󰃠 ";
+        };
+      };
+    };
+
+    style = ''
+      @define-color base #1e1e2e;
+      @define-color mantle #181825;
+      @define-color crust #11111b;
+      @define-color text #cdd6f4;
+      @define-color subtext0 #a6adc8;
+      @define-color subtext1 #bac2de;
+      @define-color surface0 #313244;
+      @define-color surface1 #45475a;
+      @define-color surface2 #585b70;
+      @define-color overlay0 #6c7086;
+      @define-color mauve #cba6f7;
+      @define-color lavender #b4befe;
+      @define-color blue #89b4fa;
+      @define-color red #f38ba8;
+      @define-color green #a6e3a1;
+      @define-color yellow #f9e2af;
+
+      * {
+        font-family: "JetBrainsMono Nerd Font", monospace;
+        font-size: 13px;
+        transition: 200ms ease;
+      }
+
+      /* Notification Window */
+      .notification-row {
+        outline: none;
+        background: transparent;
+        padding: 4px;
+      }
+
+      .notification {
+        border-radius: 16px;
+        margin: 6px 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        background: rgba(30, 30, 46, 0.85);
+        border: 2px solid @mauve;
+        padding: 12px;
+      }
+
+      .notification-content {
+        background: transparent;
+        padding: 6px;
+      }
+
+      .close-button {
+        background: @surface0;
+        color: @text;
+        text-shadow: none;
+        padding: 0;
+        border-radius: 100%;
+        margin-top: 5px;
+        margin-right: 5px;
+        box-shadow: none;
+        border: none;
+        min-width: 24px;
+        min-height: 24px;
+      }
+
+      .close-button:hover {
+        background: @red;
+        color: @crust;
+      }
+
+      .notification-default-action,
+      .notification-action {
+        padding: 6px;
+        margin: 4px;
+        border-radius: 10px;
+        background: @surface0;
+        color: @text;
+        border: 1px solid @mauve;
+      }
+
+      .notification-default-action:hover,
+      .notification-action:hover {
+        background: @surface1;
+      }
+
+      .summary {
+        font-weight: bold;
+        font-size: 14px;
+        color: @mauve;
+      }
+
+      .body {
+        color: @text;
+      }
+
+      /* Control Center */
+      .control-center {
+        background: rgba(30, 30, 46, 0.88);
+        border: 2px solid @mauve;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        padding: 16px;
+      }
+
+      .widget-title {
+        color: @mauve;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .widget-title > button {
+        background: @surface0;
+        color: @text;
+        border-radius: 10px;
+        border: 1px solid @mauve;
+        padding: 4px 12px;
+      }
+
+      .widget-title > button:hover {
+        background: @mauve;
+        color: @crust;
+      }
+
+      .widget-dnd {
+        background: @surface0;
+        border-radius: 14px;
+        padding: 8px 16px;
+        margin-bottom: 12px;
+        border: 1px solid @surface1;
+      }
+
+      .widget-dnd > switch {
+        background: @surface1;
+        border-radius: 12px;
+      }
+
+      .widget-dnd > switch:checked {
+        background: @mauve;
+      }
+
+      .widget-mpris {
+        background: @surface0;
+        border-radius: 14px;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: 1px solid @surface1;
+      }
+
+      .widget-volume,
+      .widget-backlight {
+        background: @surface0;
+        border-radius: 14px;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        border: 1px solid @surface1;
+      }
+
+      trough highlight {
+        background: @mauve;
+        border-radius: 8px;
+      }
+
+      slider {
+        background: @text;
+        border-radius: 100%;
+      }
+    '';
+  };
+}

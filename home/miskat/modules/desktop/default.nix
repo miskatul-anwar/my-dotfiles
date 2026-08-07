@@ -2,7 +2,7 @@
 {
   imports = [
     ./hyprland
-    ./dunst.nix
+    ./swaync.nix
     ./rofi.nix
     ./waybar.nix
     ./wallpaper.nix

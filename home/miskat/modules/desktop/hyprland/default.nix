@@ -25,7 +25,7 @@
       ];
 
       exec-once = [
-        "dunst"
+        "swaync"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
@@ -93,10 +93,12 @@
         };
       };
 
-      # ── Layer Rules (Hyprland v0.53+ match:namespace syntax) ───────────
+      # ── Layer Rules (SwayNC, Waybar, Rofi Blur & Transparency) ────────
       layerrule = [
-        "blur on, match:namespace dunst"
-        "ignore_alpha 0.1, match:namespace dunst"
+        "blur on, match:namespace swaync-notification-window"
+        "ignore_alpha 0.1, match:namespace swaync-notification-window"
+        "blur on, match:namespace swaync-control-center"
+        "ignore_alpha 0.1, match:namespace swaync-control-center"
         "blur on, match:namespace waybar"
         "ignore_alpha 0.1, match:namespace waybar"
         "blur on, match:namespace rofi"

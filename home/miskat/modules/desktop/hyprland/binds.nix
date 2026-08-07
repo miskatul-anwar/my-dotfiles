@@ -23,6 +23,7 @@
       "$mainMod ALT, S, exec, mkdir -p ~/Pictures/Screenshots && hyprshot -m window -o ~/Pictures/Screenshots"
       "$mainMod ALT, C, exec, hyprpicker -a"
       "$mainMod ALT, M, exec, pavucontrol"
+      "$mainMod, N, exec, swaync-client -t -sw"
 
       # ── Window Management (ZaneyOS Dispatchers) ───────────────────────
       "$mainMod, Q, killactive"

@@ -29,7 +29,7 @@
     hyprpicker
 
     # Notifications
-    dunst
+    swaynotificationcenter
     libnotify
 
     # Terminal emulators
