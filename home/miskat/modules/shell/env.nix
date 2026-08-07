@@ -7,9 +7,12 @@
     LANG     = "en_US.UTF-8";
     FLAKE    = "/home/miskat/my-dotfiles";
 
-    # ── AI / HuggingFace ─────────────────────────────────────────────
-    # Set your token: https://huggingface.co/settings/tokens
-    HF_TOKEN = ""; # TODO: replace with your actual token
+    # ── AI / LLM Tooling ─────────────────────────────────────────────
+    # Token loaded locally from ~/.hf_token to avoid GitHub Secret Protection block
+    ANTHROPIC_BASE_URL                      = "https://agentrouter.org";
+    ANTHROPIC_MODEL                         = "claude-opus-5";
+    CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY = "1";
+    OLLAMA_NUM_PARALLEL                     = "4";
 
     # ── Theme & Styling ──────────────────────────────────────────────
     GTK_THEME            = "adw-gtk3-dark";

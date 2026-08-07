@@ -138,6 +138,7 @@
     };
 
     initContent = ''
+      [[ -f "$HOME/.hf_token" ]] && export HF_TOKEN="$(cat "$HOME/.hf_token")"
       fastfetch
     '';
   };
