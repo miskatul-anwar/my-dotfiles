@@ -102,22 +102,23 @@
         preserve_split = true;
       };
 
-      # ── Window Rules (HyprDots-style opacity + floats) ────────────────
-      windowrulev2 = [
-        "opacity 0.90 0.90, class:^(Google-chrome)$"
-        "opacity 0.90 0.90, class:^(firefox)$"
-        "opacity 0.80 0.80, class:^([Cc]odium)$"
-        "opacity 0.80 0.80, class:^(kitty)$"
-        "opacity 0.80 0.70, class:^(org.pulseaudio.pavucontrol)$"
-        "opacity 0.80 0.70, class:^(blueman-manager)$"
-        "float,  class:^(pavucontrol)$"
-        "float,  class:^(blueman-manager)$"
-        "float,  class:^(mpv)$"
-        "center, class:^(mpv)$"
-        "size 934 525, class:^(mpv)$"
-        "float,  class:^(nm-connection-editor)$"
-        "float,  title:^(Picture-in-Picture)$"
-        "pin,    title:^(Picture-in-Picture)$"
+      # ── Window Rules (Hyprland windowrule syntax) ───────────────────────
+      windowrule = [
+        "opacity 0.90 0.90, ^(Google-chrome)$"
+        "opacity 0.90 0.90, ^(firefox)$"
+        "opacity 0.85 0.85, ^([Cc]odium)$"
+        "opacity 0.85 0.85, ^(kitty)$"
+        "opacity 0.85 0.75, ^(org.pulseaudio.pavucontrol)$"
+        "opacity 0.85 0.75, ^(blueman-manager)$"
+        "float, ^(pavucontrol)$"
+        "float, ^(org.pulseaudio.pavucontrol)$"
+        "float, ^(blueman-manager)$"
+        "float, ^(mpv)$"
+        "center, ^(mpv)$"
+        "size 934 525, ^(mpv)$"
+        "float, ^(nm-connection-editor)$"
+        "float, title:^(Picture-in-Picture)$"
+        "pin, title:^(Picture-in-Picture)$"
       ];
 
       # ── Keybindings (HyprDots-inspired) ──────────────────────────────
