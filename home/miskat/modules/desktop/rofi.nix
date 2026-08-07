@@ -6,19 +6,19 @@
     package  = pkgs.rofi;
     terminal = "${pkgs.kitty}/bin/kitty";
     extraConfig = {
-      icon-theme = "Tela-circle-purple-dark";
+      icon-theme = "Tela-circle-dark";
     };
     theme = builtins.toFile "rofi-theme.rasi" ''
       configuration {
         modi:                "drun,run,filebrowser,window";
         show-icons:          true;
-        icon-theme:          "Tela-circle-purple-dark";
+        icon-theme:          "Tela-circle-dark";
         drun-display-format: "{name}";
         window-format:       "{w} · {c} · {t}";
       }
 
       * {
-        font:            "CaskaydiaCove Nerd Font Mono 11";
+        font:            "JetBrainsMono Nerd Font 10.5";
         background:      #1e1e2eF0;
         background-alt:  #313244;
         foreground:      #cdd6f4;

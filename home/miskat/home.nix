@@ -35,7 +35,7 @@
       package = pkgs.adw-gtk3;
     };
     iconTheme = {
-      name    = "Tela-circle-purple-dark";
+      name    = "Tela-circle-dark";
       package = pkgs.tela-circle-icon-theme;
     };
     cursorTheme = {
@@ -65,7 +65,7 @@
     "org/gnome/desktop/interface" = {
       color-scheme        = "prefer-dark";
       gtk-theme           = "adw-gtk3-dark";
-      icon-theme          = "Tela-circle-purple-dark";
+      icon-theme          = "Tela-circle-dark";
       cursor-theme        = "Bibata-Modern-Classic";
       cursor-size         = 24;
       font-name           = "Inter 10";
