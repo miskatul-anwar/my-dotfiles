@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    # C / C++
+    # C / C++ & Debugging
     gcc
+    gdb
     clang
     clang-tools
     libclang
