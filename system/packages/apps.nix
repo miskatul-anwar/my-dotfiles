@@ -6,8 +6,16 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Browsers
-    google-chrome
+    # Browsers (configured with Wayland Ozone & Vulkan to eliminate NVIDIA video flickering)
+    (google-chrome.override {
+      commandLineArgs = [
+        "--enable-features=UseOzonePlatform,Vulkan,WaylandWindowDecorations"
+        "--ozone-platform=wayland"
+        "--ignore-gpu-blocklist"
+        "--enable-gpu-rasterization"
+        "--enable-zero-copy"
+      ];
+    })
 
     # Communication
     telegram-desktop

@@ -21,15 +21,16 @@
     # ── Browser default ───────────────────────────────────────────────
     BROWSER  = "google-chrome";
 
-    # ── NVIDIA Wayland ────────────────────────────────────────────────
+    # ── NVIDIA Wayland & Chromium Ozone Fixes ────────────────────────
+    NIXOS_OZONE_WL           = "1";        # Forces Chrome, Electron & Zen Browser to native Wayland mode
     GBM_BACKEND              = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     LIBVA_DRIVER_NAME        = "nvidia";
-    __GL_VRR_ALLOWED         = "1";
-    WLR_NO_HARDWARE_CURSORS  = "1";
+    __GL_VRR_ALLOWED         = "0";        # Disable VRR/G-Sync micro-flickering on video hover
+    WLR_NO_HARDWARE_CURSORS  = "1";        # Software cursor overlay to prevent hardware cursor jitter
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
     CLUTTER_BACKEND          = "wayland";
     WLR_RENDERER             = "vulkan";
-    XDG_SESSION_TYPE    = "wayland";
+    XDG_SESSION_TYPE         = "wayland";
   };
 }
