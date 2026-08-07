@@ -1,22 +1,23 @@
-{config, pkgs, ... }: {
+{ ... }:
+{
   imports = [
-    # ./modules/ghostty.nix
     ./modules/git.nix
-    ./modules/env.nix
-    ./modules/zsh.nix
     ./modules/packages.nix
-    ./modules/codium/settings.nix
-    ./modules/codium/snippet.nix
+    ./modules/shell/zsh.nix
+    ./modules/shell/env.nix
+    ./modules/terminal/kitty.nix
+    ./modules/terminal/alacritty.nix
+    ./modules/terminal/ghostty.nix
+    ./modules/editor/codium/default.nix
+    ./modules/desktop/default.nix
   ];
 
   home = {
-    username = "miskat";
+    username     = "miskat";
     homeDirectory = "/home/miskat";
-    stateVersion="25.05";
-
+    stateVersion  = "25.05";
     file = {};
   };
 
-
-   programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
 }

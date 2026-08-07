@@ -1,6 +1,6 @@
-{inputs, pkgs, system, ... }: { 
-	home.packages = with pkgs; [ 
-    		hello neovim curl wget htop docker kitty
-        inputs.zen-browser.packages."${system}".default
-  	];
+{ pkgs, ... }:
+{
+  # Add user-specific packages here (beyond system-wide packages)
+  # zen-browser removed — install via flatpak or add a new flake input if needed
+  home.packages = with pkgs; [ ];
 }
