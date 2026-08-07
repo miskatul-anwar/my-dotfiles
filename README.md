@@ -56,6 +56,7 @@ my-dotfiles/
 - **Desktop Environment**: GNOME 47 Desktop Environment + GDM.
 - **Default Terminal**: **Ghostty** (`com.mitchellh.ghostty.desktop`, `TERMINAL = "ghostty"`).
 - **Theme & Cursor**: Stock GNOME `Adwaita` / `Adwaita-dark` GTK theme, `Adwaita` icons, default `Adwaita` cursor.
+- **Shell Extensions**: `dash-to-panel` (unified taskbar), `user-themes`, `lens` (spotlight search), `dash-to-dock`, `rounded-window-corners-reborn`, `caffeine`, and `blur-my-shell`.
 - **Suite Isolation**: Completely excludes Hyprland compositor, Waybar, SwayNC, Rofi, `awww`, Kitty, and rice bloat.
 
 ---
@@ -105,8 +106,8 @@ Comprehensive hardware driver stack & multimedia subsystem shared across both GN
 
 - **GitHub & AI Assistants**: `gh` (GitHub CLI), `github-copilot-cli`, `antigravity-cli`, `antigravity-ide`, `claude-code`.
 - **Development & Debugging**: `gcc`, `clang`, `gdb` (GNU Debugger), `rustup`, `pypy3`, `uv`, `graphviz`, `arduino-ide`, `texliveFull`, `protege`.
-- **Network Analysis & Security**: `wireshark`, `sniffnet`, `nmap`, `tcpdump`, `netcat`, `bettercap`, `burpsuite`, `aircrack-ng`, `hashcat`.
-- **Services & Virtualisation**: `libvirtd`, `qemu`, `winboat`, `flatpak` (Flathub repo auto-added), `llama-cpp`, `vllm`, `open-webui`, `oterm`.
+- **Network Analysis & Security**: `wireshark`, `sniffnet`, `nmap`, `tcpdump`, `netcat`, `bettercap`, `burpsuite`, `aircrack-ng`, `hashcat`, `cloudflare-warp` (`warp-cli`).
+- **Services & Virtualisation**: `libvirtd`, `qemu`, `winboat`, `flatpak` (Flathub repo auto-added), `services.cloudflare-warp`, `llama-cpp`, `vllm`, `open-webui`, `oterm`.
 
 ---
 
