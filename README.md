@@ -16,22 +16,8 @@ This repository provides a modular, flake-based configuration for NixOS and Home
 ### Home Manager Integration
 - **Home Manager**: Managed via flakes and integrated into the system configuration.
 - **User Packages**: Includes a curated selection of user-level packages and window managers.
-- **Dotfiles**: Customizes git, shell aliases, VSCodium settings, and editor configurations.
-
-### Nixpkgs & Flake Inputs
-- Uses the latest `nixos-unstable` channel:
-  - `nixpkgs`: Core package set.
-  - `home-manager`: Follows the same nixpkgs version.
-  - `zen-browser`: External package via flake input.
-
-### NH (Nix Helper)
-- **nh**: Installed and configured for system cleaning and flake management.
-- **Tools**: Includes `nix-output-monitor` and `nvd` for system insights.
-
-### Software & Services
-- **System Packages**: Programming languages (Rust, Python, GCC, Clang), developer tools (Ripgrep, Vim, LunarVim, DBeaver), browsers (Google Chrome, Zen Browser), and utilities.
-- **Database**: MySQL service (MariaDB) with pre-configured users and databases.
-- **Editors**: VSCodium with extensions for Nix, Clang, Vim, Rust, Python, themes, and icons.
+- **Dotfiles**: Customizes git, shell aliases, Neovim settings, and shell configurations.
+- **Editors**: Neovim with plugins for Nix, C/C++, Rust, Python, and modern AI development.
 - **Shell**: Zsh with Powerlevel10k prompt, custom aliases, and initialization.
 - **Window Manager**: Hyprland, Kitty, Alacritty, and essential Wayland utilities.
 

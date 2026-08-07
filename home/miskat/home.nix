@@ -8,7 +8,6 @@
     ./modules/terminal/kitty.nix
     ./modules/terminal/alacritty.nix
     ./modules/terminal/ghostty.nix
-    ./modules/editor/codium/default.nix
     ./modules/desktop/default.nix
   ];
 

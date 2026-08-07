@@ -41,7 +41,7 @@
       # ── Variables ─────────────────────────────────────────────────────
       "$mainMod" = "SUPER";
       "$term"    = "kitty";
-      "$editor"  = "codium";
+      "$editor"  = "nvim";
       "$file"    = "nautilus";
       "$browser" = "google-chrome-stable";
 

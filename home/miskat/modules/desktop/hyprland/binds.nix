@@ -17,7 +17,7 @@
       "$mainMod, T, exec, kitty"
       "$mainMod, Return, exec, kitty"
       "$mainMod, E, exec, nautilus"
-      "$mainMod, C, exec, codium"
+      "$mainMod, C, exec, kitty -e nvim"
       "$mainMod, F, exec, google-chrome-stable"
       "$mainMod, B, exec, google-chrome-stable"
       "CTRL SHIFT, Escape, exec, kitty -e btop"

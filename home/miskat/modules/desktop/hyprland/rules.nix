@@ -4,7 +4,6 @@
   wayland.windowManager.hyprland.settings = {
     windowrule = [
       "opacity 0.90 0.90, class:^(Google-chrome)$"
-      "opacity 0.85 0.85, class:^([Cc]odium)$"
       "opacity 0.85 0.85, class:^(kitty)$"
       "opacity 0.85 0.75, class:^(org.pulseaudio.pavucontrol)$"
       "opacity 0.85 0.75, class:^(blueman-manager)$"
