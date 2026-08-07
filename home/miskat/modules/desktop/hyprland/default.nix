@@ -78,26 +78,29 @@
       # ── Decoration (Blur + Shadow enabled) ─────────────────────────────
       decoration = {
         rounding                 = 12;
-        "blur:enabled"           = true;
-        "blur:size"              = 8;
-        "blur:passes"            = 3;
-        "blur:new_optimizations" = true;
-        "blur:ignore_opacity"    = true;
-        "blur:xray"              = false;
-        "shadow:enabled"         = true;
-        "shadow:range"           = 16;
-        "shadow:render_power"    = 3;
+        drop_shadow              = true;
+        shadow_range             = 16;
+        shadow_render_power      = 3;
         "col.shadow"             = "rgba(11111bee)";
+
+        blur = {
+          enabled           = true;
+          size              = 8;
+          passes            = 3;
+          new_optimizations = true;
+          ignore_opacity    = true;
+          xray              = false;
+        };
       };
 
-      # ── Layer Rules (Blur & Ignorezero for Dunst & Waybar) ─────────────
+      # ── Layer Rules (Blur & Ignorezero for Dunst, Waybar, Rofi) ─────────
       layerrule = [
-        "blur, dunst"
-        "ignorezero, dunst"
-        "blur, waybar"
-        "ignorezero, waybar"
-        "blur, rofi"
-        "ignorezero, rofi"
+        "blur,dunst"
+        "ignorezero,dunst"
+        "blur,waybar"
+        "ignorezero,waybar"
+        "blur,rofi"
+        "ignorezero,rofi"
       ];
 
       # ── Animations ────────────────────────────────────────────────────
