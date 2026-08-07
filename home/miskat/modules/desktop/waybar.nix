@@ -128,17 +128,21 @@
         border-radius: 0;
       }
 
+      /* Continuous horizontal blurred bar spanning from left to right behind all 3 sections */
       window#waybar {
-        background-color: transparent;
+        background-color: rgba(18, 18, 22, 0.70);
+        border: 1px solid rgba(243, 190, 83, 0.35);
+        border-radius: 14px;
+        padding: 2px 6px;
       }
 
-      /* Bar containers (Obsidian Gold Accent Glassmorphism) */
+      /* Module groups sit cleanly inside the continuous horizontal bar */
       .modules-left, .modules-center, .modules-right {
-        background-color: rgba(18, 18, 22, 0.90);
-        border: 1px solid rgba(243, 190, 83, 0.35);
-        border-radius: 12px;
-        padding: 2px 8px;
-        margin: 2px 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 2px 4px;
+        margin: 0;
       }
 
       /* Launcher */

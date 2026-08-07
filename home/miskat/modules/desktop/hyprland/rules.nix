@@ -17,5 +17,10 @@
       "float, title:^(Picture-in-Picture)$"
       "pin, title:^(Picture-in-Picture)$"
     ];
+
+    layerrule = [
+      "blur, waybar"
+      "ignorezero, waybar"
+    ];
   };
 }
