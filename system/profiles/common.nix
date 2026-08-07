@@ -32,6 +32,9 @@
     ../services/llm.nix
   ];
 
+  # Cloudflare WARP VPN service & CLI (warp-cli)
+  services.cloudflare-warp.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-40.10.5"

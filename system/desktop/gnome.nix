@@ -86,6 +86,9 @@
     gnomeExtensions.rounded-window-corners-reborn
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.user-themes
+    gnomeExtensions.lens
     gnomeExtensions.blur-my-shell
   ];
 
