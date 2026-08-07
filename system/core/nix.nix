@@ -2,6 +2,7 @@
 {
   # Flakes + new CLI
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.extraOptions = "!include /home/miskat/.config/nix/nix.conf";
 
   # Store optimisation
   nix.settings.auto-optimise-store = true;
