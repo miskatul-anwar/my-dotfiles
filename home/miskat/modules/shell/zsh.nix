@@ -56,9 +56,15 @@
       gc      = "git commit";
       gp      = "git push";
       gl      = "git log --oneline --graph --decorate";
-      ghce    = "gh copilot explain";
-      ghcs    = "gh copilot suggest";
-      copilot = "github-copilot-cli";
+      # AI / Copilot CLI
+      copilot  = "gh copilot";
+      ghcs     = "gh copilot suggest";
+      ghce     = "gh copilot explain";
+
+      # Cloudflare WARP VPN
+      warp-on   = "warp-cli connect";
+      warp-off  = "warp-cli disconnect";
+      warp-stat = "warp-cli status";
 
       # Nix helpers
       nix-clean  = "nh clean all";
