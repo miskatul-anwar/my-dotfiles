@@ -50,12 +50,15 @@
       hm               = "home-manager switch --flake ~/my-dotfiles#miskat";
       editcfg          = "nvim ~/my-dotfiles";
 
-      # Git
-      gs  = "git status";
-      ga  = "git add .";
-      gc  = "git commit";
-      gp  = "git push";
-      gl  = "git log --oneline --graph --decorate";
+      # Git & GitHub AI
+      gs      = "git status";
+      ga      = "git add .";
+      gc      = "git commit";
+      gp      = "git push";
+      gl      = "git log --oneline --graph --decorate";
+      ghce    = "gh copilot explain";
+      ghcs    = "gh copilot suggest";
+      copilot = "github-copilot-cli";
 
       # Nix helpers
       nix-clean  = "nh clean all";

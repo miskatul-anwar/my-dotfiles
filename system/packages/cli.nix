@@ -9,9 +9,11 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Version control
+    # Version control & GitHub AI
     git
     git-lfs
+    gh
+    github-copilot-cli
 
     # CLI utilities
     ripgrep
