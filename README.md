@@ -32,41 +32,45 @@ A modular, reproducible, flake-based NixOS & Home Manager dotfiles repository st
 
 ```
 my-dotfiles/
-├── flake.nix                 # Flake entry point (NixOS & Home Manager outputs)
+├── flake.nix                 # Flake entry point (miskat-hyprland & miskat-gnome profiles)
 ├── system/                   # System-level NixOS modules
-│   ├── default.nix           # Module orchestrator
+│   ├── profiles/             # System profiles (hyprland.nix, gnome.nix, common.nix)
 │   ├── core/                 # Bootloader, locale, networking, users, nix options
-│   ├── desktop/              # GNOME, Pipewire audio, fonts, Wayland compositors
+│   ├── desktop/              # GNOME DE, Hyprland suite, Pipewire audio, fonts
 │   ├── hardware/             # Machine hardware configuration
 │   ├── packages/             # System packages (cli, dev, security, apps)
 │   └── services/             # Virtualisation, Flatpak, local LLM, Docker, MariaDB
 └── home/
     └── miskat/               # User-level Home Manager modules
-        ├── home.nix          # Home Manager entry point & GTK/QT theme state
+        ├── profiles/         # Home profiles (hyprland.nix, gnome.nix, common.nix)
         └── modules/          # Modular user configurations
             ├── git.nix       # User Git credentials
             ├── packages.nix  # User packages (Zen Browser)
             ├── shell/        # Zsh, environment variables, sleek Fastfetch
             ├── terminal/     # Kitty, Alacritty, Ghostty
-            ├── desktop/      # Hyprland, Waybar, Rofi, Dunst, wallpaper cycler
+            ├── desktop/      # Hyprland, Waybar, Rofi, SwayNC, wallpaper
             └── editor/       # Declarative Nixvim IDE configuration
 ```
 
 ---
 
-## 🚀 Usage & Commands
+## 🚀 Usage & Profiles
 
-### Rebuild System
-Using **Nix Helper** (`nh`):
-```bash
-nh os switch
-```
+### Switch Profiles
 
-*Or shell aliases:*
-```bash
-rebuild   # Alias for nh os switch
-update    # Alias for nh os switch
-```
+- **Hyprland Profile** (Catppuccin Mocha Lavender, Tela icons, Bibata cursor, Waybar, SwayNC, Rofi):
+  ```bash
+  nh os switch --hostname miskat-hyprland
+  # Or alias:
+  rebuild-hyprland
+  ```
+
+- **GNOME Profile** (Pure GNOME DE + Stock Adwaita theme, Adwaita icons, Adwaita cursor):
+  ```bash
+  nh os switch --hostname miskat-gnome
+  # Or alias:
+  rebuild-gnome
+  ```
 
 ### Essential Shortcuts
 

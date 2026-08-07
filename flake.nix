@@ -1,5 +1,5 @@
 {
-  description = "Miskat's NixOS + Home Manager setup (flake-based)";
+  description = "Miskat's NixOS + Home Manager setup (Flake profiles for Hyprland & GNOME)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -16,27 +16,45 @@
   };
 
   outputs = { nixpkgs, home-manager, nixvim, ... }@inputs:
-  {
-    nixosConfigurations.miskat = nixpkgs.lib.nixosSystem {
+  let
+    mkNixosSystem = { systemProfile, homeProfile }: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         { nixpkgs.hostPlatform = "x86_64-linux"; }
-        ./system/default.nix
-        ./system/hardware/hardware-configuration.nix
-
-        # Home Manager — manages user environment declaratively
+        systemProfile
         home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.miskat = import ./home/miskat/home.nix;
+            users.miskat = import homeProfile;
             backupFileExtension = "backup";
             extraSpecialArgs = { inherit inputs; };
             sharedModules = [ nixvim.homeModules.nixvim ];
           };
         }
       ];
+    };
+  in
+  {
+    nixosConfigurations = {
+      # Default host target (Hyprland profile)
+      miskat = mkNixosSystem {
+        systemProfile = ./system/profiles/hyprland.nix;
+        homeProfile   = ./home/miskat/profiles/hyprland.nix;
+      };
+
+      # Explicit Hyprland Profile (Catppuccin Mocha Lavender, Tela icons, Bibata cursor, Waybar, SwayNC, Rofi)
+      miskat-hyprland = mkNixosSystem {
+        systemProfile = ./system/profiles/hyprland.nix;
+        homeProfile   = ./home/miskat/profiles/hyprland.nix;
+      };
+
+      # Explicit GNOME Profile (Stock Adwaita theme, Adwaita icons, Adwaita cursor, GNOME DE)
+      miskat-gnome = mkNixosSystem {
+        systemProfile = ./system/profiles/gnome.nix;
+        homeProfile   = ./home/miskat/profiles/gnome.nix;
+      };
     };
   };
 }

@@ -42,11 +42,13 @@
       "..." = "cd ../..";
       "~"  = "cd ~";
 
-      # NixOS rebuild
-      update   = "nh os switch";
-      rebuild  = "nh os switch";
-      hm       = "home-manager switch --flake ~/my-dotfiles#miskat";
-      editcfg  = "nvim ~/my-dotfiles";
+      # NixOS rebuild profiles
+      update           = "nh os switch";
+      rebuild          = "nh os switch";
+      rebuild-hyprland = "nh os switch --hostname miskat-hyprland";
+      rebuild-gnome    = "nh os switch --hostname miskat-gnome";
+      hm               = "home-manager switch --flake ~/my-dotfiles#miskat";
+      editcfg          = "nvim ~/my-dotfiles";
 
       # Git
       gs  = "git status";

@@ -7,10 +7,10 @@
     xkb.variant = "";
   };
 
-  # GDM — session picker for both GNOME and Hyprland
+  # GDM — session picker for GNOME
   services.displayManager = {
-    gdm.enable = true;  # gdm.wayland removed in GNOME 50 — Wayland is always on
-    defaultSession = "hyprland"; # Hyprland boots by default; GNOME selectable from picker
+    gdm.enable = true;
+    defaultSession = pkgs.lib.mkDefault "gnome";
   };
 
   services.desktopManager.gnome.enable = true;
