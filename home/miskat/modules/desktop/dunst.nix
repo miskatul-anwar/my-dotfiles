@@ -17,20 +17,20 @@
         enable_recursive_icon_lookup = true;
       };
       urgency_low = {
-        background = "#1a1a24";
-        foreground = "#e6e6ee";
-        frame_color = "#3a3a4a";
+        background = "#121216";
+        foreground = "#e6e4df";
+        frame_color = "#282832";
         timeout    = 5;
       };
       urgency_normal = {
-        background   = "#1a1a24";
-        foreground   = "#e6e6ee";
+        background   = "#121216";
+        foreground   = "#e6e4df";
         frame_color  = "#f3be53";
         timeout      = 10;
       };
       urgency_critical = {
-        background   = "#1a1a24";
-        foreground   = "#e6e6ee";
+        background   = "#121216";
+        foreground   = "#e6e4df";
         frame_color  = "#ff5555";
         timeout      = 0;
       };

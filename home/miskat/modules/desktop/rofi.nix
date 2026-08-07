@@ -14,11 +14,11 @@
 
       * {
         font:           "JetBrains Mono Nerd Font 11";
-        background:     #1A1A24E6;
-        background-alt: #2A2A3B;
-        foreground:     #E6E6EE;
+        background:     #121216F2;
+        background-alt: #1C1C24;
+        foreground:     #E6E4DF;
         selected:       #F3BE53;
-        selected-text:  #1A1A24;
+        selected-text:  #121216;
         active:         #FFD700;
         urgent:         #FF5555;
         border-color:   #F3BE53;

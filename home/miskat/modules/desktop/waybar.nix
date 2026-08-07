@@ -132,9 +132,9 @@
         background-color: transparent;
       }
 
-      /* Bar containers (Golden Accent Glassmorphism) */
+      /* Bar containers (Obsidian Gold Accent Glassmorphism) */
       .modules-left, .modules-center, .modules-right {
-        background-color: rgba(26, 26, 36, 0.88);
+        background-color: rgba(18, 18, 22, 0.90);
         border: 1px solid rgba(243, 190, 83, 0.35);
         border-radius: 12px;
         padding: 2px 8px;

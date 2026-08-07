@@ -58,22 +58,13 @@
         };
       };
 
-      gestures = {
-        workspace_swipe                    = true;
-        workspace_swipe_fingers            = 3;
-        workspace_swipe_distance           = 300;
-        workspace_swipe_invert             = true;
-        workspace_swipe_min_speed_to_force = 30;
-        workspace_swipe_cancel_ratio       = 0.5;
-      };
-
-      # ── General (Golden Accent Borders) ───────────────────────────────
+      # ── General (Obsidian Gold Accent Borders) ─────────────────────────
       general = {
         gaps_in              = 6;
         gaps_out             = 14;
         border_size          = 2;
         "col.active_border"  = "rgba(f3be53ee) rgba(ffd700ee) 45deg";
-        "col.inactive_border" = "rgba(2a2a3baa)";
+        "col.inactive_border" = "rgba(282832aa)";
         layout               = "dwindle";
       };
 
@@ -301,19 +292,19 @@
     # wallpaper = ,~/.config/hypr/wallpaper.jpg
   '';
 
-  # ── Color palette (Golden Gold Accent Theme) ─────────────────────────
+  # ── Color palette (Obsidian Gold Accent Theme) ─────────────────────────
   home.file.".config/hypr/colors".text = ''
-    $background = rgba(1a1a24ee)
-    $foreground = rgba(e6e6eeee)
-    $color0  = rgba(1a1a24ee)
+    $background = rgba(121216ee)
+    $foreground = rgba(e6e4dfee)
+    $color0  = rgba(121216ee)
     $color1  = rgba(ff5555ee)
     $color2  = rgba(e5c07bee)
     $color3  = rgba(f3be53ee)
     $color4  = rgba(ffd700ee)
     $color5  = rgba(e6c368ee)
     $color6  = rgba(f7c04aee)
-    $color7  = rgba(e6e6eeee)
-    $color8  = rgba(5c5c70ee)
+    $color7  = rgba(e6e4dfee)
+    $color8  = rgba(282832ee)
     $color9  = rgba(ff6e6eee)
     $color10 = rgba(e5c07bee)
     $color11 = rgba(f3be53ee)
