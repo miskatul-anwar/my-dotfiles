@@ -4,7 +4,14 @@
   imports = [
     ./common.nix
     ../modules/desktop/default.nix
+    ../modules/terminal/kitty.nix
   ];
+
+  home.sessionVariables = {
+    TERMINAL            = "kitty";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+  };
 
   home.pointerCursor = {
     enable     = true;

@@ -18,9 +18,10 @@
     ../desktop/audio.nix
     ../desktop/fonts.nix
 
-    # System packages (CLI, Dev, Security, Common Apps)
+    # System packages (CLI, Dev, Python AI/ML, Security, Common Apps)
     ../packages/cli.nix
     ../packages/development.nix
+    ../packages/python-ai.nix
     ../packages/security.nix
     ../packages/apps.nix
 

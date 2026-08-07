@@ -3,7 +3,14 @@
 {
   imports = [
     ./common.nix
+    ../modules/terminal/ghostty.nix
   ];
+
+  home.sessionVariables = {
+    TERMINAL            = "ghostty";
+    XDG_CURRENT_DESKTOP = "GNOME";
+    XDG_SESSION_DESKTOP = "GNOME";
+  };
 
   home.pointerCursor = {
     enable     = true;

@@ -14,13 +14,8 @@
     CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY = "1";
     OLLAMA_NUM_PARALLEL                     = "4";
 
-    # ── Theme & Styling ──────────────────────────────────────────────
-    GTK_THEME            = "adw-gtk3-dark";
-    QT_STYLE_OVERRIDE    = "adwaita-dark";
-
-    # ── Browser & terminal defaults ───────────────────────────────────
+    # ── Browser default ───────────────────────────────────────────────
     BROWSER  = "google-chrome";
-    TERMINAL = "kitty";
 
     # ── NVIDIA Wayland ────────────────────────────────────────────────
     GBM_BACKEND              = "nvidia-drm";
@@ -31,10 +26,6 @@
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
     CLUTTER_BACKEND          = "wayland";
     WLR_RENDERER             = "vulkan";
-
-    # ── Wayland session ───────────────────────────────────────────────
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE    = "wayland";
   };
 }

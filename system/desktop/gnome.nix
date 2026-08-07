@@ -25,11 +25,14 @@
       "x-scheme-handler/https"   = [ "google-chrome.desktop" ];
       "text/html"                = [ "google-chrome.desktop" ];
       "application/xhtml+xml"   = [ "google-chrome.desktop" ];
-      "x-terminal-emulator"     = [ "kitty.desktop" ];
+      "x-terminal-emulator"     = [ "com.mitchellh.ghostty.desktop" ];
     };
   };
 
   environment.systemPackages = with pkgs; [
+    # Terminal
+    ghostty
+
     # GNOME core apps
     gnome-terminal
     nautilus
