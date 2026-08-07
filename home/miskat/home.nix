@@ -5,6 +5,7 @@
     ./modules/packages.nix
     ./modules/shell/zsh.nix
     ./modules/shell/env.nix
+    ./modules/shell/fastfetch.nix
     ./modules/terminal/kitty.nix
     ./modules/terminal/alacritty.nix
     ./modules/terminal/ghostty.nix
