@@ -6,12 +6,12 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Browsers (configured with Wayland Ozone & Vulkan to eliminate NVIDIA video flickering)
+    # Browsers (configured with Wayland Ozone & ANGLE GL backend for smooth NVIDIA video playback)
     (google-chrome.override {
       commandLineArgs = [
-        "--enable-features=UseOzonePlatform,Vulkan,WaylandWindowDecorations"
         "--ozone-platform=wayland"
-        "--ignore-gpu-blocklist"
+        "--enable-features=UseOzonePlatform,WaylandWindowDecorations"
+        "--use-angle=gl"
         "--enable-gpu-rasterization"
         "--enable-zero-copy"
       ];
