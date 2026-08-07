@@ -14,13 +14,13 @@
       "$mainMod SHIFT, F, pin"
 
       # ── Launch Applications ─────────────────────────────────────────
-      "$mainMod, T, exec, $term"
-      "$mainMod, Return, exec, $term"
-      "$mainMod, E, exec, $file"
-      "$mainMod, C, exec, $editor"
-      "$mainMod, F, exec, $browser"
-      "$mainMod, B, exec, $browser"
-      "CTRL SHIFT, Escape, exec, $term -e btop"
+      "$mainMod, T, exec, kitty"
+      "$mainMod, Return, exec, kitty"
+      "$mainMod, E, exec, nautilus"
+      "$mainMod, C, exec, codium"
+      "$mainMod, F, exec, google-chrome-stable"
+      "$mainMod, B, exec, google-chrome-stable"
+      "CTRL SHIFT, Escape, exec, kitty -e btop"
 
       # ── Rofi Launchers ──────────────────────────────────────────────
       "$mainMod, A, exec, pkill -x rofi || rofi -show drun"
