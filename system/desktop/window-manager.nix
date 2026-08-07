@@ -40,11 +40,14 @@
     # XWayland bridge for X11 apps on Wayland
     xwayland-satellite
 
-    # Clipboard + screenshot
+    # Clipboard + screenshot + file tools (ZaneyOS suite)
     wl-clipboard
+    cliphist
+    hyprshot
     xclip
     grim
     slurp
+    yazi
 
     # Media controls
     playerctl

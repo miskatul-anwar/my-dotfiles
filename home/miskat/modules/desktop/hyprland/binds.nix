@@ -1,41 +1,37 @@
-# Hyprland Keybindings — Official Hyprland dispatchers
+# Hyprland Keybindings — ZaneyOS Ruleset
 { ... }:
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      # ── Session & Window Actions ────────────────────────────────────
-      "$mainMod, Q, killactive"
-      "$mainMod, Delete, exit"
-      "$mainMod, W, togglefloating"
-      "$mainMod, G, togglegroup"
-      "ALT, Return, fullscreen"
-      "$mainMod, L, exec, hyprlock"
-      "$mainMod, Backspace, exec, wlogout"
-      "$mainMod SHIFT, F, pin"
-
-      # ── Launch Applications ─────────────────────────────────────────
-      "$mainMod, T, exec, kitty"
+      # ── Terminal & Launchers ──────────────────────────────────────────
       "$mainMod, Return, exec, kitty"
+      "$mainMod, D, exec, pkill -x rofi || rofi -show drun"
+      "$mainMod SHIFT, Return, exec, pkill -x rofi || rofi -show drun"
+      "$mainMod, W, exec, google-chrome-stable"
+      "$mainMod, Y, exec, kitty -e yazi"
+      "$mainMod, T, exec, nautilus"
       "$mainMod, E, exec, nautilus"
       "$mainMod, C, exec, kitty -e nvim"
-      "$mainMod, F, exec, google-chrome-stable"
-      "$mainMod, B, exec, google-chrome-stable"
-      "CTRL SHIFT, Escape, exec, kitty -e btop"
+      "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
-      # ── Rofi Launchers ──────────────────────────────────────────────
-      "$mainMod, A, exec, pkill -x rofi || rofi -show drun"
-      "$mainMod, Tab, exec, pkill -x rofi || rofi -show window"
-      "$mainMod SHIFT, E, exec, pkill -x rofi || rofi -show filebrowser"
-
-      # ── Screenshots & Utilities ─────────────────────────────────────
+      # ── Screenshots & Utilities (ZaneyOS Hyprshot & Grim) ────────────
       "$mainMod, S, exec, grim -g \"$(slurp)\" - | wl-copy"
-      "$mainMod SHIFT, S, exec, grim -g \"$(slurp)\""
-      ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
-      "SHIFT, Print, exec, grim -g \"$(slurp)\""
-      "CTRL ALT, W, exec, killall waybar || waybar"
-      "$mainMod SHIFT, P, exec, hyprpicker -a"
+      "$mainMod CTRL, S, exec, grim - | wl-copy"
+      "$mainMod SHIFT, S, exec, grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png"
+      "$mainMod ALT, C, exec, hyprpicker -a"
+      "$mainMod ALT, M, exec, pavucontrol"
 
-      # ── Focus Movement (Arrow Keys + Vim HJKL) ──────────────────────
+      # ── Window Management (ZaneyOS Dispatchers) ───────────────────────
+      "$mainMod, Q, killactive"
+      "$mainMod, F, fullscreen"
+      "$mainMod SHIFT, F, togglefloating"
+      "$mainMod, P, pseudo"
+      "$mainMod SHIFT, I, layoutmsg, togglesplit"
+      "$mainMod SHIFT, C, exit"
+      "$mainMod, L, exec, hyprlock"
+      "$mainMod, Backspace, exec, wlogout"
+
+      # ── Focus Movement (Arrow Keys + Vim HJKL) ────────────────────────
       "$mainMod, left, movefocus, l"
       "$mainMod, right, movefocus, r"
       "$mainMod, up, movefocus, u"
@@ -45,7 +41,7 @@
       "$mainMod, K, movefocus, u"
       "$mainMod, J, movefocus, d"
 
-      # ── Move Window (Super + Shift + Arrow Keys / HJKL) ──────────────
+      # ── Move Window (Super + Shift + Arrow Keys / HJKL) ────────────────
       "$mainMod SHIFT, left, movewindow, l"
       "$mainMod SHIFT, right, movewindow, r"
       "$mainMod SHIFT, up, movewindow, u"
@@ -55,7 +51,17 @@
       "$mainMod SHIFT, K, movewindow, u"
       "$mainMod SHIFT, J, movewindow, d"
 
-      # ── Workspace Switching (1..10) ──────────────────────────────────
+      # ── Swap Window (Super + Alt + Arrow Keys) ────────────────────────
+      "$mainMod ALT, left, swapwindow, l"
+      "$mainMod ALT, right, swapwindow, r"
+      "$mainMod ALT, up, swapwindow, u"
+      "$mainMod ALT, down, swapwindow, d"
+
+      # ── Window Cycling ────────────────────────────────────────────────
+      "ALT, Tab, cyclenext"
+      "ALT, Tab, bringactivetotop"
+
+      # ── Workspace Switching (1..10) ────────────────────────────────────
       "$mainMod, 1, workspace, 1"
       "$mainMod, 2, workspace, 2"
       "$mainMod, 3, workspace, 3"
@@ -67,7 +73,7 @@
       "$mainMod, 9, workspace, 9"
       "$mainMod, 0, workspace, 10"
 
-      # ── Move Window to Workspace ────────────────────────────────────
+      # ── Move Window to Workspace ──────────────────────────────────────
       "$mainMod SHIFT, 1, movetoworkspace, 1"
       "$mainMod SHIFT, 2, movetoworkspace, 2"
       "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -79,14 +85,16 @@
       "$mainMod SHIFT, 9, movetoworkspace, 9"
       "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-      # ── Scroll / Special Workspaces ─────────────────────────────────
+      # ── Workspace Navigation & Special Workspaces ──────────────────────
+      "$mainMod CONTROL, right, workspace, e+1"
+      "$mainMod CONTROL, left, workspace, e-1"
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
-      "$mainMod, minus, togglespecialworkspace, magic"
-      "$mainMod SHIFT, minus, movetoworkspace, special:magic"
+      "$mainMod, SPACE, togglespecialworkspace"
+      "$mainMod SHIFT, SPACE, movetoworkspace, special"
     ];
 
-    # ── Repeatable Binds (Resize / Volume / Brightness) ────────────────
+    # ── Repeatable Binds (Resize / Volume / Brightness) ──────────────────
     binde = [
       "$mainMod CTRL, right, resizeactive, 20 0"
       "$mainMod CTRL, left, resizeactive, -20 0"
@@ -94,11 +102,11 @@
       "$mainMod CTRL, down, resizeactive, 0 20"
       ", XF86AudioRaiseVolume, exec, pamixer -i 5"
       ", XF86AudioLowerVolume, exec, pamixer -d 5"
-      ", XF86MonBrightnessUp, exec, brightnessctl s +10%"
-      ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
+      ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
     ];
 
-    # ── Locked / Media Keys ───────────────────────────────────────────
+    # ── Locked / Media Keys ─────────────────────────────────────────────
     bindl = [
       ", XF86AudioMute, exec, pamixer -t"
       ", XF86AudioPlay, exec, playerctl play-pause"
@@ -108,7 +116,7 @@
       ", XF86AudioMicMute, exec, pamixer --default-source -t"
     ];
 
-    # ── Mouse Window Drag / Resize ────────────────────────────────────
+    # ── Mouse Window Drag / Resize ──────────────────────────────────────
     bindm = [
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
