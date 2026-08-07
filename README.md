@@ -1,94 +1,143 @@
-# ❄️ my-dotfiles
+# ❄️ Modular NixOS & Home Manager Dotfiles
 
-A modular, reproducible, flake-based NixOS & Home Manager dotfiles repository styled with the **Catppuccin Mocha** palette and **ZaneyOS** Wayland desktop aesthetic.
+[![NixOS Unstable](https://img.shields.io/badge/NixOS-26.05_unstable-5277C3?style=for-the-badge&logo=nixos&logoColor=white)](https://nixos.org)
+[![Home Manager](https://img.shields.io/badge/Home_Manager-Declarative-F05032?style=for-the-badge&logo=git&logoColor=white)](https://github.com/nix-community/home-manager)
+[![Nixvim](https://img.shields.io/badge/Nixvim-Declarative_IDE-57A143?style=for-the-badge&logo=neovim&logoColor=white)](https://github.com/nix-community/nixvim)
+[![Hyprland](https://img.shields.io/badge/Hyprland-Wayland_v0.56+-00B4D8?style=for-the-badge&logo=wayland&logoColor=white)](https://hyprland.org)
+[![GNOME](https://img.shields.io/badge/GNOME-47_Desktop-4A86E8?style=for-the-badge&logo=gnome&logoColor=white)](https://www.gnome.org)
+
+A modular, reproducible, flake-based NixOS and Home Manager environment featuring **declarative dual desktop profiles** (`miskat-hyprland` and `miskat-gnome`), a **Nixvim IDE**, a **Python AI/ML/DL suite**, and **ZaneyOS glassmorphic design aesthetics**.
 
 ![Desktop Showcase](view.png)
 
 ---
 
-## 🌟 Highlights & Architecture
+## 🌟 Architecture Overview
 
-### 🎨 Desktop & Visual Aesthetic
-- **Window Manager**: Hyprland with ZaneyOS ruleset, active purple/blue glowing borders (`rgba(cba6f7ee) rgba(89b4faee) 45deg`), and window animations.
-- **Status Bar**: Curved glass Waybar with asymmetric pill modules and Catppuccin Mocha accents.
-- **Application Launcher**: Glassmorphic Rofi with a 2-column grid layout and high-res **Tela-circle-dark** icons.
-- **Notifications**: Dunst notification daemon customized with Catppuccin Mocha Lavender borders and `JetBrainsMono Nerd Font`.
-- **Terminals**: Kitty styled with `JetBrainsMono Nerd Font` and Catppuccin Mocha palette.
-- **Shell & Prompt**: Zsh with **Powerlevel10k** prompt integration, Zoxide, LSD, and custom aliases.
-- **System Fetch**: Modernized **Fastfetch** enclosed in a rounded box frame (`╭─────╮` ... `╰─────╯`) displaying essential system & hardware specs.
-- **Wallpapers**: Local theme-matching anime wallpaper cycler (`anime-wallpaper`) running via systemd timer (or press `Super + Shift + W`).
-
-### ⚡ Declarative Nixvim IDE (`github:nix-community/nixvim`)
-- **Editor**: Declarative Neovim configured via **Nixvim** flake input.
-- **Theme**: Catppuccin Mocha transparent theme.
-- **LSP Support**: Auto-configured language servers for `nixd` (Nix), `clangd` (C/C++), `pyright` (Python), `rust_analyzer` (Rust), and `bashls`.
-- **Completion & Snippets**: `nvim-cmp` + `luasnip` with Tab completion.
-- **Navigation & Explorer**: `telescope` (fuzzy finder) and `nvim-tree` file explorer (`Ctrl + N`).
-- **Git & Formatting**: `gitsigns`, `comment-nvim`, `vim-surround`, `lualine`, `bufferline`, and `which-key`.
-
----
-
-## 📁 Repository Layout
+This repository uses a **single-branch, multi-profile Flake architecture** (`flake.nix`). System and user modules are cleanly separated so you can switch desktop environments and software suites declaratively without code duplication or Git branch conflicts.
 
 ```
 my-dotfiles/
 ├── flake.nix                 # Flake entry point (miskat-hyprland & miskat-gnome profiles)
 ├── system/                   # System-level NixOS modules
-│   ├── profiles/             # System profiles (hyprland.nix, gnome.nix, common.nix)
+│   ├── profiles/             # Host profiles (hyprland.nix, gnome.nix, common.nix)
 │   ├── core/                 # Bootloader, locale, networking, users, nix options
-│   ├── desktop/              # GNOME DE, Hyprland suite, Pipewire audio, fonts
-│   ├── hardware/             # Machine hardware configuration
-│   ├── packages/             # System packages (cli, dev, security, apps)
-│   └── services/             # Virtualisation, Flatpak, local LLM, Docker, MariaDB
+│   ├── desktop/              # GNOME 47 DE, Hyprland suite, PipeWire audio, fonts
+│   ├── hardware/             # Machine hardware & NVIDIA configuration
+│   ├── packages/             # CLI, C/C++/gdb, Python AI/ML, Security, Apps
+│   └── services/             # Libvirt/QEMU, Flatpak, local LLM (vLLM/llama.cpp)
 └── home/
     └── miskat/               # User-level Home Manager modules
-        ├── profiles/         # Home profiles (hyprland.nix, gnome.nix, common.nix)
-        └── modules/          # Modular user configurations
+        ├── profiles/         # User profiles (hyprland.nix, gnome.nix, common.nix)
+        └── modules/          # Feature-specific user configurations
             ├── git.nix       # User Git credentials
-            ├── packages.nix  # User packages (Zen Browser)
-            ├── shell/        # Zsh, environment variables, sleek Fastfetch
-            ├── terminal/     # Kitty, Alacritty, Ghostty
-            ├── desktop/      # Hyprland, Waybar, Rofi, SwayNC, wallpaper
+            ├── packages.nix  # Zen Browser & user apps
+            ├── shell/        # Zsh, Powerlevel10k, Fastfetch, environment
+            ├── terminal/     # Kitty (Hyprland profile) & Ghostty (GNOME profile)
+            ├── desktop/      # Hyprland, ZaneyOS Waybar, SwayNC, Rofi, Wallpaper
             └── editor/       # Declarative Nixvim IDE configuration
 ```
 
 ---
 
-## 🚀 Usage & Profiles
+## 🖥️ Desktop Profiles & Specifications
 
-### Switch Profiles
+### 1. `miskat-hyprland` Profile (ZaneyOS Wayland Rice)
+- **Window Manager**: Hyprland compositor with ZaneyOS ruleset, active purple/blue glowing borders (`rgba(cba6f7ee) rgba(89b4faee) 45deg`), window animations, and native Lua configuration engine (`configType = "lua"`).
+- **Status Bar**: ZaneyOS Curved Glassmorphic Waybar featuring asymmetric bottom curves, floating center workspace pill, and SwayNC control center trigger (`󰂚`).
+- **Notifications**: SwayNC (Sway Notification Center) styled with translucent obsidian glass (`rgba(30, 30, 46, 0.88)`), 16px rounded corners, glowing lavender borders (`#cba6f7`), DND toggle, MPRIS media player, and Volume/Brightness sliders.
+- **Launcher**: Glassmorphic Rofi with a 2-column grid layout and high-res **Tela-circle-dark** icons.
+- **Default Terminal**: **Kitty** with `JetBrainsMono Nerd Font` & Catppuccin Mocha palette (`TERMINAL = "kitty"`).
+- **Theme & Cursor**: Catppuccin Mocha Lavender GTK theme, `Tela-circle-dark` icons, `Bibata-Modern-Classic` cursor (24px).
+- **Wallpaper**: Static Dracula NixOS wallpaper (`nixos-dracula.png`) applied via `awww`.
+- **Screenshots**: `Hyprshot` bindings with automatic directory creation (`~/Pictures/Screenshots/`) and desktop notifications.
 
-- **Hyprland Profile** (Catppuccin Mocha Lavender, Tela icons, Bibata cursor, Waybar, SwayNC, Rofi):
-  ```bash
-  nh os switch --hostname miskat-hyprland
-  # Or alias:
-  rebuild-hyprland
-  ```
-
-- **GNOME Profile** (Pure GNOME DE + Stock Adwaita theme, Adwaita icons, Adwaita cursor):
-  ```bash
-  nh os switch --hostname miskat-gnome
-  # Or alias:
-  rebuild-gnome
-  ```
-
-### Essential Shortcuts
-
-| Shortcut | Action |
-| :--- | :--- |
-| `Super + Return` | Open Kitty Terminal |
-| `Super + D` | Open Rofi Launcher |
-| `Super + W` | Open Google Chrome |
-| `Super + Shift + W` | Cycle Anime Wallpaper |
-| `Super + S` | Capture Region Screenshot |
-| `Print` or `Super + Shift + S` | Capture Region to Clipboard |
-| `Super + L` | Lock Screen (`hyprlock`) |
-| `Super + Backspace` | Open Power Menu (`wlogout`) |
-| `Ctrl + N` | Toggle Nvim-Tree in Neovim |
+### 2. `miskat-gnome` Profile (Pure Desktop Environment)
+- **Desktop Environment**: GNOME 47 Desktop Environment + GDM.
+- **Default Terminal**: **Ghostty** (`com.mitchellh.ghostty.desktop`, `TERMINAL = "ghostty"`).
+- **Theme & Cursor**: Stock GNOME `Adwaita` / `Adwaita-dark` GTK theme, `Adwaita` icons, default `Adwaita` cursor.
+- **Suite Isolation**: Completely excludes Hyprland compositor, Waybar, SwayNC, Rofi, `awww`, Kitty, and rice bloat.
 
 ---
 
-## 🔐 Credentials & Rate Limits
+## ⚡ Declarative Nixvim IDE (`github:nix-community/nixvim`)
 
-- **GitHub API Rate Limit**: Configured `nix.extraOptions = "!include /home/miskat/.config/nix/nix.conf"` to load personal access tokens locally without committing secrets into Git.
-- **HuggingFace API Token**: Stored locally in `~/.hf_token` and auto-exported in Zsh environment.
+Declarative Neovim environment configured via Nixvim flake input (`nixvim.homeModules.nixvim`):
+
+- **Colorscheme**: Catppuccin Mocha with a solid dark obsidian background (`#1e1e2e`, `transparent_background = false`).
+- **Language Server Protocol (LSP)**: Auto-configured language servers for `nixd` (Nix), `clangd` (C/C++), `pyright` (Python), `rust_analyzer` (Rust), and `bashls` (Bash).
+- **Completion & Snippets**: `nvim-cmp` + `luasnip` with Tab completion.
+- **Fuzzy Finder & Explorer**: `telescope` for file/grep searching, `nvim-tree` file explorer (`Ctrl + N`).
+- **Status & Buffer Line**: `lualine` (`theme = "auto"`), `bufferline` (slant separators), `gitsigns`, `comment-nvim`, `vim-surround`, `which-key`.
+
+---
+
+## 🧠 Python AI, Machine Learning & Deep Learning Suite
+
+Comprehensive Python data science, machine learning, and deep learning environment (`system/packages/python-ai.nix`):
+
+- **Core Data Science**: `NumPy`, `Pandas`, `Matplotlib`, `SciPy`, `Scikit-Learn`.
+- **Deep Learning Framework**: `PyTorch` (`torch`), `torchvision`, `torchaudio`.
+- **LLM & Transformers**: `Transformers`, `Accelerate`, `Datasets`, `HuggingFace-Hub`.
+- **Interactive Notebooks**: `JupyterLab`, `Jupyter Notebook`, `IPython`, `IPyKernel`.
+- **LLM Fine-Tuning & Package Support (Unsloth, TRL, BitsAndBytes)**: `pip`, `virtualenv`, `setuptools`, `wheel`.
+
+---
+
+## 🛠️ CLI, Security & Engineering Suite
+
+- **GitHub & AI Assistants**: `gh` (GitHub CLI), `github-copilot-cli`, `antigravity-cli`, `antigravity-ide`, `claude-code`.
+- **Development & Debugging**: `gcc`, `clang`, `gdb` (GNU Debugger), `rustup`, `pypy3`, `uv`, `graphviz`, `arduino-ide`, `texliveFull`, `protege`.
+- **Network Analysis & Security**: `wireshark`, `sniffnet`, `nmap`, `tcpdump`, `netcat`, `bettercap`, `burpsuite`, `aircrack-ng`, `hashcat`.
+- **Services & Virtualisation**: `libvirtd`, `qemu`, `winboat`, `flatpak` (Flathub repo auto-added), `llama-cpp`, `vllm`, `open-webui`, `oterm`.
+
+---
+
+## 🚀 Quick Start & Profile Switching
+
+### 1. Switch to Hyprland Profile
+```bash
+nh os switch --hostname miskat-hyprland
+# Or using Zsh alias:
+rebuild-hyprland
+```
+
+### 2. Switch to GNOME Profile
+```bash
+nh os switch --hostname miskat-gnome
+# Or using Zsh alias:
+rebuild-gnome
+```
+
+### 3. Default Rebuild
+```bash
+nh os switch
+```
+
+---
+
+## ⌨️ Essential Keyboard Shortcuts
+
+| Shortcut | Action |
+| :--- | :--- |
+| `Super + Return` | Open Terminal (Kitty on Hyprland / Ghostty on GNOME) |
+| `Super + D` | Open Rofi Application Launcher |
+| `Super + N` | Toggle SwayNC Control Center |
+| `Super + W` | Open Google Chrome |
+| `Super + Shift + W` | Apply Dracula NixOS Wallpaper |
+| `Print` or `Super + Shift + S` | Capture Region Screenshot to Clipboard |
+| `Super + S` | Capture Region Screenshot to `~/Pictures/Screenshots/` |
+| `Super + Ctrl + S` | Capture Full Screen Screenshot |
+| `Super + Alt + S` | Capture Active Window Screenshot |
+| `Super + L` | Lock Screen (`hyprlock`) |
+| `Super + Backspace` | Open Power Menu (`wlogout`) |
+| `Ctrl + N` | Toggle Nvim-Tree in Neovim |
+| `ghcs` | GitHub Copilot Suggest Command (`gh copilot suggest`) |
+| `ghce` | GitHub Copilot Explain Command (`gh copilot explain`) |
+
+---
+
+## 🔐 Rate Limit Protection & Local Secrets
+
+- **GitHub Personal Access Token**: Stored locally in `~/.config/nix/nix.conf` (`chmod 600`) and imported via `nix.extraOptions = "!include /home/miskat/.config/nix/nix.conf";` to increase GitHub API limit to 5,000 requests/hr without committing secrets to Git.
+- **HuggingFace API Token**: Stored in `~/.hf_token` and auto-exported in Zsh environment.
