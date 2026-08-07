@@ -1,25 +1,29 @@
-# Fastfetch — Sleek & Modern Fastfetch Configuration
+# Fastfetch — Minimal Device Info with Big Logo & Rounded Box
 { ... }:
 {
   home.file.".config/fastfetch/config.jsonc".text = ''
     {
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
       "logo": {
-        "type": "small",
+        "type": "auto",
         "padding": {
           "top": 1,
           "left": 2,
-          "right": 3
+          "right": 4
         }
       },
       "display": {
-        "separator": " 󰁔  ",
+        "separator": "  󰅂  ",
         "color": {
           "keys": "magenta",
           "title": "cyan"
         }
       },
       "modules": [
+        {
+          "type": "custom",
+          "format": "╭─────────────────── 󰋜 System Info ───────────────────╮"
+        },
         {
           "type": "title",
           "color": {
@@ -29,17 +33,13 @@
           }
         },
         {
-          "type": "custom",
-          "format": "╭──────────────────────────────────────────────╮"
-        },
-        {
           "type": "os",
           "key": " 󰣇 OS",
           "keyColor": "blue"
         },
         {
           "type": "host",
-          "key": " 󰌢 Host",
+          "key": " 󰌢 Device",
           "keyColor": "blue"
         },
         {
@@ -53,23 +53,8 @@
           "keyColor": "blue"
         },
         {
-          "type": "packages",
-          "key": " 󰏖 Packages",
-          "keyColor": "blue"
-        },
-        {
-          "type": "shell",
-          "key": " 󰞷 Shell",
-          "keyColor": "cyan"
-        },
-        {
           "type": "wm",
           "key": " 󰍹 WM",
-          "keyColor": "cyan"
-        },
-        {
-          "type": "terminal",
-          "key": " 󰞍 Terminal",
           "keyColor": "cyan"
         },
         {
@@ -89,7 +74,7 @@
         },
         {
           "type": "custom",
-          "format": "╰──────────────────────────────────────────────╯"
+          "format": "╰─────────────────────────────────────────────────────╯"
         },
         "break",
         {
