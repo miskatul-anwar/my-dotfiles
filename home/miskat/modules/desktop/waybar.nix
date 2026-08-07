@@ -31,7 +31,9 @@
 
       modules-right = [
         "network"
+        "pulseaudio"
         "tray"
+        "custom/notification"
         "custom/exit"
         "clock"
       ];
@@ -102,6 +104,12 @@
       tray = {
         icon-size = 16;
         spacing = 10;
+      };
+
+      "custom/notification" = {
+        format = "󰂚";
+        on-click = "swaync-client -t -sw";
+        tooltip = false;
       };
 
       "custom/exit" = {
@@ -200,7 +208,7 @@
       }
 
       /* ZaneyOS Right Curved Modules (8px 20px 8px 20px) */
-      #network, #tray, #custom-exit {
+      #network, #tray, #custom-notification, #custom-exit {
         font-weight: bold;
         background: rgba(30, 30, 46, 0.88);
         border: 1px solid rgba(203, 166, 247, 0.30);
@@ -216,6 +224,13 @@
       }
       #network.disconnected {
         color: #f38ba8;
+      }
+      #custom-notification {
+        color: #cba6f7;
+        font-size: 15px;
+      }
+      #custom-notification:hover {
+        color: #f5c2e7;
       }
       #custom-exit {
         color: #f38ba8;
