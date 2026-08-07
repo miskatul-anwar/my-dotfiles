@@ -1,0 +1,22 @@
+# Hypridle — idle daemon
+{ ... }:
+{
+  home.file.".config/hypr/hypridle.conf".text = ''
+    general {
+      lock_cmd         = hyprlock
+      before_sleep_cmd = hyprlock
+      after_sleep_cmd  = hyprctl dispatch dpms on
+    }
+
+    listener {
+      timeout  = 300
+      on-timeout = hyprlock
+    }
+
+    listener {
+      timeout    = 600
+      on-timeout = hyprctl dispatch dpms off
+      on-resume  = hyprctl dispatch dpms on
+    }
+  '';
+}
