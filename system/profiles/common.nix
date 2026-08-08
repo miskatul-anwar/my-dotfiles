@@ -28,6 +28,7 @@
 
     # Services
     ../services/virtualisation.nix
+    ../services/docker.nix
     ../services/flatpak.nix
     ../services/llm.nix
   ];
