@@ -1,4 +1,4 @@
-# Niri Compositor Configuration & Ergonomic Scrollable-Tiling Keybindings
+# Niri Compositor Configuration — Caelestia Shell & Custom Rounded Aesthetic
 { config, pkgs, ... }:
 let
   actions = config.lib.niri.actions;
@@ -37,9 +37,9 @@ in
         };
       };
 
-      # ── Layout & Aesthetics ─────────────────────────────────────────
+      # ── Layout & Custom Aesthetics ──────────────────────────────────
       layout = {
-        gaps = 8;
+        gaps = 10;
         center-focused-column = "on-overflow";
 
         preset-column-widths = [
@@ -50,26 +50,49 @@ in
 
         default-column-width = { proportion = 0.5; };
 
-        focus-ring = {
+        # Active Glowing Borders (Catppuccin Lavender)
+        border = {
           enable = true;
           width = 2;
           active = { color = "#cba6f7"; };
           inactive = { color = "#313244"; };
         };
 
-        border = {
-          enable = false;
+        # Focus Ring (Catppuccin Sapphire)
+        focus-ring = {
+          enable = true;
+          width = 2;
+          active = { color = "#89b4fa"; };
+          inactive = { color = "#1e1e2e"; };
         };
 
+        # Drop Shadows
         shadow = {
-          enable = false;
+          enable = true;
+          softness = 30;
+          spread = 5;
+          offset = { x = 0; y = 8; };
+          color = "rgba(0, 0, 0, 0.4)";
         };
       };
 
-      # ── Startup Environment & Autostart Daemons ─────────────────────
+      # ── Window Rules: Rounded Corners & Geometry Clipping ──────────
+      window-rules = [
+        {
+          geometry-corner-radius = {
+            top-left = 12.0;
+            top-right = 12.0;
+            bottom-left = 12.0;
+            bottom-right = 12.0;
+          };
+          clip-to-geometry = true;
+        }
+      ];
+
+      # ── Startup Environment & Caelestia Shell Autostart ─────────────
       spawn-at-startup = [
         { command = [ "dbus-update-activation-environment" "--systemd" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" ]; }
-        { command = [ "dms" ]; }
+        { command = [ "caelestia" "run" ]; }
         { command = [ "wl-paste" "--type" "text" "--watch" "cliphist" "store" ]; }
         { command = [ "wl-paste" "--type" "image" "--watch" "cliphist" "store" ]; }
         { command = [ "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1" ]; }
@@ -79,12 +102,12 @@ in
       binds = {
         # ── Launchers & Terminal ──────────────────────────────────────
         "Mod+Return".action = actions.spawn "kitty";
-        "Mod+D".action      = actions.spawn "dms" "toggle-launcher";
+        "Mod+D".action      = actions.spawn "caelestia" "toggle" "launcher";
         "Mod+E".action      = actions.spawn "nautilus";
         "Mod+Y".action      = actions.spawn "kitty" "-e" "yazi";
         "Mod+C".action      = actions.spawn "kitty" "-e" "nvim";
-        "Mod+V".action      = actions.spawn "dms" "toggle-clipboard";
-        "Mod+N".action      = actions.spawn "dms" "toggle-notifications";
+        "Mod+V".action      = actions.spawn "caelestia" "toggle" "clipboard";
+        "Mod+N".action      = actions.spawn "caelestia" "toggle" "notifications";
         "Mod+W".action      = actions.spawn "google-chrome-stable";
 
         # ── Window Controls ───────────────────────────────────────────
@@ -93,7 +116,7 @@ in
         "Mod+Shift+F".action        = actions.fullscreen-window;
         "Mod+Space".action          = actions.toggle-window-floating;
         "Mod+Shift+C".action        = actions.quit;
-        "Mod+Backspace".action      = actions.spawn "dms" "toggle-power";
+        "Mod+Backspace".action      = actions.spawn "caelestia" "toggle" "dashboard";
 
         # ── Focus Movement (Vim HJKL + Arrow Keys) ────────────────────
         "Mod+Left".action           = actions.focus-column-left;
@@ -142,9 +165,9 @@ in
         "Mod+Shift+9".action.move-column-to-workspace = 9;
 
         # ── Screenshots & Hardware Keys ──────────────────────────────
-        "Print".action              = actions.spawn "dms" "screenshot";
-        "Mod+Control+S".action      = actions.spawn "dms" "screenshot";
-        "Mod+Shift+S".action        = actions.spawn "dms" "screenshot-gui";
+        "Print".action              = actions.spawn "caelestia" "screenshot";
+        "Mod+Control+S".action      = actions.spawn "caelestia" "screenshot";
+        "Mod+Shift+S".action        = actions.spawn "caelestia" "screenshot" "region";
 
         "XF86AudioRaiseVolume".action = actions.spawn "pamixer" "-i" "5";
         "XF86AudioLowerVolume".action = actions.spawn "pamixer" "-d" "5";

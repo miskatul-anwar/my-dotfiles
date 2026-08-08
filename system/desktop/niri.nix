@@ -1,15 +1,10 @@
-# Niri Scrollable-Tiling Compositor & Dank Material Shell System Setup
+# Niri Scrollable-Tiling Compositor & Caelestia Shell System Setup
 { pkgs, inputs, ... }:
 {
   # Enable Niri Wayland compositor
   programs.niri = {
     enable = true;
     package = pkgs.niri;
-  };
-
-  # Enable Dank Material Shell system service & package
-  programs.dank-material-shell = {
-    enable = true;
   };
 
   # GDM Display Manager configured with Niri as default session
@@ -33,7 +28,10 @@
     niri
     xwayland-satellite
 
-    # Theme & Color Generator (Material You / Material 3)
+    # Caelestia Shell
+    inputs.caelestia-shell.packages.${pkgs.system}.caelestia-shell
+
+    # Theme & Color Generator (Material You / Matugen)
     matugen
 
     # Shell & Desktop Utilities

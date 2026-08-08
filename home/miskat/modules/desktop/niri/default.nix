@@ -1,4 +1,4 @@
-# Niri + Dank Material Shell Desktop Module Entry Point
+# Niri + Caelestia Shell Desktop Module Entry Point
 { inputs, pkgs, ... }:
 {
   imports = [
@@ -6,6 +6,6 @@
   ];
 
   home.packages = [
-    inputs.dank-material-shell.packages.${pkgs.system}.default
+    inputs.caelestia-shell.packages.${pkgs.system}.caelestia-shell
   ];
 }

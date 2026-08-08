@@ -1,5 +1,5 @@
 {
-  description = "Miskat's NixOS + Home Manager setup (Single profile: Niri + Dank Material Shell)";
+  description = "Miskat's NixOS + Home Manager setup (Single profile: Niri + Caelestia Shell)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -19,13 +19,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dank-material-shell = {
-      url = "github:AvengeMedia/DankMaterialShell";
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, dank-material-shell, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixvim, niri, caelestia-shell, ... }@inputs:
   let
     mkNixosSystem = { systemProfile, homeProfile }: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
@@ -33,7 +33,6 @@
         { nixpkgs.hostPlatform = "x86_64-linux"; }
         systemProfile
         niri.nixosModules.niri
-        dank-material-shell.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -52,7 +51,7 @@
   in
   {
     nixosConfigurations = {
-      # Single Unified Target (Niri + Dank Material Shell)
+      # Single Unified Target (Niri + Caelestia Shell)
       miskat = mkNixosSystem {
         systemProfile = ./system/profiles/default.nix;
         homeProfile   = ./home/miskat/profiles/default.nix;
