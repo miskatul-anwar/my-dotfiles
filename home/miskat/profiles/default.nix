@@ -1,4 +1,4 @@
-# Sway User Profile — Catppuccin Mocha Lavender GTK, Tela Icons & Bibata Cursor
+# Single Unified User Profile — Niri + Dank Material Shell Environment
 { config, pkgs, ... }:
 {
   imports = [
@@ -9,8 +9,8 @@
 
   home.sessionVariables = {
     TERMINAL            = "kitty";
-    XDG_CURRENT_DESKTOP = "sway";
-    XDG_SESSION_DESKTOP = "sway";
+    XDG_CURRENT_DESKTOP = "niri";
+    XDG_SESSION_DESKTOP = "niri";
   };
 
   home.pointerCursor = {

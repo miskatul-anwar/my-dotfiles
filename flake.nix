@@ -1,5 +1,5 @@
 {
-  description = "Miskat's NixOS + Home Manager setup (Flake profiles for Sway & GNOME)";
+  description = "Miskat's NixOS + Home Manager setup (Single profile: Niri + Dank Material Shell)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -13,15 +13,26 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dank-material-shell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixvim, niri, dank-material-shell, ... }@inputs:
   let
     mkNixosSystem = { systemProfile, homeProfile }: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         { nixpkgs.hostPlatform = "x86_64-linux"; }
         systemProfile
+        niri.nixosModules.niri
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -30,7 +41,9 @@
             users.miskat = import homeProfile;
             backupFileExtension = "backup";
             extraSpecialArgs = { inherit inputs; };
-            sharedModules = [ nixvim.homeModules.nixvim ];
+            sharedModules = [
+              nixvim.homeModules.nixvim
+            ];
           };
         }
       ];
@@ -38,22 +51,10 @@
   in
   {
     nixosConfigurations = {
-      # Default host target (Sway profile)
+      # Single Unified Target (Niri + Dank Material Shell)
       miskat = mkNixosSystem {
-        systemProfile = ./system/profiles/sway.nix;
-        homeProfile   = ./home/miskat/profiles/sway.nix;
-      };
-
-      # Explicit Sway Profile (Catppuccin Mocha Lavender, Tela icons, Bibata cursor, Waybar, SwayNC, Rofi)
-      miskat-sway = mkNixosSystem {
-        systemProfile = ./system/profiles/sway.nix;
-        homeProfile   = ./home/miskat/profiles/sway.nix;
-      };
-
-      # Explicit GNOME Profile (Stock Adwaita theme, Adwaita icons, Adwaita cursor, GNOME DE)
-      miskat-gnome = mkNixosSystem {
-        systemProfile = ./system/profiles/gnome.nix;
-        homeProfile   = ./home/miskat/profiles/gnome.nix;
+        systemProfile = ./system/profiles/default.nix;
+        homeProfile   = ./home/miskat/profiles/default.nix;
       };
     };
   };

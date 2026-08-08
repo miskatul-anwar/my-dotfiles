@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./sway
+    ./niri
     ./swaync.nix
     ./rofi.nix
     ./waybar.nix
