@@ -37,6 +37,7 @@ in
 {
   environment.systemPackages = [
     pythonWithAiPackages
+    pkgs.pipx
   ];
 
   # Environment variables for Jupyter, HuggingFace & uv

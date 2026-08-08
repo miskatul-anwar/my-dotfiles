@@ -87,6 +87,7 @@
       [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${USER}.zsh" ]] && source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${USER}.zsh"
       [[ -f "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
       [[ -f "$HOME/.hf_token" ]] && export HF_TOKEN="$(cat "$HOME/.hf_token")"
+      export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
       fastfetch
     '';
   };

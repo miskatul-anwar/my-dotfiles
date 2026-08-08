@@ -14,7 +14,9 @@
     CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY = "1";
     OLLAMA_NUM_PARALLEL                        = "4";
 
-    # ── Python / uv Tooling ──────────────────────────────────────────
+    # ── Python / pipx / uv Tooling ──────────────────────────────────
+    PIPX_BIN_DIR                               = "$HOME/.local/bin";
+    PIPX_HOME                                  = "$HOME/.local/pipx";
     UV_PYTHON_DOWNLOADS                        = "never";        # Never fetch standalone builds
     UV_PYTHON_PREFERENCE                       = "only-system";  # Only use Python found on PATH
 
