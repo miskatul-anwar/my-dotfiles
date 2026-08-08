@@ -1,4 +1,4 @@
-# Neovim User Interface & Statusline Configuration
+# Neovim User Interface & Statusline Configuration — Adwaita Pill Aesthetic
 { ... }:
 {
   programs.nixvim.plugins = {
@@ -9,8 +9,77 @@
       settings = {
         options = {
           theme = "auto";
-          component_separators = { left = "│"; right = "│"; };
-          section_separators = { left = "󰅂"; right = "󰅁"; };
+          globalstatus = true;
+          component_separators = { left = ""; right = ""; };
+          section_separators = { left = ""; right = ""; };
+        };
+
+        sections = {
+          lualine_a = [
+            {
+              __unkeyed-1 = "mode";
+              icon = "";
+            }
+          ];
+          lualine_b = [
+            {
+              __unkeyed-1 = "branch";
+              icon = "󰘬";
+            }
+            {
+              __unkeyed-1 = "diff";
+              symbols = {
+                added = " ";
+                modified = "󰏬 ";
+                removed = " ";
+              };
+            }
+          ];
+          lualine_c = [
+            {
+              __unkeyed-1 = "diagnostics";
+              sources = [ "nvim_diagnostic" ];
+              symbols = {
+                error = " ";
+                warn = " ";
+                info = " ";
+                hint = "󰌵 ";
+              };
+            }
+            {
+              __unkeyed-1 = "filename";
+              file_status = true;
+              path = 1; # Relative path
+            }
+          ];
+          lualine_x = [
+            {
+              __unkeyed-1 = "encoding";
+            }
+            {
+              __unkeyed-1 = "fileformat";
+              symbols = {
+                unix = "";
+                dos = "";
+                mac = "";
+              };
+            }
+            {
+              __unkeyed-1 = "filetype";
+              icon_only = false;
+            }
+          ];
+          lualine_y = [
+            {
+              __unkeyed-1 = "progress";
+            }
+          ];
+          lualine_z = [
+            {
+              __unkeyed-1 = "location";
+              icon = "";
+            }
+          ];
         };
       };
     };
