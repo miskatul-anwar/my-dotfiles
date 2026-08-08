@@ -2,6 +2,7 @@
 {
   networking = {
     hostName = "miskat";
+    useDHCP = false;         # Disable global DHCP to prevent request loops with NetworkManager
     networkmanager = {
       enable = true;
       wifi.powersave = false;  # Disable Wi-Fi power saving to eliminate wake-up latency spikes
@@ -28,5 +29,7 @@
     };
   };
 
-  systemd.network.wait-online.enable = true;
+  # Disable wait-online services to eliminate boot & startup delays
+  systemd.network.wait-online.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
 }
