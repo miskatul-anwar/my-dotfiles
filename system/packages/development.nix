@@ -12,6 +12,9 @@
     # Rust
     rustup
 
+    # JavaScript / Node.js
+    nodejs
+
     # Python & tooling
     pypy3
     uv

@@ -43,7 +43,6 @@
     gnome-disk-utility
     gnome-control-center
     eog
-    evince
     file-roller
     gnome-maps
     totem
