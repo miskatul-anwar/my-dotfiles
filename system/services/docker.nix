@@ -1,4 +1,4 @@
-# Docker daemon & container configuration
+# Docker & Distrobox Container Environment
 { pkgs, ... }:
 {
   virtualisation.docker = {
@@ -10,5 +10,8 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ docker-compose ];
+  environment.systemPackages = with pkgs; [
+    distrobox
+    docker-compose
+  ];
 }
