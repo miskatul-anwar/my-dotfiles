@@ -1,12 +1,12 @@
-# ❄️ Miskat's NixOS Dotfiles: Niri + Dank Material Shell Profile
+# ❄️ Miskat's NixOS Dotfiles: GNOME 47 + Ghostty Profile
 
 [![NixOS](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&logo=nixos&logoColor=white)](https://nixos.org)
 [![Home Manager](https://img.shields.io/badge/Home_Manager-master-red.svg?style=for-the-badge&logo=nixos&logoColor=white)](https://nix-community.github.io/home-manager/)
-[![Niri](https://img.shields.io/badge/Niri-Wayland_Scrollable_Tiling-cba6f7?style=for-the-badge&logo=wayland&logoColor=white)](https://github.com/YaLTeR/niri)
-[![Dank Material Shell](https://img.shields.io/badge/Dank_Material_Shell-Material_3-89b4fa?style=for-the-badge&logo=gnome&logoColor=white)](https://github.com/AvengeMedia/DankMaterialShell)
+[![GNOME](https://img.shields.io/badge/GNOME-47_Desktop-4A86E8?style=for-the-badge&logo=gnome&logoColor=white)](https://www.gnome.org)
+[![Ghostty](https://img.shields.io/badge/Terminal-Ghostty-black.svg?style=for-the-badge)](https://ghostty.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-A modular, reproducible, single-target flake-based NixOS and Home Manager environment featuring **Niri (scrollable-tiling Wayland compositor)**, **Dank Material Shell (DMS)**, a **Nixvim Neovim setup**, **Unsloth Studio Docker containerization**, and a **Python AI/ML/DL suite**.
+A clean, reproducible, single-target flake-based NixOS and Home Manager environment featuring **GNOME 47 Desktop Environment**, official **Adwaita Dark Theme/Icons/Cursors**, **Ghostty Terminal**, **Nixvim Neovim setup**, **Python AI/ML/DL suite**, and **Encrypted DNS over TLS + TCP BBR Network Security**.
 
 ---
 
@@ -19,45 +19,28 @@ my-dotfiles/
 ├── system/                   # System-level NixOS configuration
 │   ├── profiles/             # Host profile (default.nix, common.nix)
 │   ├── core/                 # Core system services (bootloader, networking, users, nix)
-│   ├── desktop/              # Niri scrollable compositor, audio, fonts, media drivers
+│   ├── desktop/              # GNOME 47 DE (Adwaita), Ghostty, Audio, Fonts, Media drivers
 │   ├── hardware/             # Hardware configuration, graphics, kernel parameters
 │   ├── packages/             # CLI utilities, dev tools, security, apps, python-ai
-│   └── services/             # Docker (Unsloth Studio), DBMS, LLM, Flatpak, Virtualisation
+│   └── services/             # Docker, DBMS, LLM, Flatpak, Virtualisation
 └── home/                     # Declarative User Environment (Home Manager)
     └── miskat/
-        ├── profiles/         # User profile (default.nix, common.nix)
+        ├── profiles/         # User profile (Adwaita cursor/icons/theme)
         ├── home.nix          # HM root entry point
         └── modules/
             ├── shell/        # Zsh, Starship, environment variables
-            ├── terminal/     # Kitty, Alacritty, Ghostty
+            ├── terminal/     # Ghostty Terminal configuration
             ├── editor/       # Nixvim Neovim & VSCodium settings/snippets
-            └── desktop/      # Niri scrollable tiling & Dank Material Shell configuration
+            └── desktop/      # GNOME wallpaper configuration
 ```
 
 ---
 
-## 🖥️ Desktop Features & Keybindings
+## 🛡️ Network Security & Speed Stack
 
-- **Compositor**: Niri (infinite scrollable tiling with 8px gaps and Catppuccin Lavender active focus rings).
-- **Desktop Shell**: **Dank Material Shell (DMS)** — Material 3 unified panel, application launcher, notifications, quick settings, and power menu.
-
-| Keybinding | Action |
-| :--- | :--- |
-| `Super + Return` | Open Terminal (Kitty) |
-| `Super + D` | Toggle Application Launcher (DMS) |
-| `Super + E` | Open File Manager (Nautilus) |
-| `Super + Y` | Open TUI File Manager (Yazi in Kitty) |
-| `Super + C` | Open Editor (Neovim in Kitty) |
-| `Super + V` | Toggle Clipboard History (DMS) |
-| `Super + N` | Toggle Notification Center (DMS) |
-| `Super + Q` | Close Active Window |
-| `Super + F` | Maximize Column |
-| `Super + Shift + F` | Fullscreen Window |
-| `Super + H/J/K/L` | Focus Left / Down / Up / Right |
-| `Super + Shift + H/J/K/L` | Move Column Left / Down / Up / Right |
-| `Super + 1..9` | Switch to Workspace 1..9 |
-| `Super + Shift + 1..9` | Move Column to Workspace 1..9 |
-| `Super + Backspace` | Open Power Menu (DMS) |
+- **Stateful Firewall**: Stealth mode with restricted TCP ports (`22`, `80`, `443`), anti-spoofing reverse path filtering, and dropped unroutable ICMP sweeps.
+- **TCP BBR & Fast Open**: Enabled in Linux kernel sysctls for zero-latency network throughput.
+- **Encrypted DNS over TLS**: Direct Cloudflare (`1.1.1.1`) and Quad9 (`9.9.9.9`) encrypted resolver with DNSSEC validation via `systemd-resolved`.
 
 ---
 
@@ -72,14 +55,6 @@ or using aliases:
 update      # Rebuild and switch NixOS configuration
 rebuild     # Rebuild and switch NixOS configuration
 hm          # Switch Home Manager configuration
-```
-
-### Unsloth Studio Control Aliases
-```bash
-unsloth-on   # Start Unsloth Studio Docker service
-unsloth-off  # Stop Unsloth Studio Docker service
-unsloth-stat # Check Unsloth Studio status
-unsloth-logs # Follow Unsloth Studio container logs
 ```
 
 ---

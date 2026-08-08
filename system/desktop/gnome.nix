@@ -1,4 +1,4 @@
-# GNOME 47 Desktop Environment Subsystem
+# GNOME 47 Desktop Environment Subsystem — Adwaita & Ghostty Terminal Only
 { pkgs, ... }:
 {
   # X11 / Display Server
@@ -27,10 +27,23 @@
     ];
   };
 
+  xdg.mime = {
+    enable = true;
+    defaultApplications = {
+      "x-scheme-handler/http"    = [ "google-chrome.desktop" ];
+      "x-scheme-handler/https"   = [ "google-chrome.desktop" ];
+      "text/html"                = [ "google-chrome.desktop" ];
+      "application/xhtml+xml"   = [ "google-chrome.desktop" ];
+      "x-terminal-emulator"     = [ "com.mitchellh.ghostty.desktop" ];
+    };
+  };
+
   # System Desktop Applications & Tools
   environment.systemPackages = with pkgs; [
+    # Ghostty — Single Dedicated Terminal Emulator
+    ghostty
+
     # Core GNOME Applications
-    gnome-terminal
     nautilus
     gedit
     gnome-calculator
@@ -60,10 +73,9 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
 
-    # Icons & Themes
-    papirus-icon-theme
-    tela-circle-icon-theme
-    bibata-cursors
+    # Official Adwaita Theme, Icons & Cursors
+    adwaita-icon-theme
+    gnome-themes-extra
 
     # System Tray & Applets
     networkmanagerapplet

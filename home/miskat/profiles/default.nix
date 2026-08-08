@@ -5,7 +5,6 @@
     ./common.nix
     ../modules/desktop/default.nix
     ../modules/terminal/ghostty.nix
-    ../modules/terminal/kitty.nix
   ];
 
   home.sessionVariables = {
@@ -14,28 +13,30 @@
     XDG_SESSION_DESKTOP = "gnome";
   };
 
+  # Adwaita Cursor Theme
   home.pointerCursor = {
     enable     = true;
     gtk.enable = true;
     x11.enable = true;
-    package    = pkgs.bibata-cursors;
-    name       = "Bibata-Modern-Classic";
+    package    = pkgs.adwaita-icon-theme;
+    name       = "Adwaita";
     size       = 24;
   };
 
+  # Adwaita Theme, Icons & Cursor
   gtk = {
     enable = true;
     theme = {
-      name    = "catppuccin-mocha-lavender-standard";
-      package = (pkgs.catppuccin-gtk.override { accents = [ "lavender" ]; variant = "mocha"; });
+      name    = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
     };
     iconTheme = {
-      name    = "Tela-circle-dark";
-      package = pkgs.tela-circle-icon-theme;
+      name    = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
     };
     cursorTheme = {
-      name    = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
+      name    = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
       size    = 24;
     };
     gtk3.extraConfig = {
@@ -59,9 +60,9 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme        = "prefer-dark";
-      gtk-theme           = "catppuccin-mocha-lavender-standard";
-      icon-theme          = "Tela-circle-dark";
-      cursor-theme        = "Bibata-Modern-Classic";
+      gtk-theme           = "Adwaita-dark";
+      icon-theme          = "Adwaita";
+      cursor-theme        = "Adwaita";
       cursor-size         = 24;
       font-name           = "Inter 10";
       monospace-font-name = "JetBrainsMono Nerd Font 10";
