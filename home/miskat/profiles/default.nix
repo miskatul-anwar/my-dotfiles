@@ -76,6 +76,8 @@
         "rounded-window-corners@yilozt"
         "caffeine@patapon.info"
         "dash-to-dock@micxgx.gmail.com"
+        "dash-to-panel@jderose9.github.com"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
         "blur-my-shell@aunetx"
         "appindicatorsupport@rgcjonas.gmail.com"
       ];
