@@ -22,6 +22,23 @@
     caprine
     zoom-us
 
+    # Productivity & Media
+    libreoffice-fresh
+    vlc
+    gimp
+    flameshot
+    filezilla
+    transmission_4-gtk
+    rhythmbox
+    cheese
+    shotwell
+    simple-scan
+
+    # System Utilities & Archiving
+    p7zip
+    gparted
+    baobab
+
     # Shell prompt theme
     zsh-powerlevel10k
   ];

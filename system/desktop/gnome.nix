@@ -62,21 +62,6 @@
     papirus-icon-theme
     tela-circle-icon-theme
 
-    # Common desktop apps
-    transmission_4-gtk
-    rhythmbox
-    cheese
-    shotwell
-    simple-scan
-    flameshot
-    filezilla
-    vlc
-    gimp
-    libreoffice-fresh
-    p7zip
-    gparted
-    baobab
-
     # System tray / network / bluetooth
     networkmanagerapplet
     blueman
