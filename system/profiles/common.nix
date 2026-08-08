@@ -38,6 +38,9 @@
   # nix-ld — dynamic linker for unpatched prebuilt binaries (standalone Python, uv, VSCode server, unsloth wheels)
   programs.nix-ld.enable = true;
 
+  # envfs — FHS compatibility layer creating dynamic symlinks for /bin, /usr/bin shebangs (Unsloth Studio, standard Linux scripts)
+  services.envfs.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-40.10.5"

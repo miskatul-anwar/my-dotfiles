@@ -107,7 +107,10 @@ Comprehensive hardware driver stack & multimedia subsystem shared across both GN
 - **GitHub & AI Assistants**: `gh` (GitHub CLI), `github-copilot-cli`, `antigravity-cli`, `antigravity-ide`, `claude-code`.
 - **Development & Debugging**: `gcc`, `clang`, `gdb` (GNU Debugger), `rustup`, `pypy3`, `uv`, `graphviz`, `arduino-ide`, `texliveFull`, `protege`.
 - **Network Analysis & Security**: `wireshark`, `sniffnet`, `nmap`, `tcpdump`, `netcat`, `bettercap`, `burpsuite`, `aircrack-ng`, `hashcat`, `cloudflare-warp` (`warp-cli`).
-- **Services & Virtualisation**: `libvirtd`, `qemu`, `winboat`, `flatpak` (Flathub repo auto-added), `services.cloudflare-warp`, `llama-cpp`, `vllm`, `open-webui`, `oterm`.
+- **Services, Virtualisation & Linux FHS Compatibility**:
+  - **`services.envfs.enable = true`**: FHS compatibility filesystem layer that dynamically creates `/bin` and `/usr/bin` executable symlinks on NixOS. Standard Linux scripts (`#!/bin/bash`, `#!/usr/bin/env python3`), **Unsloth Studio**, and prebuilt CLI tools execute seamlessly in the terminal just like on a standard Linux distribution (Ubuntu/Debian/Arch).
+  - **`programs.nix-ld.enable = true`**: Dynamic glibc linker enabling unpatched prebuilt binaries (standalone Python, `uv` wheels, VSCode server) to run without manual `patchelf`.
+  - **Virtualisation & Security**: `libvirtd`, `qemu`, `winboat`, `flatpak` (Flathub repo auto-added), `services.cloudflare-warp`, `llama-cpp`, `vllm`, `open-webui`, `oterm`.
 
 ---
 
