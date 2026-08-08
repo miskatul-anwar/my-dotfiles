@@ -66,6 +66,12 @@
       warp-off  = "warp-cli disconnect";
       warp-stat = "warp-cli status";
 
+      # Unsloth Studio Docker container
+      unsloth-on   = "sudo systemctl start docker-unsloth-studio.service";
+      unsloth-off  = "sudo systemctl stop docker-unsloth-studio.service";
+      unsloth-stat = "sudo systemctl status docker-unsloth-studio.service";
+      unsloth-logs = "sudo docker logs -f unsloth-studio";
+
       # Nix helpers
       nix-clean  = "nh clean all";
       nix-search = "nix search nixpkgs";
