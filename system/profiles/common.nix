@@ -32,8 +32,8 @@
     ../services/llm.nix
   ];
 
-  # Cloudflare WARP VPN service & CLI (warp-cli)
-  services.cloudflare-warp.enable = true;
+  # Cloudflare WARP VPN service & CLI (warp-cli) — Disabled for now (set to true to enable)
+  services.cloudflare-warp.enable = false;
 
   # nix-ld — dynamic linker for unpatched prebuilt binaries (standalone Python, uv, VSCode server, unsloth wheels)
   programs.nix-ld.enable = true;
