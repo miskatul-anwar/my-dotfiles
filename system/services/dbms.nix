@@ -1,4 +1,4 @@
-# MariaDB / DBMS — disabled by default, uncomment in system/profiles/common.nix to enable
+# MariaDB / DBMS — optional system module
 { pkgs, ... }:
 {
   services.mysql = {

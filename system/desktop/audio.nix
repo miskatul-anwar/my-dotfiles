@@ -35,6 +35,6 @@
     alsa-utils       # alsamixer, amixer command line tools
     pulsemixer       # CLI PulseAudio/PipeWire volume mixer
     playerctl        # MPRIS media player controller
-    pamixer          # CLI volume controls for waybar/hyprland
+    pamixer          # CLI volume controls for Wayland session
   ];
 }

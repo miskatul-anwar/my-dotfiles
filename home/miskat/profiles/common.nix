@@ -1,4 +1,4 @@
-# Shared User Profile — Inherited by both GNOME & Hyprland user environments
+# Base User Profile Configuration
 { ... }:
 {
   imports = [

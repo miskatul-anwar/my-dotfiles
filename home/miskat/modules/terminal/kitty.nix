@@ -6,7 +6,7 @@
       shell = "${pkgs.zsh}/bin/zsh";
       confirm_os_window_close = 0;
 
-      # Font configuration (Matching Waybar font)
+      # Font configuration
       font_family      = "JetBrainsMono Nerd Font";
       bold_font        = "auto";
       italic_font      = "auto";

@@ -1,4 +1,4 @@
-# Android development — disabled by default, uncomment in system/profiles/common.nix to enable
+# Android development — optional system module
 { pkgs, ... }:
 {
   nixpkgs.config.android_sdk.accept_license = true;

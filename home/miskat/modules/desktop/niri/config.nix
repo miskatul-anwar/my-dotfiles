@@ -69,12 +69,9 @@ in
       # ── Startup Environment & Autostart Daemons ─────────────────────
       spawn-at-startup = [
         { command = [ "dbus-update-activation-environment" "--systemd" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" ]; }
-        { command = [ "swaync" ]; }
-        { command = [ "waybar" ]; }
+        { command = [ "dms" ]; }
         { command = [ "wl-paste" "--type" "text" "--watch" "cliphist" "store" ]; }
         { command = [ "wl-paste" "--type" "image" "--watch" "cliphist" "store" ]; }
-        { command = [ "awww-daemon" ]; }
-        { command = [ "set-wallpaper" ]; }
         { command = [ "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1" ]; }
       ];
 
@@ -82,14 +79,13 @@ in
       binds = {
         # ── Launchers & Terminal ──────────────────────────────────────
         "Mod+Return".action = actions.spawn "kitty";
-        "Mod+D".action      = actions.spawn "rofi" "-show" "drun";
+        "Mod+D".action      = actions.spawn "dms" "toggle-launcher";
         "Mod+E".action      = actions.spawn "nautilus";
         "Mod+Y".action      = actions.spawn "kitty" "-e" "yazi";
         "Mod+C".action      = actions.spawn "kitty" "-e" "nvim";
-        "Mod+V".action      = actions.spawn "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy";
-        "Mod+N".action      = actions.spawn "swaync-client" "-t" "-sw";
+        "Mod+V".action      = actions.spawn "dms" "toggle-clipboard";
+        "Mod+N".action      = actions.spawn "dms" "toggle-notifications";
         "Mod+W".action      = actions.spawn "google-chrome-stable";
-        "Mod+Shift+W".action = actions.spawn "set-wallpaper";
 
         # ── Window Controls ───────────────────────────────────────────
         "Mod+Q".action              = actions.close-window;
@@ -97,7 +93,7 @@ in
         "Mod+Shift+F".action        = actions.fullscreen-window;
         "Mod+Space".action          = actions.toggle-window-floating;
         "Mod+Shift+C".action        = actions.quit;
-        "Mod+Backspace".action      = actions.spawn "wlogout";
+        "Mod+Backspace".action      = actions.spawn "dms" "toggle-power";
 
         # ── Focus Movement (Vim HJKL + Arrow Keys) ────────────────────
         "Mod+Left".action           = actions.focus-column-left;

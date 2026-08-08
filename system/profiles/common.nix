@@ -1,4 +1,4 @@
-# Shared System Core Configuration — Inherited by both GNOME & Hyprland profiles
+# Base System Core Configuration
 { ... }:
 {
   imports = [

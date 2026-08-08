@@ -1,10 +1,15 @@
 # Niri Scrollable-Tiling Compositor & Dank Material Shell System Setup
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   # Enable Niri Wayland compositor
   programs.niri = {
     enable = true;
     package = pkgs.niri;
+  };
+
+  # Enable Dank Material Shell system service & package
+  programs.dank-material-shell = {
+    enable = true;
   };
 
   # GDM Display Manager configured with Niri as default session
@@ -31,14 +36,10 @@
     # Theme & Color Generator (Material You / Material 3)
     matugen
 
-    # Launcher, Shell & Utilities
-    rofi
-    fuzzel
-    waybar
+    # Shell & Desktop Utilities
     swaybg
     swaylock
     swayidle
-    swaynotificationcenter
     libnotify
 
     # Terminal Emulators

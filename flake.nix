@@ -33,6 +33,7 @@
         { nixpkgs.hostPlatform = "x86_64-linux"; }
         systemProfile
         niri.nixosModules.niri
+        dank-material-shell.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager = {

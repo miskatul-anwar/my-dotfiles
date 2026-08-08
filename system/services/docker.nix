@@ -1,4 +1,4 @@
-# Docker — disabled by default, uncomment in system/profiles/common.nix to enable
+# Docker daemon & container configuration
 { pkgs, ... }:
 {
   virtualisation.docker = {
