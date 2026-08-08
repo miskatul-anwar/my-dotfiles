@@ -14,6 +14,10 @@
     username      = "miskat";
     homeDirectory = "/home/miskat";
     stateVersion   = "25.05";
+    sessionPath   = [
+      "$HOME/.npm-global/bin"
+      "$HOME/.local/bin"
+    ];
     file          = {};
   };
 

@@ -18,6 +18,9 @@
     UV_PYTHON_DOWNLOADS                        = "never";        # Never fetch standalone builds
     UV_PYTHON_PREFERENCE                       = "only-system";  # Only use Python found on PATH
 
+    # ── Node.js / npm Global Prefix ──────────────────────────────────
+    NPM_CONFIG_PREFIX                          = "$HOME/.npm-global";
+
     # ── Browser default ───────────────────────────────────────────────
     BROWSER  = "google-chrome";
 
