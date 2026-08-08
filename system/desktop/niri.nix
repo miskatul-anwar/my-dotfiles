@@ -28,8 +28,8 @@
     niri
     xwayland-satellite
 
-    # Caelestia Shell
-    inputs.caelestia-shell.packages.${pkgs.system}.caelestia-shell
+    # Caelestia Shell & CLI
+    inputs.caelestia-shell.packages.${pkgs.system}.with-cli
 
     # Theme & Color Generator (Material You / Matugen)
     matugen

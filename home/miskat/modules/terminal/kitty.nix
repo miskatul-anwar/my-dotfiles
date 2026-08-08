@@ -2,6 +2,9 @@
 {
   programs.kitty = {
     enable = true;
+    extraConfig = ''
+      include ~/.config/caelestia/kitty.conf
+    '';
     settings = {
       shell = "${pkgs.zsh}/bin/zsh";
       confirm_os_window_close = 0;
@@ -18,7 +21,7 @@
       background_opacity   = "0.85";
       dynamic_background_opacity = "yes";
 
-      # Colors (ZaneyOS Catppuccin Mocha)
+      # Base colors (Fallback before Caelestia loads)
       foreground              = "#CDD6F4";
       background              = "#1E1E2E";
       selection_foreground    = "#1E1E2E";
@@ -31,11 +34,6 @@
       bell_border_color       = "#F9E2AF";
       wayland_titlebar_color  = "system";
       macos_titlebar_color    = "system";
-      active_tab_foreground   = "#11111B";
-      active_tab_background   = "#CBA6F7";
-      inactive_tab_foreground = "#CDD6F4";
-      inactive_tab_background = "#181825";
-      tab_bar_background      = "#11111B";
 
       # 16 terminal colors
       color0  = "#45475a";

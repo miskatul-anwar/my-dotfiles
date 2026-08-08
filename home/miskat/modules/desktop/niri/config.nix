@@ -92,7 +92,8 @@ in
       # ── Startup Environment & Caelestia Shell Autostart ─────────────
       spawn-at-startup = [
         { command = [ "dbus-update-activation-environment" "--systemd" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" ]; }
-        { command = [ "caelestia" "run" ]; }
+        { command = [ "caelestia" ]; }
+        { command = [ "caelestia" "scheme" "apply" ]; }
         { command = [ "wl-paste" "--type" "text" "--watch" "cliphist" "store" ]; }
         { command = [ "wl-paste" "--type" "image" "--watch" "cliphist" "store" ]; }
         { command = [ "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1" ]; }

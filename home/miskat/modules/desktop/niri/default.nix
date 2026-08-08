@@ -6,6 +6,6 @@
   ];
 
   home.packages = [
-    inputs.caelestia-shell.packages.${pkgs.system}.caelestia-shell
+    inputs.caelestia-shell.packages.${pkgs.system}.with-cli
   ];
 }
