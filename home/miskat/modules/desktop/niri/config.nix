@@ -142,9 +142,9 @@ in
         "Mod+Shift+9".action.move-column-to-workspace = 9;
 
         # ── Screenshots & Hardware Keys ──────────────────────────────
-        "Print".action              = actions.spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy";
-        "Mod+Control+S".action      = actions.spawn "sh" "-c" "mkdir -p ~/Pictures/Screenshots && grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png";
-        "Mod+Shift+S".action        = actions.spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy";
+        "Print".action              = actions.spawn "dms" "screenshot";
+        "Mod+Control+S".action      = actions.spawn "dms" "screenshot";
+        "Mod+Shift+S".action        = actions.spawn "dms" "screenshot-gui";
 
         "XF86AudioRaiseVolume".action = actions.spawn "pamixer" "-i" "5";
         "XF86AudioLowerVolume".action = actions.spawn "pamixer" "-d" "5";
