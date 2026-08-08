@@ -45,7 +45,7 @@
       # NixOS rebuild profiles
       update           = "nh os switch";
       rebuild          = "nh os switch";
-      rebuild-hyprland = "nh os switch --hostname miskat-hyprland";
+      rebuild-sway     = "nh os switch --hostname miskat-sway";
       rebuild-gnome    = "nh os switch --hostname miskat-gnome";
       hm               = "home-manager switch --flake ~/my-dotfiles#miskat";
       editcfg          = "nvim ~/my-dotfiles";

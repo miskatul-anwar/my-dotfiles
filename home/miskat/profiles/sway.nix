@@ -1,4 +1,4 @@
-# Hyprland User Profile — Catppuccin Mocha Lavender GTK, Tela Icons & Bibata Cursor
+# Sway User Profile — Catppuccin Mocha Lavender GTK, Tela Icons & Bibata Cursor
 { config, pkgs, ... }:
 {
   imports = [
@@ -9,8 +9,8 @@
 
   home.sessionVariables = {
     TERMINAL            = "kitty";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_CURRENT_DESKTOP = "sway";
+    XDG_SESSION_DESKTOP = "sway";
   };
 
   home.pointerCursor = {

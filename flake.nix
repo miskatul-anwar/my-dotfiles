@@ -1,5 +1,5 @@
 {
-  description = "Miskat's NixOS + Home Manager setup (Flake profiles for Hyprland & GNOME)";
+  description = "Miskat's NixOS + Home Manager setup (Flake profiles for Sway & GNOME)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -38,16 +38,16 @@
   in
   {
     nixosConfigurations = {
-      # Default host target (Hyprland profile)
+      # Default host target (Sway profile)
       miskat = mkNixosSystem {
-        systemProfile = ./system/profiles/hyprland.nix;
-        homeProfile   = ./home/miskat/profiles/hyprland.nix;
+        systemProfile = ./system/profiles/sway.nix;
+        homeProfile   = ./home/miskat/profiles/sway.nix;
       };
 
-      # Explicit Hyprland Profile (Catppuccin Mocha Lavender, Tela icons, Bibata cursor, Waybar, SwayNC, Rofi)
-      miskat-hyprland = mkNixosSystem {
-        systemProfile = ./system/profiles/hyprland.nix;
-        homeProfile   = ./home/miskat/profiles/hyprland.nix;
+      # Explicit Sway Profile (Catppuccin Mocha Lavender, Tela icons, Bibata cursor, Waybar, SwayNC, Rofi)
+      miskat-sway = mkNixosSystem {
+        systemProfile = ./system/profiles/sway.nix;
+        homeProfile   = ./home/miskat/profiles/sway.nix;
       };
 
       # Explicit GNOME Profile (Stock Adwaita theme, Adwaita icons, Adwaita cursor, GNOME DE)
