@@ -1,6 +1,5 @@
+# Desktop Home Module Entry Point
 { ... }:
 {
-  imports = [
-    ./wallpaper.nix
-  ];
+  imports = [];
 }
