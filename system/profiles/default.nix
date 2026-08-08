@@ -1,8 +1,8 @@
-# Single Unified System Profile — Niri + Dank Material Shell Environment
+# Single Unified System Profile — GNOME Desktop Environment
 { ... }:
 {
   imports = [
     ./common.nix
-    ../desktop/niri.nix
+    ../desktop/gnome.nix
   ];
 }

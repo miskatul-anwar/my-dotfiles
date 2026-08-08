@@ -1,5 +1,5 @@
 {
-  description = "Miskat's NixOS + Home Manager setup (Single profile: Niri + Caelestia Shell)";
+  description = "Miskat's NixOS + Home Manager setup (Single profile: GNOME 47 Desktop Environment)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -13,26 +13,15 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, niri, caelestia-shell, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixvim, ... }@inputs:
   let
     mkNixosSystem = { systemProfile, homeProfile }: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         { nixpkgs.hostPlatform = "x86_64-linux"; }
         systemProfile
-        niri.nixosModules.niri
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -51,7 +40,7 @@
   in
   {
     nixosConfigurations = {
-      # Single Unified Target (Niri + Caelestia Shell)
+      # Single Unified Target (GNOME 47 Desktop Environment)
       miskat = mkNixosSystem {
         systemProfile = ./system/profiles/default.nix;
         homeProfile   = ./home/miskat/profiles/default.nix;

@@ -1,16 +1,17 @@
-# Single Unified User Profile — Niri + Dank Material Shell Environment
+# Single Unified User Profile — GNOME 47 Desktop Environment
 { config, pkgs, ... }:
 {
   imports = [
     ./common.nix
     ../modules/desktop/default.nix
+    ../modules/terminal/ghostty.nix
     ../modules/terminal/kitty.nix
   ];
 
   home.sessionVariables = {
-    TERMINAL            = "kitty";
-    XDG_CURRENT_DESKTOP = "niri";
-    XDG_SESSION_DESKTOP = "niri";
+    TERMINAL            = "ghostty";
+    XDG_CURRENT_DESKTOP = "GNOME";
+    XDG_SESSION_DESKTOP = "gnome";
   };
 
   home.pointerCursor = {
@@ -64,9 +65,26 @@
       cursor-size         = 24;
       font-name           = "Inter 10";
       monospace-font-name = "JetBrainsMono Nerd Font 10";
+      enable-hot-corners  = false;
     };
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
+    };
+    "org/gnome/shell" = {
+      enabled-extensions = [
+        "rounded-window-corners@yilozt"
+        "caffeine@patapon.info"
+        "dash-to-dock@micxgx.gmail.com"
+        "blur-my-shell@aunetx"
+        "appindicatorsupport@rgcjonas.gmail.com"
+      ];
+    };
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      dock-position       = "BOTTOM";
+      transparency-mode   = "FIXED";
+      background-opacity  = 0.3;
+      dash-max-icon-size  = 48;
+      show-mounts         = false;
     };
   };
 }

@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./niri
     ./wallpaper.nix
   ];
 }

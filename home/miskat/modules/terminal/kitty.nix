@@ -2,9 +2,6 @@
 {
   programs.kitty = {
     enable = true;
-    extraConfig = ''
-      include ~/.config/caelestia/kitty.conf
-    '';
     settings = {
       shell = "${pkgs.zsh}/bin/zsh";
       confirm_os_window_close = 0;
@@ -21,7 +18,7 @@
       background_opacity   = "0.85";
       dynamic_background_opacity = "yes";
 
-      # Base colors (Fallback before Caelestia loads)
+      # Catppuccin Mocha Colors
       foreground              = "#CDD6F4";
       background              = "#1E1E2E";
       selection_foreground    = "#1E1E2E";

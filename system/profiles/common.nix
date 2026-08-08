@@ -29,18 +29,14 @@
     # Services
     ../services/virtualisation.nix
     ../services/docker.nix
-    ../services/unsloth.nix
     ../services/flatpak.nix
     ../services/llm.nix
   ];
 
-  # Cloudflare WARP VPN service & CLI (warp-cli) — Disabled for now (set to true to enable)
-  services.cloudflare-warp.enable = false;
-
-  # nix-ld — dynamic linker for unpatched prebuilt binaries (standalone Python, uv, VSCode server, unsloth wheels)
+  # nix-ld — dynamic linker for unpatched prebuilt binaries (standalone Python, uv, VSCode server)
   programs.nix-ld.enable = true;
 
-  # envfs — FHS compatibility layer creating dynamic symlinks for /bin, /usr/bin shebangs (Unsloth Studio, standard Linux scripts)
+  # envfs — FHS compatibility layer creating dynamic symlinks for /bin, /usr/bin shebangs
   services.envfs.enable = true;
 
   nixpkgs.config.allowUnfree = true;
