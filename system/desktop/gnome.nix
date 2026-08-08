@@ -74,6 +74,7 @@
     gnomeExtensions.user-themes
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
+    gnomeExtensions.network-stats
 
     # Official Adwaita Theme, Icons & Cursors
     adwaita-icon-theme

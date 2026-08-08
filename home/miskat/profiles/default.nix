@@ -80,6 +80,7 @@
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "blur-my-shell@aunetx"
         "appindicatorsupport@rgcjonas.gmail.com"
+        "network-stats@gnome.noroadsleft.xyz"
       ];
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
