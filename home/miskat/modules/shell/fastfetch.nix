@@ -1,11 +1,15 @@
-# Fastfetch — Minimal Device Info with Big Logo & Rounded Box
 { ... }:
 {
+  home.file.".config/fastfetch/nixos.png".source = ../../assets/nixos.png;
+
   home.file.".config/fastfetch/config.jsonc".text = ''
     {
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
       "logo": {
+        "source": "~/.config/fastfetch/nixos.png",
         "type": "auto",
+        "width": 30,
+        "height": 15,
         "padding": {
           "top": 1,
           "left": 2,
