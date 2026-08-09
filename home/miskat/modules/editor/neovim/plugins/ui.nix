@@ -88,7 +88,7 @@
       enable = true;
       settings.options = {
         diagnostics = "nvim_lsp";
-        separator_style = "slant";
+        separator_style = "thin";
         always_show_bufferline = true;
       };
     };
@@ -110,6 +110,14 @@
     alpha = {
       enable = true;
       theme = "dashboard";
+      settings.opts.val = [
+        "      ███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗"
+        "      ████╗  ██║██║╚██╗██╔╝██║   ██║██║████╗ ████║"
+        "      ██╔██╗ ██║██║ ╚███╔╝ ██║   ██║██║██╔████╔██║"
+        "      ██║╚██╗██║██║ ██╔██╗ ██║   ██║██║██║╚██╔╝██║"
+        "      ██║ ╚████║██║██╔╝ ██╗╚██████╔╝██║██║ ╚═╝ ██║"
+        "      ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝╚═╝     ╚═╝"
+      ];
     };
   };
 }
